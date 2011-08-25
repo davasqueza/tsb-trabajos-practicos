@@ -15,6 +15,11 @@ public class Prueba1 {
     {
         Dni=123;
     }
-            
+    
+    @Override
+    public String toString()
+    {
+        return String.valueOf(Dni);
+    }
     
 }
