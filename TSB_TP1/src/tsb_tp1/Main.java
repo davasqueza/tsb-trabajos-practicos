@@ -5,7 +5,8 @@
 package tsb_tp1;
 
 /**
- *
+ *hhaaaaaaaaaaaaaaaaaaaa
+ * por dios como ago para cmpartir..?
  * @author Ale
  */
 public class Main {
@@ -14,6 +15,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("Hola la concha");
     }
 }
