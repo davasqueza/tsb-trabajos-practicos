@@ -3,7 +3,7 @@ package tsb_tp1;
 public class Node
 {
    private Comparable info;
-   private Node next;
+   private Node next, back;
    
    public Node ( )
    {
@@ -23,6 +23,16 @@ public class Node
    public void setNext(Node p)
    {
      next = p;
+   }
+   
+   public Node getBack()
+   {
+     return back;
+   }
+   
+   public void setBack(Node p)
+   {
+     back = p;
    }
    
    public Comparable getInfo()
