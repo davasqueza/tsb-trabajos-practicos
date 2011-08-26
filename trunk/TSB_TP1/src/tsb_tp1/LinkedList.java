@@ -4,10 +4,11 @@ import java.util.NoSuchElementException;
 
 public class LinkedList {
       private Node frente;
-      
+      private Node fondo;
       public LinkedList ()
       { 
           frente = null;
+          fondo = null;
       }
      
       public void addFirst(Comparable x)

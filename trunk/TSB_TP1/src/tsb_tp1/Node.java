@@ -9,10 +9,11 @@ public class Node
    {
    }
    
-   public Node (Comparable x, Node p)
+   public Node (Comparable x, Node p, Node s)
    {
      info = x;
      next = p;
+     back = s;
    }
    
    public Node getNext()
