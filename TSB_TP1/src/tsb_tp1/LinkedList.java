@@ -6,7 +6,7 @@ public class LinkedList {
       private Node frente;
       
       public LinkedList ()
-      {
+      { 
           frente = null;
       }
      
