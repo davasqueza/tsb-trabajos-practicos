@@ -15,14 +15,14 @@ public class LinkedList {
       {
             if ( x != null )
             {
-               Node p = new Node(x, frente);
+               Node p = new Node(x, frente, fondo);
                frente = p;
             }
       }  
       
       public void clear( )
       {
-         frente = null; // �alguna duda?
+         frente = null;
       }
       
       public Comparable getFirst()
