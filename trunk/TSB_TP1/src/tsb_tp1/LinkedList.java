@@ -1,30 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tsb_tp1;
 
 import java.util.NoSuchElementException;
 
-/**
- *
- * @author Franco
- */
 public class LinkedList {
       private Node frente;
       
-      /** 
-       * Constructor por defecto
-       */
       public LinkedList ()
       {
           frente = null;
       }
-      
-      /**
-       *  Inserta un objeto al principio de la lista.
-       *  @param x el objeto a almacenar en la lista.
-       */
+     
       public void addFirst(Comparable x)
       {
             if ( x != null )
@@ -34,19 +19,11 @@ public class LinkedList {
             }
       }  
       
-      /**
-       *  Remueve todos los elementos de la lista.
-       */
       public void clear( )
       {
          frente = null; // �alguna duda?
       }
       
-      /**
-       *  Retorna (pero sin removerlo) el objeto ubicado al principio de la lista. 
-       *  @return una referencia al primer elemento de la lista.
-       *  @throws NoSuchElementException si la lista estaba vac�a.
-       */
       public Comparable getFirst()
       {
          if (frente == null) throw new NoSuchElementException("Error: la lista est� vac�a...");
@@ -54,11 +31,6 @@ public class LinkedList {
          return frente.getInfo();
       }
       
-      /**
-       *  Retorna (y remueve) el objeto ubicado al principio de la lista. 
-       *  @return el primer elemento de la lista.
-       *  @throws NoSuchElementException si la lista estaba vac�a.
-       */
       public Comparable removeFirst()
       {
          if (frente == null) throw new NoSuchElementException("Error: la lista est� vac�a...");
@@ -68,12 +40,6 @@ public class LinkedList {
          return x;
       }
       
-      /**
-       *  Determina si en la lista existe un elemento que coincida con x. Usamos compareTo() para
-       *  realizar las comparaciones (aunque podr�a usarse equals()).
-       *  @return true si x est� en la lista - false si x no est� o si x es null.
-       *  @param x el objeto a buscar.
-       */
       public boolean contains (Comparable x)
       {
           if (x == null) return false;
@@ -84,17 +50,9 @@ public class LinkedList {
                 p = p.getNext();    
           }
           return ( p != null );
-          /*
-           * lo anterior es los mismo que:
-           * if(p!=null) return true;
-           * else return false;
-           */
+       
       }
      
-      /**
-       *  Redefine el m�todo toString heredado desde Object.
-       *  @return el contenido de la lista convertido a String.
-       */
     @Override
       public String toString()
       {
