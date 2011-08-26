@@ -5,8 +5,9 @@ public class Node
    private Comparable info;
    private Node next, back;
    
-   public Node ( )
+   public Node ( Comparable x )
    {
+       info=x;
    }
    
    public Node (Comparable x, Node p, Node s)

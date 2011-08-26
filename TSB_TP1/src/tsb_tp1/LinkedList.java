@@ -4,21 +4,28 @@ import java.util.NoSuchElementException;
 
 public class LinkedList {
       private Node frente;
-      private Node fondo;
+      
       public LinkedList ()
       { 
           frente = null;
-          fondo = null;
       }
      
-      public void addFirst(Comparable x)
-      {
-            if ( x != null )
-            {
-               Node p = new Node(x, frente, fondo);
-               frente = p;
-            }
-      }  
+         public void addFirst(Comparable x) {
+      if (x==null) {
+         frente = new Node(x,frente,frente);
+      }
+      else {
+      	 Node actual = frente;
+      	 while(actual.getNext() != frente) {
+      	 	actual = actual.getNext();
+      	 }
+      	 Node ultimoNodo = actual;
+         Node desplazado = frente;
+         frente = new Node(x,desplazado,ultimoNodo);
+         ultimoNodo.setNext(frente);
+      	 desplazado.setBack(frente);
+      }
+   }
       
       public void clear( )
       {
