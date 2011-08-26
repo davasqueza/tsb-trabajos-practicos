@@ -34,18 +34,30 @@ public class LinkedList {
       
       public Comparable getFirst()
       {
-         if (frente == null) throw new NoSuchElementException("Error: la lista est� vac�a...");
-         
+         if (frente != null)
          return frente.getInfo();
+         else return null;
       }
       
       public Comparable removeFirst()
       {
-         if (frente == null) throw new NoSuchElementException("Error: la lista est� vac�a...");
+         if(frente==null)
+             return null;
+         else if (frente.getNext()==frente)
+         {
+             Node removido = frente;
+             frente = null;
+             return removido.getInfo();
+         }
+            else
+            {
+                Node removido = frente;
+                frente=frente.getNext();
+                frente.setBack(removido.getBack());
+                removido.getBack().setNext(frente);
+                return removido.getInfo();
+            }
          
-         Comparable x = frente.getInfo();
-         frente = frente.getNext();
-         return x;
       }
       
       public boolean contains (Comparable x)
