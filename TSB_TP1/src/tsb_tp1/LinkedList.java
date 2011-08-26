@@ -1,10 +1,11 @@
 package tsb_tp1;
 
-import java.util.NoSuchElementException;
+
 
 public class LinkedList {
       private Node frente;
       
+
       public LinkedList ()
       { 
           frente = null;
