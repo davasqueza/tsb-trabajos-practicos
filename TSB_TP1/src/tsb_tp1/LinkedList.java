@@ -4,17 +4,19 @@ package tsb_tp1;
 
 public class LinkedList {
       private Node frente;
-      
+      private int size;
 
       public LinkedList ()
       { 
           frente = null;
       }
-     
+      
+
       public void addFirst(Comparable x)
       {
       if (frente==null) {
          frente = new Node(x,frente,frente);
+         size++;
       }
       else {
              Node actual = frente;
@@ -26,8 +28,12 @@ public class LinkedList {
              frente = new Node(x,desplazado,ultimoNodo);
              ultimoNodo.setNext(frente);
              desplazado.setBack(frente);
+             size++;
            }
       }
+      
+      
+      /*                   Este metodo no haria falta, le hice atributo size y cada vez que agrego o saco un nodo le sumo o resto uno.
       public int size()
       {
           int contador=0;
@@ -42,6 +48,8 @@ public class LinkedList {
           }
           return contador;
       }
+      */
+      
       
     /*     public void add (int index, Comparable element)
       {
@@ -66,6 +74,8 @@ public class LinkedList {
           
       }*/
       
+      
+                             
       public int getIndex(Node n) {
         int index = -1;
         if (frente!=null)
@@ -90,6 +100,8 @@ public class LinkedList {
         }
         return index;
     }
+
+      
       
       public void clear( )
       {
@@ -111,6 +123,7 @@ public class LinkedList {
          {
              Node removido = frente;
              frente = null;
+             size--;
              return removido.getInfo();
          }
             else
@@ -119,6 +132,7 @@ public class LinkedList {
                 frente=frente.getNext();
                 frente.setBack(removido.getBack());
                 removido.getBack().setNext(frente);
+                size--;
                 return removido.getInfo();
             }
          
