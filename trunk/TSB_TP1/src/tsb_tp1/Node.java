@@ -4,6 +4,7 @@ public class Node
 {
    private Comparable info;
    private Node next, back;
+   private int index;
    
    public Node ( Comparable x )
    {
@@ -35,6 +36,16 @@ public class Node
    public void setBack(Node p)
    {
      back = p;
+   }
+   
+   public int getIndex()
+   {
+       return index;
+   }
+   
+   public void setIndex(int i)
+   {
+       index=i;
    }
    
    public Comparable getInfo()
