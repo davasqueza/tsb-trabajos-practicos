@@ -33,7 +33,7 @@ public class LinkedList {
     }
       
       
-    /*                   Este metodo no haria falta, le hice atributo size y cada vez que agrego o saco un nodo le sumo o resto uno.
+    /*Este metodo no haria falta, le hice atributo size y cada vez que agrego o saco un nodo le sumo o resto uno.
     public int size()
     {
         int contador=0;
@@ -81,8 +81,8 @@ public class LinkedList {
 
       
       
-    /*                                    Este metodo lo transforme en un atributo del nodo, y que directamente cada vez que necesitemos el indice
-     *                                    llamo a un metodo que le asigne todos los indices a los nodos, esto simplifica los algoritmos.
+    /* Este metodo lo transforme en un atributo del nodo, y que directamente cada vez que necesitemos el indice
+     * llamo a un metodo que le asigne todos los indices a los nodos, esto simplifica los algoritmos.
     public int getIndex(Node n) {
     int index = -1;
         if (frente!=null)
