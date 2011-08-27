@@ -3,81 +3,88 @@ package tsb_tp1;
 
 
 public class LinkedList {
-      private Node frente;
-      private int size;
+    private Node frente;
+    private int size;
 
-      public LinkedList ()
-      { 
-          frente = null;
-      }
+    public LinkedList ()
+    { 
+        frente = null;
+    }
       
 
-      public void addFirst(Comparable x)
-      {
-      if (frente==null) {
-         frente = new Node(x,frente,frente);
-         size++;
-      }
-      else {
-             Node actual = frente;
-             while(actual.getNext() != frente) {
-                    actual = actual.getNext();
-        	 }
+    public void addFirst(Comparable x)
+    {
+    if (frente==null) {
+        frente = new Node(x,frente,frente);
+        size++;
+    }
+    else {
+        Node actual = frente;
+        while(actual.getNext() != frente) {
+             actual = actual.getNext();
+        }
              Node ultimoNodo = actual;
              Node desplazado = frente;
              frente = new Node(x,desplazado,ultimoNodo);
              ultimoNodo.setNext(frente);
              desplazado.setBack(frente);
              size++;
-           }
-      }
+        }
+    }
       
       
-      /*                   Este metodo no haria falta, le hice atributo size y cada vez que agrego o saco un nodo le sumo o resto uno.
-      public int size()
-      {
-          int contador=0;
-          if (frente!=null)
-          {
-             Node actual = frente;
-             contador=1;
-             while(actual.getNext() != frente) {
-                    actual = actual.getNext();
-                    contador++;
-        	 }
-          }
-          return contador;
-      }
+    /*                   Este metodo no haria falta, le hice atributo size y cada vez que agrego o saco un nodo le sumo o resto uno.
+    public int size()
+    {
+        int contador=0;
+        if (frente!=null)
+        {
+            Node actual = frente;
+            contador=1;
+            while(actual.getNext() != frente) {
+                actual = actual.getNext();
+                contador++;
+            }
+        }
+        return contador;
+    }
       */
       
-      
-    /*     public void add (int index, Comparable element)
-      {
-          if(this.size()>=index && index>-1)
-          {
-              if (index==0) {
+      // Fijense si les gusta el metod add asi:
+  
+    public void add (int index, Comparable element)
+    {
+        if(size>=index && index>-1)
+        {
+            if (index==0) {
                 this.addFirst(element);
-              }
-              else {
-           Node actual = frente;
-              int indice=0;
-              while(actual.getNext() != frente) {
-                    actual = actual.getNext();
-        	 }
-              Node ultimoNodo = actual;
-              Node desplazado = frente;
-              frente = new Node(x,desplazado,ultimoNodo);
-              ultimoNodo.setNext(frente);
-              desplazado.setBack(frente);
-           }
-          }
+            }
+            else{
+                this.setIndexNodes();
+                Node actual = frente;
+                while(actual.getNext() != frente)
+                {
+                    if(index==actual.getIndex())
+                    {
+                        Node e=new Node(element,actual,actual.getBack());
+                        actual.getBack().setNext(e);
+                        actual.setBack(e);
+                        size++;
+                        break;
+                    }
+                    actual=actual.getNext();
+                }
+            }
+        }
           
-      }*/
+    }
+
       
       
-                             
-      public int getIndex(Node n) {
-        int index = -1;
+    /*                                    Este metodo lo transforme en un atributo del nodo, y que directamente cada vez que necesitemos el indice
+     *                                    llamo a un metodo que le asigne todos los indices a los nodos, esto simplifica los algoritmos.
+    public int getIndex(Node n) {
+    int index = -1;
         if (frente!=null)
         {
             index=0;
@@ -100,71 +107,82 @@ public class LinkedList {
         }
         return index;
     }
-
+    */
       
+    public void setIndexNodes()
+    {
+        Node actual = frente;
+        int i=0;
+        while(actual.getNext() != frente)
+        {
+            actual.setIndex(i);
+            i++;
+            actual = actual.getNext();
+        }
+    }
       
-      public void clear( )
-      {
-         frente = null;
-      }
+    public void clear( )
+    {
+        frente = null;
+    }
       
-      public Comparable getFirst()
-      {
-         if (frente != null)
-         return frente.getInfo();
-         else return null;
-      }
+    public Comparable getFirst()
+    {
+        if (frente != null)
+        return frente.getInfo();
+        else return null;
+    }
       
-      public Comparable removeFirst()
-      {
-         if(frente==null)
-             return null;
-         else if (frente.getNext()==frente)
-         {
-             Node removido = frente;
-             frente = null;
-             size--;
-             return removido.getInfo();
-         }
-            else
-            {
-                Node removido = frente;
-                frente=frente.getNext();
-                frente.setBack(removido.getBack());
-                removido.getBack().setNext(frente);
-                size--;
-                return removido.getInfo();
-            }
+    public Comparable removeFirst()
+    {
+        if(frente==null)
+            return null;
+        else if (frente.getNext()==frente)
+        {
+            Node removido = frente;
+            frente = null;
+            size--;
+            return removido.getInfo();
+        }
+        else
+        {
+            Node removido = frente;
+            frente=frente.getNext();
+            frente.setBack(removido.getBack());
+            removido.getBack().setNext(frente);
+            size--;
+            return removido.getInfo();
+        }
          
-      }
+    }
       
-      public boolean contains (Comparable x)
-      {
-          if (x == null) return false;
+    public boolean contains (Comparable x)
+    {
+        if (x == null) return false;
            
-          Node p = frente;
-          while ( p != null && x.compareTo( p.getInfo() ) != 0 )
-          {
-                p = p.getNext();    
-          }
-          return ( p != null );
+        Node p = frente;
+        while ( p != null && x.compareTo( p.getInfo() ) != 0 )
+        {
+            p = p.getNext();    
+        }
+        return ( p != null );
        
-      }
+    }
      
     @Override
-      public String toString()
-      {
-             Node p = frente;
-             String res = "[ ";
-             while( p != null )
-             {
-                res = res + p.toString();
-                if ( p.getNext() != null ) res = res + " - ";
-                p = p.getNext();
-             }
-             res = res + " ]";
-             return res;
-      }
+    public String toString()
+    {
+        Node p = frente;
+        String res = "[ ";
+        while( p != null )
+        {
+            res = res + p.toString();
+            if ( p.getNext() != null ) res = res + " - ";
+            p = p.getNext();
+        }
+        res = res + " ]";
+        return res;
+    }
 }
 
 
