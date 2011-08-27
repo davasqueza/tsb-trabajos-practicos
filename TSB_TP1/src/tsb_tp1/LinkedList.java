@@ -19,17 +19,21 @@ public class LinkedList {
         size++;
     }
     else {
-        Node actual = frente;
-        while(actual.getNext() != frente) {
-             actual = actual.getNext();
+        if(!esHomogeneo(x))
+        {
+            System.out.println("No es homogeneo.");
         }
-             Node ultimoNodo = actual;
-             Node desplazado = frente;
-             frente = new Node(x,desplazado,ultimoNodo);
-             ultimoNodo.setNext(frente);
-             desplazado.setBack(frente);
-             size++;
+        else{
+            Node actual = frente;
+            Node ultimoNodo = actual.getBack();
+            Node desplazado = frente;
+            frente = new Node(x,desplazado,ultimoNodo);
+            ultimoNodo.setNext(frente);
+            desplazado.setBack(frente);
+            size++;
+            }
         }
+        
     }
       
       
@@ -183,6 +187,13 @@ public class LinkedList {
         res = res + " ]";
         return res;
     }
+    
+    private boolean esHomogeneo (Comparable x)
+      {
+            if ( x == null ) return false;
+            if ( frente != null && x.getClass() != frente.getInfo().getClass() ) return false;
+            return true;
+      }
 }
 
 
