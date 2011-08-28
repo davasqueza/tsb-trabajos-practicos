@@ -198,4 +198,33 @@ public class LinkedList {
         }
     }
     
+    public Node getNode(int index)
+    {
+        if(frente!=null)
+        {
+            if(index==0)
+            {
+                return frente;
+            }
+            else
+            {
+                 Node actual = frente;
+                 while(actual.getNext() != frente)
+                 {
+                 if(index==actual.getIndex())
+                 {
+                       return actual;
+                 }
+                 actual=actual.getNext();
+               }
+           }
+        }
+        return null;
+    }
+    
+    public Comparable remove(int index)
+    {
+        
+    }
+    
 }
