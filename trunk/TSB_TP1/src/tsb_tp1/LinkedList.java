@@ -177,4 +177,25 @@ public class LinkedList {
         return size;
     }
     
+    public Comparable removeLast()
+    {
+        if(frente==null)
+            return null;
+        else if (frente.getNext()==frente)
+        {
+            Node removido = frente;
+            frente = null;
+            size--;
+            return removido.getInfo();
+        }
+        else
+        {
+            Node removido = frente.getBack();
+            frente.setBack(removido.getBack());
+            removido.getBack().setNext(frente);
+            size--;
+            return removido.getInfo();
+        }
+    }
+    
 }
