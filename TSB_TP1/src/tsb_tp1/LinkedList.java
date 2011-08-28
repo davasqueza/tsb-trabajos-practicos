@@ -67,7 +67,7 @@ public class LinkedList {
     }
 
       
-    public void setIndexNodes()
+    private void setIndexNodes()
     {
         Node actual = frente;
         int i=0;
