@@ -20,9 +20,7 @@ public class LinkedList {
     }
     else {
         if(!esHomogeneo(x))
-        {
             System.out.println("No es homogeneo.");
-        }
         else{
             Node actual = frente;
             Node ultimoNodo = actual.getBack();
@@ -64,21 +62,25 @@ public class LinkedList {
                 this.addFirst(element);
             }
             else{
-                this.setIndexNodes();
-                Node actual = frente;
-                while(actual.getNext() != frente)
-                {
-                    if(index==actual.getIndex())
+                if(!esHomogeneo(element))
+                    System.out.println("No es homogeneo.");
+                else{
+                    this.setIndexNodes();
+                    Node actual = frente;
+                    while(actual.getNext() != frente)
                     {
-                        Node e=new Node(element,actual,actual.getBack());
-                        actual.getBack().setNext(e);
-                        actual.setBack(e);
-                        size++;
-                        break;
-                    }
+                        if(index==actual.getIndex())
+                        {
+                            Node e=new Node(element,actual,actual.getBack());
+                            actual.getBack().setNext(e);
+                            actual.setBack(e);
+                            size++;
+                            break;
+                        }
                     actual=actual.getNext();
+                    }
+                    }
                 }
-            }
         }
           
     }
@@ -189,11 +191,28 @@ public class LinkedList {
     }
     
     private boolean esHomogeneo (Comparable x)
-      {
-            if ( x == null ) return false;
-            if ( frente != null && x.getClass() != frente.getInfo().getClass() ) return false;
-            return true;
-      }
+    {
+        if ( x == null ) return false;
+        if ( frente != null && x.getClass() != frente.getInfo().getClass() ) return false;
+        return true;
+    }
+    
+    public void addInOrder(Comparable x)
+    {
+        if (!esHomogeneo(x))
+            System.out.println("No es homogeneo.");
+        else{
+            Node actual=frente;
+            while (actual != null && x.compareTo(actual.getInfo()) >= 0)
+            {
+               actual=actual.getNext();
+            }
+            Node nuevo=new Node(x,actual,actual.getBack());
+            actual.getBack().setNext(nuevo);
+            actual.setBack(nuevo);
+        }
+    }  
+    
 }
 
 
