@@ -154,14 +154,21 @@ public class LinkedList {
         if (!esHomogeneo(x))
             System.out.println("No es homogeneo.");
         else{
-            Node actual=frente;
-            while (actual != null && x.compareTo(actual.getInfo()) >= 0)
-            {
-               actual=actual.getNext();
+            if (frente==null){
+            frente = new Node(x,frente,frente);
+            size++;
             }
-            Node nuevo=new Node(x,actual,actual.getBack());
-            actual.getBack().setNext(nuevo);
-            actual.setBack(nuevo);
+            else{
+                Node actual=frente;
+                while (actual != null && x.compareTo(actual.getInfo()) >= 0)
+                {
+                actual=actual.getNext();
+                }
+                Node nuevo=new Node(x,actual,actual.getBack());
+                actual.getBack().setNext(nuevo);
+                actual.setBack(nuevo);
+                size++;
+            }
         }
     }  
     
