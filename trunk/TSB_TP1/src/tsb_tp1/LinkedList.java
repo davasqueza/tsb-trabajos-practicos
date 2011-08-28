@@ -165,6 +165,9 @@ public class LinkedList {
         }
     }  
     
-    
+    public int size()
+    {
+        return size;
+    }
     
 }
