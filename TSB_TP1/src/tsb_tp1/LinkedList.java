@@ -224,7 +224,14 @@ public class LinkedList {
     
     public Comparable remove(int index)
     {
-        
+        if(this.getNode(index)!=null)
+        {
+            Node actual=this.getNode(index);
+            actual.getBack().setNext(actual.getNext());
+            actual.getNext().setBack(actual.getBack());
+            return actual.getInfo();
+        }
+        return null;
     }
     
 }
