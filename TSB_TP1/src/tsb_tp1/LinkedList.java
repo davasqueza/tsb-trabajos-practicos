@@ -321,7 +321,7 @@ public class LinkedList {
         if(size>0)
         {
             Node actual=frente;
-            while(actual!=null && actual.getBack()!=actual)
+            while(actual!=null && actual.getBack()!=frente)
             {
                 if(actual.getInfo()==c)
                 {
