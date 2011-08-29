@@ -259,6 +259,7 @@ public class LinkedList {
             Node e=new Node(c,actual,actual.getBack());
             actual.getBack().setNext(e);
             actual.setBack(e);
+            size++;
             this.setIndexNodes();
         }
         
