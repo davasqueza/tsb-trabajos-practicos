@@ -259,7 +259,7 @@ public class LinkedList {
             actual.setBack(e);
             size++;
             this.setIndexNodes();
-        }
+        }   
         
     }
     
