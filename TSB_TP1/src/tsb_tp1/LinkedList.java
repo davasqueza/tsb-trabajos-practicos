@@ -120,15 +120,16 @@ public class LinkedList {
       
     public boolean contains (Comparable x)
     {
-        if (x == null) return false;
-           
-        Node p = frente;
-        while ( p != null && x.compareTo( p.getInfo() ) != 0 )
+        if (x == null) 
+            return false;
+        Node actual = frente;
+        while (actual!=frente)
         {
-            p = p.getNext();    
+            if(x.compareTo(actual.getInfo()) == 0) 
+                return true;
+            actual=actual.getNext();
         }
-        return ( p != null );
-       
+        return false;
     }
      
     @Override
