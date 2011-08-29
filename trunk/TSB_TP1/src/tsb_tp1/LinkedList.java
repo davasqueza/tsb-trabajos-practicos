@@ -321,21 +321,24 @@ public class LinkedList {
         if(size>0)
         {
             Node actual=frente;
-            while(actual!=null && actual.getBack()!=frente)
+            if(frente.getBack()!=frente)
             {
+               while(actual!=null && actual.getBack()!=frente)
+               {
                 if(actual.getInfo().compareTo(c)==0)
                 {
                     return actual.getIndex();
                 }
-                actual=actual.getBack();                
-            }           
-        }
-        else
-        {
-            if(frente.getBack()==frente)
-            {
-                return frente.getIndex();
+                actual=actual.getBack();
+                } 
             }
+            else
+            {
+                if(actual.getInfo().compareTo(c)==0)
+                {
+                    return frente.getIndex();
+                }
+            }                      
         }
         return -1;
     }
