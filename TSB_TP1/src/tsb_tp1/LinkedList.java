@@ -316,4 +316,20 @@ public class LinkedList {
         }
         return c;
     }
+    public int lastIndexOf(Comparable c)
+    {
+        if(size>0)
+        {
+            Node actual=frente;
+            while(actual!=null && actual.getBack()!=actual)
+            {
+                if(actual.getInfo()==c)
+                {
+                    return (actual.getIndex()-1);
+                }                
+                actual=actual.getBack();                
+            }           
+        }
+        return -1;
+    }
 }
