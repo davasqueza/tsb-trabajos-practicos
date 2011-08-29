@@ -239,8 +239,9 @@ public class LinkedList {
             else{
                 actual.getBack().setNext(actual.getNext());
                 actual.getNext().setBack(actual.getBack());
-            this.setIndexNodes();
+                this.setIndexNodes();
             }
+            size--;
             return actual.getInfo();
         }
         return null;
@@ -282,6 +283,7 @@ public class LinkedList {
                          actual.getNext().setBack(actual.getBack());
                          this.setIndexNodes();
                      }
+                     size--;
                      return true;
                 }
             }while(actual.getNext() != frente);
