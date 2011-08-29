@@ -306,4 +306,14 @@ public class LinkedList {
         return null;
     }
     
+    public Comparable set(int index, Comparable element)
+    {
+        Comparable c=null;
+        if(this.getNode(index)!=null)
+        {
+            c=this.getNode(index).getInfo();
+            this.getNode(index).setInfo(element);
+        }
+        return c;
+    }
 }
