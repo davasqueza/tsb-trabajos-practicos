@@ -39,6 +39,7 @@ public class LinkedList {
   
     public void add (int index, Comparable element)
     {
+        this.setIndexNodes();
         if(size>=index && index>-1)
         {
             if (index==0) {
@@ -48,7 +49,6 @@ public class LinkedList {
                 if(!esHomogeneo(element))
                     System.out.println("No es homogeneo.");
                 else{
-                    this.setIndexNodes();
                     Node actual = frente;
                     while(actual.getNext() != frente)
                     {
@@ -203,6 +203,7 @@ public class LinkedList {
     
     public Node getNode(int index)
     {
+        this.setIndexNodes();
         if(frente!=null)
         {
             if(index==0)
@@ -211,14 +212,14 @@ public class LinkedList {
             }
             else
             {
-                 Node actual = frente;
-                 while(actual.getNext() != frente)
-                 {
-                 if(index==actual.getIndex())
-                 {
-                       return actual;
-                 }
-                 actual=actual.getNext();
+                Node actual = frente;
+                while(actual.getNext() != frente)
+                {
+                if(index==actual.getIndex())
+                {
+                    return actual;
+                }
+                actual=actual.getNext();
                }
            }
         }
@@ -238,7 +239,6 @@ public class LinkedList {
             else{
                 actual.getBack().setNext(actual.getNext());
                 actual.getNext().setBack(actual.getBack());
-                this.setIndexNodes();
             }
             size--;
             return actual.getInfo();
@@ -308,14 +308,14 @@ public class LinkedList {
     
     public Comparable set(int index, Comparable element)
     {
-        Comparable c=null;
-        if(this.getNode(index)!=null)
+        Comparable c=this.getNode(index).getInfo();
+        if(c!=null)
         {
-            c=this.getNode(index).getInfo();
             this.getNode(index).setInfo(element);
         }
         return c;
     }
+    
     public int lastIndexOf(Comparable c)
     {
         if(size>0)
