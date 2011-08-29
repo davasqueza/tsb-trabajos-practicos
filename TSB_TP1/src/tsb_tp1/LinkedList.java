@@ -287,7 +287,8 @@ public class LinkedList {
                      size--;
                      return true;
                 }
-            }while(actual.getNext() != frente);
+                actual=actual.getNext();
+            }while(actual != frente);
         }
         return false;
     }
@@ -339,6 +340,23 @@ public class LinkedList {
                     return frente.getIndex();
                 }
             }                      
+        }
+        return -1;
+    }
+    
+    public int indexOf(Comparable element)
+    {
+        if(element!=null&&frente!=null)
+        {
+            Node actual=frente;
+            do
+            {
+                if(actual.getInfo().compareTo(element)==0)
+                {
+                     return actual.getIndex();
+                }
+                actual=actual.getNext();
+            }while(actual != frente);
         }
         return -1;
     }
