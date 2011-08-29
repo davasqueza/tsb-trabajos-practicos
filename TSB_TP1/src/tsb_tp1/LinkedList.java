@@ -318,12 +318,13 @@ public class LinkedList {
     
     public int lastIndexOf(Comparable c)
     {
-        if(size>0)
+        this.setIndexNodes();
+        if(frente!=null)
         {
             Node actual=frente;
-            if(frente.getBack()!=frente)
+            if(actual.getBack()!=frente)
             {
-               while(actual!=null && actual.getBack()!=frente)
+               while(actual.getBack()!=frente)
                {
                 if(actual.getInfo().compareTo(c)==0)
                 {
@@ -336,7 +337,7 @@ public class LinkedList {
             {
                 if(actual.getInfo().compareTo(c)==0)
                 {
-                    return frente.getIndex();
+                    return actual.getIndex();
                 }
             }                      
         }
@@ -345,6 +346,7 @@ public class LinkedList {
     
     public int indexOf(Comparable element)
     {
+        this.setIndexNodes();
         if(element!=null&&frente!=null)
         {
             Node actual=frente;
