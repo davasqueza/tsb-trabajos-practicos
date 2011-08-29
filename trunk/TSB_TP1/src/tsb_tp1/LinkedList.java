@@ -14,14 +14,17 @@ public class LinkedList {
 
     public void addFirst(Comparable x)
     {
-    if (frente==null) {
+    if (frente==null)
+    {
         frente = new Node(x,frente,frente);
         size++;
     }
-    else {
+    else 
+    {
         if(!esHomogeneo(x))
             System.out.println("No es homogeneo.");
-        else{
+        else
+        {
             Node actual = frente;
             Node ultimoNodo = actual.getBack();
             Node desplazado = frente;
@@ -56,6 +59,7 @@ public class LinkedList {
                             actual.getBack().setNext(e);
                             actual.setBack(e);
                             size++;
+                            this.setIndexNodes();
                             break;
                         }
                     actual=actual.getNext();
@@ -233,6 +237,23 @@ public class LinkedList {
             return actual.getInfo();
         }
         return null;
+    }
+    
+    public void addLast(Comparable c)
+    {
+        Node actual=frente;
+        if(c==null)
+        {
+            System.out.println("EL objeto que quiere ingresar esta vacio");
+        }
+        else
+        {            
+            Node e=new Node(c,actual,actual.getBack());
+            actual.getBack().setNext(e);
+            actual.setBack(e);
+            this.setIndexNodes();
+        }
+        
     }
     
 }
