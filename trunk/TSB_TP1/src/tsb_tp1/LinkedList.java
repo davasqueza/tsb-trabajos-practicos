@@ -297,4 +297,13 @@ public class LinkedList {
         return this.getNode(index).getInfo();       
     }
     
+    public Comparable getLast()
+    {
+        if(frente!=null)
+        {
+            return frente.getBack().getInfo();
+        }
+        return null;
+    }
+    
 }
