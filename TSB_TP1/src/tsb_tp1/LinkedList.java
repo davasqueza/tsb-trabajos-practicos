@@ -325,10 +325,17 @@ public class LinkedList {
             {
                 if(actual.getInfo().compareTo(c)==0)
                 {
-                    return (actual.getIndex()-1);
-                }                
+                    return actual.getIndex();
+                }
                 actual=actual.getBack();                
             }           
+        }
+        else
+        {
+            if(frente.getBack()==frente)
+            {
+                return frente.getIndex();
+            }
         }
         return -1;
     }
