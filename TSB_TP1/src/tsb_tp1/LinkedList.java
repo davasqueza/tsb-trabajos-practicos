@@ -294,18 +294,7 @@ public class LinkedList {
     
     public Comparable get(int index)
     {
-        if(size>=index && index>-1)
-        {
-            Node actual=frente;
-            while(actual.getNext() != frente)
-            {
-                if(actual.getNext().getIndex()==index)
-                {
-                    return actual.getInfo();
-                }
-            }
-        }
-        return null;       
+        return this.getNode(index).getInfo();       
     }
     
 }
