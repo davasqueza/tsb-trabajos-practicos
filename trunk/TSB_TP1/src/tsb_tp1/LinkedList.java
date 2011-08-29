@@ -25,8 +25,7 @@ public class LinkedList {
             System.out.println("No es homogeneo.");
         else
         {
-            Node actual = frente;
-            Node ultimoNodo = actual.getBack();
+            Node ultimoNodo = frente.getBack();
             Node desplazado = frente;
             frente = new Node(x,desplazado,ultimoNodo);
             ultimoNodo.setNext(frente);
@@ -59,7 +58,6 @@ public class LinkedList {
                             actual.getBack().setNext(e);
                             actual.setBack(e);
                             size++;
-                            this.setIndexNodes();
                             break;
                         }
                     actual=actual.getNext();
@@ -123,7 +121,7 @@ public class LinkedList {
         if (x == null) 
             return false;
         Node actual = frente;
-        while (actual!=frente)
+        while (actual.getNext()!=frente)
         {
             if(x.compareTo(actual.getInfo()) == 0) 
                 return true;
