@@ -231,9 +231,16 @@ public class LinkedList {
         if(this.getNode(index)!=null)
         {
             Node actual=this.getNode(index);
-            actual.getBack().setNext(actual.getNext());
-            actual.getNext().setBack(actual.getBack());
+            if(actual==frente&&frente.getNext()==frente)
+            {
+                frente=null;
+                
+            }
+            else{
+                actual.getBack().setNext(actual.getNext());
+                actual.getNext().setBack(actual.getBack());
             this.setIndexNodes();
+            }
             return actual.getInfo();
         }
         return null;
@@ -254,6 +261,32 @@ public class LinkedList {
             this.setIndexNodes();
         }
         
+    }
+    
+    public boolean remove(Comparable c)
+    {
+        if(c!=null&&frente!=null)
+        {
+            Node actual=frente;
+            do
+            {
+                if(actual.getInfo().compareTo(c)==0)
+                {
+                     if(actual==frente&&frente.getNext()==frente)
+                     {
+                         frente=null;
+                
+                     }
+                     else{
+                         actual.getBack().setNext(actual.getNext());
+                         actual.getNext().setBack(actual.getBack());
+                         this.setIndexNodes();
+                     }
+                     return true;
+                }
+            }while(actual.getNext() != frente);
+        }
+        return false;
     }
     
 }
