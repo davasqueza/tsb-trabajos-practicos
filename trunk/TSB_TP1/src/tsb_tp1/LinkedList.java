@@ -5,7 +5,7 @@ package tsb_tp1;
 public class LinkedList {
     private Node frente;
     private int size;
-
+    
     public LinkedList ()
     { 
         frente = null;
@@ -39,8 +39,7 @@ public class LinkedList {
   
     public void add (int index, Comparable element)
     {
-        this.setIndexNodes();
-        if(size>=index && index>-1)
+        if(this.getNode(index)!=null)
         {
             if (index==0) {
                 this.addFirst(element);
