@@ -5,7 +5,7 @@ public class Node
    private Comparable info;
    private Node next, back;
    private int index;
-   
+  
    public Node ( Comparable x )
    {
        info=x;
@@ -57,7 +57,8 @@ public class Node
    {
      info = p;
    }
-
+   
+   
     @Override
    public String toString()
    {
