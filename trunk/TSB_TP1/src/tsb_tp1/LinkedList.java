@@ -323,7 +323,7 @@ public class LinkedList {
             Node actual=frente;
             while(actual!=null && actual.getBack()!=frente)
             {
-                if(actual.getInfo()==c)
+                if(actual.getInfo().compareTo(c)==0)
                 {
                     return (actual.getIndex()-1);
                 }                
