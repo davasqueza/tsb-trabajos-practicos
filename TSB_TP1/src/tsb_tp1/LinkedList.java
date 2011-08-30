@@ -71,12 +71,12 @@ public class LinkedList {
     {
         Node actual = frente;
         int i=0;
-        while(actual.getNext() != frente)
+        do
         {
             actual.setIndex(i);
             i++;
             actual = actual.getNext();
-        }
+        }while(actual != frente);
     }
       
     public void clear( )
@@ -119,12 +119,11 @@ public class LinkedList {
         if (x == null) 
             return false;
         Node actual = frente;
-        while (actual.getNext()!=frente)
-        {
+        do{
             if(x.compareTo(actual.getInfo()) == 0) 
                 return true;
             actual=actual.getNext();
-        }
+        }while(actual!=frente);
         return false;
     }
      
@@ -212,14 +211,14 @@ public class LinkedList {
             else
             {
                 Node actual = frente;
-                while(actual.getNext() != frente)
+                do
                 {
                 if(index==actual.getIndex())
                 {
                     return actual;
                 }
                 actual=actual.getNext();
-               }
+               }while(actual != frente);
            }
         }
         return null;
@@ -323,14 +322,13 @@ public class LinkedList {
             Node actual=frente;
             if(actual.getBack()!=frente)
             {
-               while(actual.getBack()!=frente)
-               {
+               do{
                 if(actual.getInfo().compareTo(c)==0)
                 {
                     return actual.getIndex();
                 }
                 actual=actual.getBack();
-                } 
+                }while(actual!=frente);
             }
             else
             {
