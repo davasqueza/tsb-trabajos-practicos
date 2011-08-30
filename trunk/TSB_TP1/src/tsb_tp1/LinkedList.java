@@ -49,8 +49,7 @@ public class LinkedList {
                     System.out.println("No es homogeneo.");
                 else{
                     Node actual = frente;
-                    while(actual.getNext() != frente)
-                    {
+                    do{
                         if(index==actual.getIndex())
                         {
                             Node e=new Node(element,actual,actual.getBack());
@@ -59,8 +58,8 @@ public class LinkedList {
                             size++;
                             break;
                         }
-                    actual=actual.getNext();
-                    }
+                        actual=actual.getNext();
+                    }while(actual!=frente);
                     }
                 }
         }
@@ -83,6 +82,7 @@ public class LinkedList {
     public void clear( )
     {
         frente = null;
+        size = 0;
     }
       
     public Comparable getFirst()
@@ -99,8 +99,7 @@ public class LinkedList {
         else if (frente.getNext()==frente)
         {
             Node removido = frente;
-            frente = null;
-            size--;
+            this.clear();
             return removido.getInfo();
         }
         else
@@ -157,19 +156,20 @@ public class LinkedList {
             System.out.println("No es homogeneo.");
         else{
             if (frente==null){
-            frente = new Node(x,frente,frente);
-            size++;
+            this.addFirst(x);
             }
             else{
                 Node actual=frente;
-                while (actual != null && x.compareTo(actual.getInfo()) >= 0)
-                {
+                do{
+                     if(x.compareTo(actual.getInfo()) >= 0)
+                     {
+                        Node nuevo=new Node(x,actual,actual.getBack());
+                        actual.getBack().setNext(nuevo);
+                        actual.setBack(nuevo);
+                        size++;
+                     }
                 actual=actual.getNext();
-                }
-                Node nuevo=new Node(x,actual,actual.getBack());
-                actual.getBack().setNext(nuevo);
-                actual.setBack(nuevo);
-                size++;
+                }while (actual!=frente);
             }
         }
     }  
