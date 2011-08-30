@@ -63,10 +63,14 @@ public class LinkedList {
                     }
                 }
         }
-          
+    }
+    
+    public boolean add(Comparable element)
+    {
+        this.addLast(element);
+        return true;
     }
 
-      
     private void setIndexNodes()
     {
         Node actual = frente;
