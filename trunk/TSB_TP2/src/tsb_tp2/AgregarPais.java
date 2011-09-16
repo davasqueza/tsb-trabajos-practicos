@@ -31,19 +31,78 @@ public class AgregarPais extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setName("Form"); // NOI18N
+        jPanel1 = new javax.swing.JPanel();
+        lblNumeroPais = new javax.swing.JLabel();
+        lblNombrePais = new javax.swing.JLabel();
+        lblContinente = new javax.swing.JLabel();
+        txtNumeroPais = new javax.swing.JTextField();
+        txtNombrePais = new javax.swing.JTextField();
+        cmbContinente = new javax.swing.JComboBox();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 300));
+        setName("Form"); // NOI18N
+        getContentPane().setLayout(null);
+
+        jPanel1.setName("jPanel1"); // NOI18N
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(tsb_tp2.Principal.class).getContext().getResourceMap(AgregarPais.class);
+        lblNumeroPais.setText(resourceMap.getString("lblNumeroPais.text")); // NOI18N
+        lblNumeroPais.setName("lblNumeroPais"); // NOI18N
+
+        lblNombrePais.setText(resourceMap.getString("lblNombrePais.text")); // NOI18N
+        lblNombrePais.setName("lblNombrePais"); // NOI18N
+
+        lblContinente.setText(resourceMap.getString("lblContinente.text")); // NOI18N
+        lblContinente.setName("lblContinente"); // NOI18N
+
+        txtNumeroPais.setEditable(false);
+        txtNumeroPais.setText(resourceMap.getString("txtNumeroPais.text")); // NOI18N
+        txtNumeroPais.setName("txtNumeroPais"); // NOI18N
+
+        txtNombrePais.setText(resourceMap.getString("txtNombrePais.text")); // NOI18N
+        txtNombrePais.setName("txtNombrePais"); // NOI18N
+
+        cmbContinente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbContinente.setName("cmbContinente"); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNumeroPais)
+                    .addComponent(lblNombrePais)
+                    .addComponent(lblContinente))
+                .addGap(80, 80, 80)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtNumeroPais, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                    .addComponent(txtNombrePais)
+                    .addComponent(cmbContinente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(txtNumeroPais)
+                    .addComponent(lblNumeroPais, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(txtNombrePais)
+                    .addComponent(lblNombrePais, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(cmbContinente)
+                    .addComponent(lblContinente, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+                .addGap(103, 103, 103))
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(30, 30, 340, 240);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -92,5 +151,12 @@ public class AgregarPais extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox cmbContinente;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblContinente;
+    private javax.swing.JLabel lblNombrePais;
+    private javax.swing.JLabel lblNumeroPais;
+    private javax.swing.JTextField txtNombrePais;
+    private javax.swing.JTextField txtNumeroPais;
     // End of variables declaration//GEN-END:variables
 }

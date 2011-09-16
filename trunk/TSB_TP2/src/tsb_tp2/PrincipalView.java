@@ -198,7 +198,7 @@ public class PrincipalView extends FrameView {
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
         lstPaises.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", " " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
@@ -248,7 +248,7 @@ public class PrincipalView extends FrameView {
         jScrollPane5.setName("jScrollPane5"); // NOI18N
 
         lstUnidMay5.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Item 1", "Item 2", "Item 3", " " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
@@ -269,6 +269,7 @@ public class PrincipalView extends FrameView {
         pnlPestañas.addTab(resourceMap.getString("pnlUnidMay5.TabConstraints.tabTitle"), pnlUnidMay5); // NOI18N
 
         jSplitPane1.setRightComponent(pnlPestañas);
+        pnlPestañas.getAccessibleContext().setAccessibleName(resourceMap.getString("pnlPestañas.AccessibleContext.accessibleName")); // NOI18N
 
         mainPanel.add(jSplitPane1);
 
@@ -279,6 +280,8 @@ public class PrincipalView extends FrameView {
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(tsb_tp2.Principal.class).getContext().getActionMap(PrincipalView.class, this);
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
+        exitMenuItem.setText(resourceMap.getString("exitMenuItem.text")); // NOI18N
+        exitMenuItem.setToolTipText(resourceMap.getString("exitMenuItem.toolTipText")); // NOI18N
         exitMenuItem.setName("exitMenuItem"); // NOI18N
         fileMenu.add(exitMenuItem);
 
@@ -288,6 +291,8 @@ public class PrincipalView extends FrameView {
         helpMenu.setName("helpMenu"); // NOI18N
 
         aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
+        aboutMenuItem.setText(resourceMap.getString("aboutMenuItem.text")); // NOI18N
+        aboutMenuItem.setToolTipText(resourceMap.getString("aboutMenuItem.toolTipText")); // NOI18N
         aboutMenuItem.setName("aboutMenuItem"); // NOI18N
         helpMenu.add(aboutMenuItem);
 
