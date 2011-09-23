@@ -31,19 +31,67 @@ public class MostrarPaisesOcupados extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btnAceptar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lstPaises = new javax.swing.JList();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtInfoPais = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("Form"); // NOI18N
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jPanel1.setName("jPanel1"); // NOI18N
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(tsb_tp2.Principal.class).getContext().getResourceMap(MostrarPaisesOcupados.class);
+        btnAceptar.setText(resourceMap.getString("btnAceptar.text")); // NOI18N
+        btnAceptar.setName("btnAceptar"); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addComponent(btnAceptar)
+                .addContainerGap(175, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAceptar)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
+
+        jPanel2.setName("jPanel2"); // NOI18N
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jSplitPane1.setName("jSplitPane1"); // NOI18N
+
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
+
+        lstPaises.setName("lstPaises"); // NOI18N
+        jScrollPane1.setViewportView(lstPaises);
+
+        jSplitPane1.setLeftComponent(jScrollPane1);
+
+        jScrollPane2.setName("jScrollPane2"); // NOI18N
+
+        txtInfoPais.setColumns(20);
+        txtInfoPais.setRows(5);
+        txtInfoPais.setName("txtInfoPais"); // NOI18N
+        jScrollPane2.setViewportView(txtInfoPais);
+
+        jSplitPane1.setRightComponent(jScrollPane2);
+
+        jPanel2.add(jSplitPane1, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -92,5 +140,13 @@ public class MostrarPaisesOcupados extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JList lstPaises;
+    private javax.swing.JTextArea txtInfoPais;
     // End of variables declaration//GEN-END:variables
 }
