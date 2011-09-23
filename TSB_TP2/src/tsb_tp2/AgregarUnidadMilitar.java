@@ -38,6 +38,7 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
         txtNumeroUnidad = new javax.swing.JTextField();
         txtNombreUnidad = new javax.swing.JTextField();
         cmbPoder = new javax.swing.JComboBox();
+        btnAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
@@ -60,24 +61,32 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
 
         txtNombreUnidad.setName("txtNombreUnidad"); // NOI18N
 
-        cmbPoder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbPoder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         cmbPoder.setName("cmbPoder"); // NOI18N
+
+        btnAgregar.setText(resourceMap.getString("btnAgregar.text")); // NOI18N
+        btnAgregar.setName("btnAgregar"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNumeroUnidad)
-                    .addComponent(lblNombreUnidad)
-                    .addComponent(lblPoder))
-                .addGap(80, 80, 80)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNumeroUnidad, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                    .addComponent(txtNombreUnidad)
-                    .addComponent(cmbPoder, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNumeroUnidad)
+                            .addComponent(lblNombreUnidad)
+                            .addComponent(lblPoder))
+                        .addGap(80, 80, 80)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNumeroUnidad, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(txtNombreUnidad)
+                            .addComponent(cmbPoder, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(btnAgregar)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -95,7 +104,9 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(cmbPoder)
                     .addComponent(lblPoder, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
-                .addGap(103, 103, 103))
+                .addGap(26, 26, 26)
+                .addComponent(btnAgregar)
+                .addGap(54, 54, 54))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,6 +177,7 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JComboBox cmbPoder;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblNombreUnidad;

@@ -15,16 +15,59 @@ import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-
+import tsb_tp1.*;
 /**
  * The application's main frame.
  */
 public class PrincipalView extends FrameView {
 
+    private LinkedList paises;
+    private LinkedList unidades;
+    private LinkedList unidadesMayores;
+    private LinkedList paisesOcupados;
+
+    public LinkedList getPaises() {
+        return paises;
+    }
+
+    public void setPaises(LinkedList paises) {
+        this.paises = paises;
+    }
+
+    public LinkedList getPaisesOcupados() {
+        return paisesOcupados;
+    }
+
+    public void setPaisesOcupados(LinkedList paisesOcupados) {
+        this.paisesOcupados = paisesOcupados;
+    }
+
+    public LinkedList getUnidades() {
+        return unidades;
+    }
+
+    public void setUnidades(LinkedList unidades) {
+        this.unidades = unidades;
+    }
+
+    public LinkedList getUnidadesMayores() {
+        return unidadesMayores;
+    }
+
+    public void setUnidadesMayores(LinkedList unidadesMayores) {
+        this.unidadesMayores = unidadesMayores;
+    }
+    
+    
     public PrincipalView(SingleFrameApplication app) {
         super(app);
 
         initComponents();
+        paises=new LinkedList();
+        unidades=new LinkedList();
+        unidadesMayores=new LinkedList();
+        paisesOcupados=new LinkedList();
+        
 
         // status bar initialization - message timeout, idle icon and busy animation, etc
         ResourceMap resourceMap = getResourceMap();
@@ -197,11 +240,6 @@ public class PrincipalView extends FrameView {
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
-        lstPaises.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", " " };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         lstPaises.setName("lstPaises"); // NOI18N
         jScrollPane1.setViewportView(lstPaises);
 
@@ -222,11 +260,6 @@ public class PrincipalView extends FrameView {
 
         jScrollPane3.setName("jScrollPane3"); // NOI18N
 
-        lstUnidades.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         lstUnidades.setName("lstUnidades"); // NOI18N
         jScrollPane3.setViewportView(lstUnidades);
 
@@ -247,11 +280,6 @@ public class PrincipalView extends FrameView {
 
         jScrollPane5.setName("jScrollPane5"); // NOI18N
 
-        lstUnidMay5.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", " " };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         lstUnidMay5.setName("lstUnidMay5"); // NOI18N
         jScrollPane5.setViewportView(lstUnidMay5);
 
