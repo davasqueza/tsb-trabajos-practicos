@@ -42,5 +42,11 @@ public class Pais implements Comparable{
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
+    @Override
+    public String toString()
+    {
+        return "Numero: "+this.numero+"\nNombre: "+this.nombre+"\nContinente: "+this.continente;
+    }
+    
     
 }

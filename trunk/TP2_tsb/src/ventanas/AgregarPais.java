@@ -10,16 +10,29 @@
  */
 package ventanas;
 
+import datos.Pais;
+import tsb_tp1.LinkedList;
+
+
+
+
+
+
 /**
  *
  * @author Franco
  */
 public class AgregarPais extends javax.swing.JDialog {
 
+    LinkedList paises;
+    static int NUMERO_PAIS=1;
     /** Creates new form AgregarPais */
     public AgregarPais(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        paises= new LinkedList();
+        this.txtNumeroPais.setText(String.valueOf(NUMERO_PAIS));
+        
     }
 
     /** This method is called from within the constructor to
@@ -50,7 +63,7 @@ public class AgregarPais extends javax.swing.JDialog {
 
         txtNumeroPais.setEditable(false);
 
-        cmbContinente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbContinente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "America", "Europa", "Asia", "Oceania" }));
 
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +135,12 @@ public class AgregarPais extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        
+       Pais p=new Pais(Integer.valueOf(this.txtNumeroPais.getText()), this.txtNombrePais.getText(), this.cmbContinente.getSelectedItem().toString());
+       paises.addLast(p);
+       NUMERO_PAIS++;
+       limpiarCampos();
+       System.out.println("Se agrego a la lista");
+       //actualizar Campos
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
@@ -155,6 +173,7 @@ public class AgregarPais extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
                 AgregarPais dialog = new AgregarPais(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -178,4 +197,14 @@ public class AgregarPais extends javax.swing.JDialog {
     private javax.swing.JTextField txtNombrePais;
     private javax.swing.JTextField txtNumeroPais;
     // End of variables declaration//GEN-END:variables
+
+    public LinkedList getPaises() {
+        return paises;
+    }
+
+    private void limpiarCampos() {
+        this.txtNumeroPais.setText(String.valueOf(NUMERO_PAIS));
+        this.txtNombrePais.setText("");
+        this.cmbContinente.setSelectedIndex(0);
+    }
 }

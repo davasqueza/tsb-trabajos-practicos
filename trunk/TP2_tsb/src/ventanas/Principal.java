@@ -14,6 +14,8 @@ package ventanas;
  *
  * @author Franco
  */
+import java.awt.event.*;
+
 import tsb_tp1.*;
 
 public class Principal extends javax.swing.JFrame {
@@ -223,8 +225,18 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPaisActionPerformed
-       AgregarPais ap=new AgregarPais(this, true);
+       final AgregarPais ap=new AgregarPais(this, true);
        ap.setVisible(true);
+       ap.addWindowListener(new  WindowAdapter() {@Override
+       public void windowClosed(WindowEvent e) {
+		paises.addLinkedList(ap.getPaises());
+                System.out.println(paises.toString());
+			}
+      
+       });
+
+            
+		
 
     }//GEN-LAST:event_btnAgregarPaisActionPerformed
 
