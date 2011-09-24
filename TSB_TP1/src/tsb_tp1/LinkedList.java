@@ -317,6 +317,38 @@ public class LinkedList {
     }
     
     /**
+     * Agrega una Lista al final de la lista.
+     */
+    
+    public void addLinkedList(LinkedList l)
+    {
+        Node actual=frente;
+        Node ultimo=l.frente.getBack();
+        if(l==null||l.frente==null)
+        {
+            System.out.println("EL objeto que quiere ingresar esta vacio");
+        }
+        else {
+            if (!esHomogeneo(l.getFirst()))
+                System.out.println("No es homogeneo.");
+            else{
+                if(actual==null)
+                    this.frente=l.frente;
+                else
+                {
+                    actual.getBack().setNext(l.frente);
+                    l.frente.setBack(actual.getBack());
+                    actual.setBack(ultimo);
+                    ultimo.setNext(this.frente);
+                    
+                    size+=l.size;
+                }
+            }
+        }   
+        
+    }
+    
+    /**
      * Remueve el nodo que contiene el Comparable indicado por parametro.
      */
     public boolean remove(Comparable c)
