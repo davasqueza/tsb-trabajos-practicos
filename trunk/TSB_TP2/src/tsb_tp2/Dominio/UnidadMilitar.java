@@ -57,6 +57,8 @@ public class UnidadMilitar implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        UnidadMilitar um=(UnidadMilitar)o;
+        return (this.poderDeFuego-um.poderDeFuego);
     }
+    
 }
