@@ -14,11 +14,54 @@ package ventanas;
  *
  * @author Franco
  */
+import tsb_tp1.*;
+
 public class Principal extends javax.swing.JFrame {
+
+    public LinkedList getPaises() {
+        return paises;
+    }
+
+    public void setPaises(LinkedList paises) {
+        this.paises = paises;
+    }
+
+    public LinkedList getPaisesOcupados() {
+        return paisesOcupados;
+    }
+
+    public void setPaisesOcupados(LinkedList paisesOcupados) {
+        this.paisesOcupados = paisesOcupados;
+    }
+
+    public LinkedList getUnidades() {
+        return unidades;
+    }
+
+    public void setUnidades(LinkedList unidades) {
+        this.unidades = unidades;
+    }
+
+    public LinkedList getUnidadesMayores() {
+        return unidadesMayores;
+    }
+
+    public void setUnidadesMayores(LinkedList unidadesMayores) {
+        this.unidadesMayores = unidadesMayores;
+    }
+    
+     LinkedList paises;
+     LinkedList unidades;
+     LinkedList unidadesMayores;
+     LinkedList paisesOcupados;
 
     /** Creates new form Principal */
     public Principal() {
         initComponents();
+        paises=new LinkedList();
+        unidades=new LinkedList();
+        unidadesMayores=new LinkedList();
+        paisesOcupados=new LinkedList();
     }
 
     /** This method is called from within the constructor to
@@ -70,8 +113,18 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnAgregarUnidad.setText("Agregar Unidad Militar");
+        btnAgregarUnidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarUnidadActionPerformed(evt);
+            }
+        });
 
         btnMostrarPaisesOcupados.setText("Mostrar Paises Ocupados");
+        btnMostrarPaisesOcupados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarPaisesOcupadosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlBotonesLayout = new javax.swing.GroupLayout(pnlBotones);
         pnlBotones.setLayout(pnlBotonesLayout);
@@ -170,8 +223,20 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPaisActionPerformed
-       
+       AgregarPais ap=new AgregarPais(this, true);
+       ap.setVisible(true);
+
     }//GEN-LAST:event_btnAgregarPaisActionPerformed
+
+    private void btnAgregarUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUnidadActionPerformed
+        AgregarUnidadMilitar aum=new AgregarUnidadMilitar(this, true);
+       aum.setVisible(true);
+    }//GEN-LAST:event_btnAgregarUnidadActionPerformed
+
+    private void btnMostrarPaisesOcupadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarPaisesOcupadosActionPerformed
+       MostrarPaisesOcupados mpo=new MostrarPaisesOcupados(this, true);
+       mpo.setVisible(true);
+    }//GEN-LAST:event_btnMostrarPaisesOcupadosActionPerformed
 
     /**
      * @param args the command line arguments
