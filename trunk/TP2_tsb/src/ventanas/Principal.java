@@ -14,8 +14,10 @@ package ventanas;
  *
  * @author Franco
  */
+import java.awt.Component;
 import java.awt.event.*;
 
+import javax.swing.DefaultListModel;
 import tsb_tp1.*;
 
 public class Principal extends javax.swing.JFrame {
@@ -46,6 +48,16 @@ public class Principal extends javax.swing.JFrame {
 
     public LinkedList getUnidadesMayores() {
         return unidadesMayores;
+    }
+    
+    public void agregarPais()
+    {
+        DefaultListModel modelo = new DefaultListModel();  
+        for(int i = 0; i<paises.size(); i++){ 
+         modelo.addElement(paises.get(i)); 
+         
+        }  
+        lstPaises.setModel(modelo);  
     }
 
     public void setUnidadesMayores(LinkedList unidadesMayores) {
@@ -230,7 +242,9 @@ public class Principal extends javax.swing.JFrame {
        ap.addWindowListener(new  WindowAdapter() {@Override
        public void windowClosed(WindowEvent e) {
 		paises.addLinkedList(ap.getPaises());
+                agregarPais();
                 System.out.println(paises.toString());
+                
 			}
       
        });
