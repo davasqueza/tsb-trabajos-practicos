@@ -121,11 +121,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar Unidad Militar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarUnidadActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMostrarPaisesOcupados">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Mostrar Paises Ocupados"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarPaisesOcupadosActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
