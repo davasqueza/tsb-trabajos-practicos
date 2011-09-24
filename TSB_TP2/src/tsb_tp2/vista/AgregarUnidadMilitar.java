@@ -17,7 +17,8 @@ package tsb_tp2.vista;
 public class AgregarUnidadMilitar extends javax.swing.JDialog {
 
     /** Creates new form AgregarUnidadMilitar */
-    public AgregarUnidadMilitar() {
+    public AgregarUnidadMilitar(java.awt.Frame parent, boolean modal) {
+        super(parent,modal);
         initComponents();
     }
 
@@ -39,7 +40,7 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(300, 300));
 
         jLabel1.setText("Numero:");
 
