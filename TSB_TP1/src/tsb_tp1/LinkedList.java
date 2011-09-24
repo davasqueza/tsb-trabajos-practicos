@@ -333,7 +333,10 @@ public class LinkedList {
                 System.out.println("No es homogeneo.");
             else{
                 if(actual==null)
+                {
                     this.frente=l.frente;
+                    this.size=l.size;
+                }
                 else
                 {
                     actual.getBack().setNext(l.frente);
