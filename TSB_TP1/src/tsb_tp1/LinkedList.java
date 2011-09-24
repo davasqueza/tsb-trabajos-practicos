@@ -168,7 +168,7 @@ public class LinkedList {
         String res = "[ ";
         do{
             res = res + p.toString();
-            if ( p.getNext() != null ) res = res + " - ";
+            if ( p.getNext() != null ) res = res + " -\n- ";
             p = p.getNext();
         }while( p != frente );
         res = res + " ]";
