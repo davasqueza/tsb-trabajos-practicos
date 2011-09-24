@@ -26,7 +26,7 @@ public class Juego {
     }
     
     public void AgregarUnidadMilitar(UnidadMilitar u){
-    this.unidadesMilitares.addFirst(u);
+        this.unidadesMilitares.addFirst(u);
     }
     
     public UnidadMilitar elimnarUnidadMilitar(UnidadMilitar u){
@@ -43,8 +43,19 @@ public class Juego {
     }
     
     public LinkedList obtenerUnidadesConPoderDeFuegoSuperiorA5(){
-    return null;
+        int cont=0;
+        int size=this.unidadesMilitares.size();
+        LinkedList lista=new LinkedList();
+        do
+        {
+            UnidadMilitar um = (UnidadMilitar)this.unidadesMilitares.getNode(cont).getInfo();
+            if(um.getPoderDeFuego()>5)
+                lista.add(um);
+            cont++;
+        }while(cont<size);
+        return lista;
     }
+    
     public LinkedList obtenerListadoDePaisesOcupados(){
     
         LinkedList lista=new LinkedList();
