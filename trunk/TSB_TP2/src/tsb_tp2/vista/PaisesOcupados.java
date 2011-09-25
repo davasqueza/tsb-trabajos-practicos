@@ -17,8 +17,10 @@ package tsb_tp2.vista;
 public class PaisesOcupados extends javax.swing.JDialog {
 
     /** Creates new form PaisesOcupados */
-    public PaisesOcupados() {
+    public PaisesOcupados(java.awt.Frame parent, boolean modal) {
+        super(parent,modal);
         initComponents();
+           
     }
 
     /** This method is called from within the constructor to
@@ -33,6 +35,8 @@ public class PaisesOcupados extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         btnCancelar = new javax.swing.JButton();
+
+        setMinimumSize(new java.awt.Dimension(300, 300));
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -49,8 +53,8 @@ public class PaisesOcupados extends javax.swing.JDialog {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
