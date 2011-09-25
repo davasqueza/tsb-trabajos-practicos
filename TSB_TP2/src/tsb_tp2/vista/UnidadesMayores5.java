@@ -82,10 +82,10 @@ public class UnidadesMayores5 extends javax.swing.JDialog {
 
 private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
 
-LinkedList lista= this.parent.getJuego().obtenerUnidadesConPoderDeFuegoSuperiorA5();
-UnidadMilitar unidad=null;
+LinkedList lista= this.parent.getJuego().obtenerUnidadesConPoderDeFuegoSuperiorA5().size()>0?this.parent.getJuego().obtenerUnidadesConPoderDeFuegoSuperiorA5():new LinkedList();
+
 for(int i=0;i<lista.size();i++){
-modeloLista.addElement(lista.get(i));
+modeloLista.addElement((UnidadMilitar)lista.get(i));
 }
 
 }//GEN-LAST:event_formWindowGainedFocus
