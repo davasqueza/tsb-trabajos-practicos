@@ -47,6 +47,18 @@ public class AgregarPais extends javax.swing.JDialog {
         jTextField3 = new javax.swing.JTextField();
 
         setMinimumSize(new java.awt.Dimension(300, 200));
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
+        });
 
         jButton1.setText("Agregar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +147,17 @@ private void txtNumeroPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.parent.agregarPais(new Pais(this.parent.getJuego().getNumeroPais(),txtNumeroPais.getText()));
+this.setVisible(false);
+limpiarCampos();
 }//GEN-LAST:event_jButton1ActionPerformed
+
+private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+
+}//GEN-LAST:event_formFocusGained
+
+private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+txtNumeroPais.setText(String.valueOf(this.parent.getJuego().getNumeroPais()));
+}//GEN-LAST:event_formWindowGainedFocus
 
 private void limpiarCampos(){
 txtNumeroPais.setText("");
