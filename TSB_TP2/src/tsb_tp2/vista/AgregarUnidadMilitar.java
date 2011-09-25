@@ -17,8 +17,11 @@ package tsb_tp2.vista;
 public class AgregarUnidadMilitar extends javax.swing.JDialog {
 
     /** Creates new form AgregarUnidadMilitar */
-    public AgregarUnidadMilitar() {
+    public AgregarUnidadMilitar(java.awt.Frame parent, boolean modal) {
+        super(parent,modal);
         initComponents();
+        
+        
     }
 
     /** This method is called from within the constructor to
