@@ -10,17 +10,24 @@
  */
 package tsb_tp2.vista;
 
+import javax.swing.DefaultListModel;
+import tsb_tp1.LinkedList;
+import tsb_tp2.Dominio.PaisOcupado;
+
 /**
  *
  * @author Burgos
  */
 public class PaisesOcupados extends javax.swing.JDialog {
 
-    /** Creates new form PaisesOcupados */
+   DefaultListModel modeloLista;
+   Principal parent;
     public PaisesOcupados(java.awt.Frame parent, boolean modal) {
         super(parent,modal);
         initComponents();
-           
+           this.parent=(Principal) parent;
+            modeloLista= new DefaultListModel();
+         listaPaisesOcupados.setModel(modeloLista);
     }
 
     /** This method is called from within the constructor to
@@ -33,18 +40,13 @@ public class PaisesOcupados extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        listaPaisesOcupados = new javax.swing.JList();
         btnCancelar = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(300, 400));
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jList1);
+        listaPaisesOcupados.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(listaPaisesOcupados);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -75,10 +77,23 @@ public class PaisesOcupados extends javax.swing.JDialog {
 private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 this.dispose();
 }//GEN-LAST:event_btnCancelarActionPerformed
+private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {
+
+LinkedList lista= this.parent.getJuego().obtenerListadoDePaisesOcupados().size()>0?this.parent.getJuego().obtenerListadoDePaisesOcupados():new LinkedList();
+
+for(int i=0;i<lista.size();i++){
+modeloLista.addElement((PaisOcupado)lista.get(i));
+}
+
+}
+
+private void formWindowLostFocus(java.awt.event.WindowEvent evt) {
+modeloLista.clear();
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList listaPaisesOcupados;
     // End of variables declaration//GEN-END:variables
 }
