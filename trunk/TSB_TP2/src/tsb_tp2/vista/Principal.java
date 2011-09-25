@@ -10,16 +10,22 @@
  */
 package tsb_tp2.vista;
 
+import tsb_tp2.Dominio.Juego;
+import tsb_tp2.Dominio.Pais;
+import tsb_tp2.Dominio.UnidadMilitar;
+
 /**
  *
  * @author Burgos
  */
 public class Principal extends javax.swing.JFrame {
+    private final Juego juego;
 
     /** Creates new form Principal */
     public Principal() {
         initComponents();
         this.ventanAgregarPais=new AgregarPais(this,true);
+        this.juego=new Juego();
     }
 
     /** This method is called from within the constructor to
@@ -141,13 +147,24 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-this.ventanAgregarPais.setVisible(true);
+abrirVentanaAgregarPais();
 }//GEN-LAST:event_jButton1ActionPerformed
 
-  private void abrirVentanaAgregarPais(){}
+  private void abrirVentanaAgregarPais(){
+  this.ventanAgregarPais.setVisible(true);
+  }
   private void abrirVentanaAgregarUnidadMilitar(){}
-  private void agregarPais(){}
-  private void agregarUnidadMilitar(){}
+  
+  protected  void agregarPais(Pais p){
+  juego.AgregarPais(p);
+  }
+  protected void agregarUnidadMilitar(UnidadMilitar u){
+  juego.AgregarUnidadMilitar(u);
+  }
+  
+  protected Juego getJuego(){
+  return this.juego;
+  }
   
     private AgregarPais ventanAgregarPais;
     // Variables declaration - do not modify//GEN-BEGIN:variables

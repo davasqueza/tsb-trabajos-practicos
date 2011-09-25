@@ -13,6 +13,19 @@ public class Pais implements Comparable{
     private String nombre;
     private Continente continente;
 
+    public Pais(int numero, String nombre, Continente continente) {
+        this.numero = numero;
+        this.nombre = nombre;
+        this.continente = continente;
+    }
+
+        public Pais(int numero, String nombre) {
+        this.numero = numero;
+        this.nombre = nombre;
+        
+    }
+    
+    
     /**
      * @return the numero
      */
