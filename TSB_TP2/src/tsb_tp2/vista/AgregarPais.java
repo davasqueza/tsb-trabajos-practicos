@@ -67,7 +67,7 @@ public class AgregarPais extends javax.swing.JDialog {
             }
         });
 
-        comboContinentes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboContinentes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "America del Norte", "America del Sur", "Asia", "Europa", "Africa", "Oceania" }));
 
         jLabel1.setText("Numero :");
 
