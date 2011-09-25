@@ -72,4 +72,14 @@ public class Pais implements Comparable{
     public int compareTo(Object o) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+    
+        public String toString()
+    {
+        String aux="";
+        aux+="Numero: "+numero+"\n";
+        aux+="Pais: "+nombre+"\n";
+        aux+="Continente: "+continente+"\n";
+        aux+="----------------------------------------------";
+        return aux;
+    }
 }

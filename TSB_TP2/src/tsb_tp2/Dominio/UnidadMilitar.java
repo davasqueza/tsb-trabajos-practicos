@@ -61,4 +61,13 @@ public class UnidadMilitar implements Comparable{
         return (this.poderDeFuego-um.poderDeFuego);
     }
     
+    public String toString()
+    {
+        String aux="";
+        aux+="Numero: "+numero+"\n";
+        aux+="Unidad: "+nombre+"\n";
+        aux+="Poder: "+poderDeFuego+"\n";
+        aux+="----------------------------------------------";
+        return aux;
+    }
 }
