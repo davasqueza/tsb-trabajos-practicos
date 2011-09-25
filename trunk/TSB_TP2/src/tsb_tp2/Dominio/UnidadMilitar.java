@@ -71,9 +71,9 @@ public class UnidadMilitar implements Comparable{
     public String toString()
     {
         String aux="";
-        aux+="Numero: "+numero+"\n";
-        aux+="Unidad: "+nombre+"\n";
-        aux+="Poder: "+poderDeFuego+"\n";
+        aux+="Numero: "+numero+" // ";
+        aux+="Unidad: "+nombre+" // ";
+        aux+="Poder: "+poderDeFuego;
         return aux;
     }
 }

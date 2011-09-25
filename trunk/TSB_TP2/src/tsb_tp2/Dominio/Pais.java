@@ -76,9 +76,9 @@ public class Pais implements Comparable{
         public String toString()
     {
         String aux="";
-        aux+="Numero: "+numero+"\n";
-        aux+="Pais: "+nombre+"\n";
-        aux+="Continente: "+continente+"\n";
+        aux+="Numero: "+numero+" // ";
+        aux+="Pais: "+nombre+" // ";
+        aux+="Continente: "+continente;
         return aux;
     }
 }
