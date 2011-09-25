@@ -24,7 +24,7 @@ public class AgregarPais extends javax.swing.JDialog {
         super(parent,modal);
         initComponents();
         this.parent=(Principal) parent;
-        
+   
     }
 
   
