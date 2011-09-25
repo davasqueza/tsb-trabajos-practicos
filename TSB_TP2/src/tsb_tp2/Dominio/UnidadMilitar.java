@@ -74,7 +74,6 @@ public class UnidadMilitar implements Comparable{
         aux+="Numero: "+numero+"\n";
         aux+="Unidad: "+nombre+"\n";
         aux+="Poder: "+poderDeFuego+"\n";
-        aux+="----------------------------------------------";
         return aux;
     }
 }
