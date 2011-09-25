@@ -26,4 +26,11 @@ public class PaisOcupado implements Comparable{
     public int compareTo(Object o) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+    
+    public String toString()
+    {
+        String aux="";
+        aux+=pais.toString()+"\nesta ocupado por: \n"+unidadMilitar.toString();
+        return aux;
+    }
 }
