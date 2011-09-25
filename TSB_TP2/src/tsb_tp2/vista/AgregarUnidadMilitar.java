@@ -134,7 +134,7 @@ this.setVisible(false);
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.parent.agregarUnidadMilitar(new UnidadMilitar(Integer.valueOf((String)comboPoderDeFuego.getSelectedItem()),this.parent.getJuego().getNumeroUnidadMilitar(),txtNombreUnidadMilitar.getText()));
-
+this.setVisible(false);
 }//GEN-LAST:event_jButton1ActionPerformed
 
 private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
