@@ -10,6 +10,8 @@
  */
 package tsb_tp2.vista;
 
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 import tsb_tp2.Dominio.Juego;
 import tsb_tp2.Dominio.Pais;
 import tsb_tp2.Dominio.UnidadMilitar;
@@ -20,12 +22,20 @@ import tsb_tp2.Dominio.UnidadMilitar;
  */
 public class Principal extends javax.swing.JFrame {
     private final Juego juego;
+DefaultListModel modeloListaPaises;
+DefaultListModel modeloListaUnidadesMilitares ;
+DefaultListModel modeloListaPaisesOcupados ;
 
     /** Creates new form Principal */
     public Principal() {
         initComponents();
         this.ventanAgregarPais=new AgregarPais(this,true);
         this.juego=new Juego();
+        modeloListaPaises = new DefaultListModel();
+        modeloListaUnidadesMilitares = new DefaultListModel();
+        modeloListaPaisesOcupados = new DefaultListModel();
+        this.listaPaises.setModel(modeloListaPaises);
+        this.listaUnidadesMilitares.setModel(modeloListaUnidadesMilitares);
     }
 
     /** This method is called from within the constructor to
@@ -43,10 +53,10 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
+        listaPaises = new javax.swing.JList();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        listaUnidadesMilitares = new javax.swing.JList();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -77,12 +87,8 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList2);
+        listaPaises.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(listaPaises);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -97,12 +103,8 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Paises", jPanel2);
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
+        listaUnidadesMilitares.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(listaUnidadesMilitares);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -157,9 +159,11 @@ abrirVentanaAgregarPais();
   
   protected  void agregarPais(Pais p){
   juego.AgregarPais(p);
+  modeloListaPaises.addElement(p);
   }
   protected void agregarUnidadMilitar(UnidadMilitar u){
   juego.AgregarUnidadMilitar(u);
+  modeloListaUnidadesMilitares.addElement(u);
   }
   
   protected Juego getJuego(){
@@ -169,8 +173,6 @@ abrirVentanaAgregarPais();
     private AgregarPais ventanAgregarPais;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -180,5 +182,7 @@ abrirVentanaAgregarPais();
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JList listaPaises;
+    private javax.swing.JList listaUnidadesMilitares;
     // End of variables declaration//GEN-END:variables
 }
