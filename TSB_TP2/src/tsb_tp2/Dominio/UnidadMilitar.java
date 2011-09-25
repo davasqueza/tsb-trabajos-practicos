@@ -13,7 +13,14 @@ public class UnidadMilitar implements Comparable{
     private int numero;
     private String nombre;
 
+    public UnidadMilitar(int poderDeFuego, int numero, String nombre) {
+        this.poderDeFuego = poderDeFuego;
+        this.numero = numero;
+        this.nombre = nombre;
+    }
+
     /**
+     * 
      * @return the poderDeFuego
      */
     public int getPoderDeFuego() {

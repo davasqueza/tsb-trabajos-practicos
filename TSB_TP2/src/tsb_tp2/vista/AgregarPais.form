@@ -40,7 +40,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtNumeroPais" alignment="0" pref="166" max="32767" attributes="1"/>
-                          <Component id="jTextField3" alignment="0" pref="166" max="32767" attributes="1"/>
+                          <Component id="txtNombrePais" alignment="0" pref="166" max="32767" attributes="1"/>
                           <Component id="comboContinentes" alignment="0" max="32767" attributes="1"/>
                       </Group>
                   </Group>
@@ -66,7 +66,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombrePais" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -135,7 +135,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumeroPaisActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="txtNombrePais">
     </Component>
   </SubComponents>
 </Form>

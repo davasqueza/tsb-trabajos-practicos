@@ -11,9 +11,9 @@ package tsb_tp2.Dominio;
 public class Pais implements Comparable{
     private int numero;
     private String nombre;
-    private Continente continente;
+    private String continente;
 
-    public Pais(int numero, String nombre, Continente continente) {
+    public Pais(int numero, String nombre, String continente) {
         this.numero = numero;
         this.nombre = nombre;
         this.continente = continente;
@@ -57,14 +57,14 @@ public class Pais implements Comparable{
     /**
      * @return the continente
      */
-    public Continente getContinente() {
+    public String getContinente() {
         return continente;
     }
 
     /**
      * @param continente the continente to set
      */
-    public void setContinente(Continente continente) {
+    public void setContinente(String continente) {
         this.continente = continente;
     }
 

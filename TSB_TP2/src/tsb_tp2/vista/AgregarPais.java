@@ -44,7 +44,7 @@ public class AgregarPais extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtNumeroPais = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtNombrePais = new javax.swing.JTextField();
 
         setMinimumSize(new java.awt.Dimension(300, 200));
         addWindowFocusListener(new java.awt.event.WindowFocusListener() {
@@ -104,7 +104,7 @@ public class AgregarPais extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNumeroPais, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(txtNombrePais, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                             .addComponent(comboContinentes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
@@ -123,7 +123,7 @@ public class AgregarPais extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombrePais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -146,7 +146,7 @@ private void txtNumeroPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 }//GEN-LAST:event_txtNumeroPaisActionPerformed
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-this.parent.agregarPais(new Pais(this.parent.getJuego().getNumeroPais(),txtNumeroPais.getText()));
+this.parent.agregarPais(new Pais(this.parent.getJuego().getNumeroPais(),txtNombrePais.getText(),(String)comboContinentes.getSelectedItem()));
 this.setVisible(false);
 limpiarCampos();
 }//GEN-LAST:event_jButton1ActionPerformed
@@ -161,7 +161,7 @@ txtNumeroPais.setText(String.valueOf(this.parent.getJuego().getNumeroPais()));
 
 private void limpiarCampos(){
 txtNumeroPais.setText("");
-jTextField3.setText("");
+txtNombrePais.setText("");
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -171,7 +171,7 @@ jTextField3.setText("");
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtNombrePais;
     private javax.swing.JTextField txtNumeroPais;
     // End of variables declaration//GEN-END:variables
 }

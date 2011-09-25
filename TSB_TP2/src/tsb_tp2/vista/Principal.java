@@ -32,9 +32,13 @@ DefaultListModel modeloListaPaisesOcupados ;
         this.ventanAgregarPais=new AgregarPais(this,true);
         this.ventanaAgregarUnidadMilitar=new AgregarUnidadMilitar(this,true);
         this.juego=new Juego();
+        
+        
         modeloListaPaises = new DefaultListModel();
         modeloListaUnidadesMilitares = new DefaultListModel();
         modeloListaPaisesOcupados = new DefaultListModel();
+        
+        //agregamos modelos a las listas
         this.listaPaises.setModel(modeloListaPaises);
         this.listaUnidadesMilitares.setModel(modeloListaUnidadesMilitares);
     }
