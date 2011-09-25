@@ -31,53 +31,17 @@ public class UnidadesMayores5 extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        btnAceptar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jSplitPane1 = new javax.swing.JSplitPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lstPaises = new javax.swing.JList();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtInfoPais = new javax.swing.JTextArea();
+        jList1 = new javax.swing.JList();
+
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        btnAceptar.setText("Aceptar");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(btnAceptar)
-                .addContainerGap(175, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAceptar)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
-
-        jPanel2.setLayout(new java.awt.BorderLayout());
-
-        jScrollPane1.setViewportView(lstPaises);
-
-        jSplitPane1.setLeftComponent(jScrollPane1);
-
-        txtInfoPais.setColumns(20);
-        txtInfoPais.setRows(5);
-        jScrollPane2.setViewportView(txtInfoPais);
-
-        jSplitPane1.setRightComponent(jScrollPane2);
-
-        jPanel2.add(jSplitPane1, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,13 +51,7 @@ public class UnidadesMayores5 extends javax.swing.JDialog {
      */
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptar;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JList lstPaises;
-    private javax.swing.JTextArea txtInfoPais;
     // End of variables declaration//GEN-END:variables
 }
