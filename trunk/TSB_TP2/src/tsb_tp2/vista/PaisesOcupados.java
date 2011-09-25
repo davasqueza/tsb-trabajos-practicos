@@ -36,7 +36,7 @@ public class PaisesOcupados extends javax.swing.JDialog {
         jList1 = new javax.swing.JList();
         btnCancelar = new javax.swing.JButton();
 
-        setMinimumSize(new java.awt.Dimension(300, 300));
+        setMinimumSize(new java.awt.Dimension(300, 400));
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
