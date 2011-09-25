@@ -63,7 +63,7 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
         txtNumeroUnidadMilitar.setEditable(false);
 
         comboPoderDeFuego.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+      
 
         jButton1.setText("Agregar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
