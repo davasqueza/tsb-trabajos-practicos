@@ -15,7 +15,8 @@ import tsb_tp2.Dominio.UnidadMilitar;
 public class Juego {
     private LinkedList unidadesMilitares;
     private LinkedList paises;
-    
+    private static int numeroPais=0;
+    private static int numeroUnidadMilitar=0;
     public Juego(){
     this.unidadesMilitares=new LinkedList();
     this.paises=new LinkedList();
@@ -23,10 +24,12 @@ public class Juego {
     
     public void AgregarPais(Pais p){
         this.paises.addFirst(p);
+          Juego.numeroPais++;
     }
     
     public void AgregarUnidadMilitar(UnidadMilitar u){
         this.unidadesMilitares.addFirst(u);
+        Juego.numeroUnidadMilitar++;
     }
     
     public UnidadMilitar elimnarUnidadMilitar(UnidadMilitar u){
@@ -67,6 +70,14 @@ public class Juego {
         
         return lista;
     }
+    
+    public int getNumeroPais(){
+    return Juego.numeroPais;
+    }
+    public int getNumeroUnidadMilitar(){
+    return Juego.numeroUnidadMilitar;
+    }
+    
 }
    
 
