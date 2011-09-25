@@ -42,7 +42,7 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-       
+        setMinimumSize(new java.awt.Dimension(300, 300));
 
         jLabel1.setText("Numero:");
 
@@ -52,7 +52,7 @@ public class AgregarUnidadMilitar extends javax.swing.JDialog {
 
         jTextField1.setEditable(false);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
         jButton1.setText("Agregar");
 
