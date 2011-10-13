@@ -19,6 +19,10 @@ public class Principal extends javax.swing.JFrame {
     /** Creates new form Principal */
     public Principal() {
         initComponents();
+        this.ventanaBuscarCliente=new BuscarCliente(this,true);
+        this.ventanEliminarCliente=new EliminarCliente(this,true);
+        this.ventanaMostarListaClientes= new MostarListaClientes(this, true);
+        this.ventanaNuevoCliente= new NuevoCliente(this, true);
     }
 
     /** This method is called from within the constructor to
@@ -39,12 +43,32 @@ public class Principal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(400, 400));
 
         btnNuevoCliente.setText("Nuevo Cliente");
+        btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoClienteActionPerformed(evt);
+            }
+        });
 
         btnBuscarCliente.setText("Buscar Cliente");
+        btnBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarClienteActionPerformed(evt);
+            }
+        });
 
         btnBorrarCliente.setText("Eliminar Cliente");
+        btnBorrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarClienteActionPerformed(evt);
+            }
+        });
 
         btnMostarDatos.setText("Mostar Lista de Clientes");
+        btnMostarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostarDatosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,7 +100,26 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
+    private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
+      this.ventanaNuevoCliente.setVisible(true);
+    }//GEN-LAST:event_btnNuevoClienteActionPerformed
+
+    private void btnBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteActionPerformed
+        this.ventanaBuscarCliente.setVisible(true);
+    }//GEN-LAST:event_btnBuscarClienteActionPerformed
+
+    private void btnMostarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostarDatosActionPerformed
+       this.ventanaMostarListaClientes.setVisible(true);
+    }//GEN-LAST:event_btnMostarDatosActionPerformed
+
+    private void btnBorrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarClienteActionPerformed
+       this.ventanEliminarCliente.setVisible(true);
+    }//GEN-LAST:event_btnBorrarClienteActionPerformed
+
+    private BuscarCliente ventanaBuscarCliente;
+    private EliminarCliente ventanEliminarCliente;
+    private MostarListaClientes ventanaMostarListaClientes;
+    private NuevoCliente ventanaNuevoCliente;
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrarCliente;
