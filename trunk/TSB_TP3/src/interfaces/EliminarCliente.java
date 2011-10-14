@@ -10,16 +10,24 @@
  */
 package interfaces;
 
+import dominio.Cliente;
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author a1
  */
 public class EliminarCliente extends javax.swing.JDialog {
 
+    Principal parent;
+    Cliente cliente;
     /** Creates new form EliminarCliente */
     public EliminarCliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.parent=(Principal) parent;
+        cliente=null;
     }
 
     /** This method is called from within the constructor to
@@ -37,27 +45,38 @@ public class EliminarCliente extends javax.swing.JDialog {
         jbBuscar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jtfNumero = new javax.swing.JTextField();
-        jtfApellido = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jbGuardarCambios = new javax.swing.JButton();
+        jbEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
+
+        jtfSaldo.setEnabled(false);
 
         jLabel4.setText("Saldo Anterior:");
 
-        jbBuscar.setText("Buscar");
+        jtfNombre.setEnabled(false);
 
-        jLabel2.setText("Nombre del Clinete:");
+        jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Nombre del Cliente:");
 
         jLabel1.setText("Ingresesar Numero de Cliente: ");
 
-        jLabel3.setText("Apellido del Cliente:");
-
-        jbGuardarCambios.setText("Guardar Cambios");
-        jbGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
+        jbEliminar.setText("Eliminar");
+        jbEliminar.setEnabled(false);
+        jbEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbGuardarCambiosActionPerformed(evt);
+                jbEliminarActionPerformed(evt);
             }
         });
 
@@ -65,7 +84,6 @@ public class EliminarCliente extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -74,21 +92,15 @@ public class EliminarCliente extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtfSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(142, 142, 142)
-                        .addComponent(jbGuardarCambios))
+                        .addComponent(jbEliminar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(jLabel1)
@@ -98,7 +110,6 @@ public class EliminarCliente extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -110,45 +121,59 @@ public class EliminarCliente extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jtfApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtfSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jbGuardarCambios)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addComponent(jbEliminar)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void jbGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarCambiosActionPerformed
-this.lipiarCampos();
-}//GEN-LAST:event_jbGuardarCambiosActionPerformed
+private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
+    this.parent.eliminarCliente(cliente);
+    this.limpiarCampos();
+}//GEN-LAST:event_jbEliminarActionPerformed
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+       cliente=this.parent.buscarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()),"", 0));
+       if (cliente!=null)
+       {
+           
+           this.jbEliminar.setEnabled(true);
+           this.jtfSaldo.setText(String.valueOf(cliente.getSaldo()));
+           this.jtfNombre.setText(String.valueOf(cliente.getNombre()));
+       }
+       else
+       {
+           JOptionPane.showMessageDialog(null,"No existe el cliente", "Error", JOptionPane.ERROR_MESSAGE);
+       }
+    }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        this.limpiarCampos();
+    }//GEN-LAST:event_formWindowClosed
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton jbBuscar;
-    private javax.swing.JButton jbGuardarCambios;
-    private javax.swing.JTextField jtfApellido;
+    private javax.swing.JButton jbEliminar;
     private javax.swing.JTextField jtfNombre;
     private javax.swing.JTextField jtfNumero;
     private javax.swing.JTextField jtfSaldo;
     // End of variables declaration//GEN-END:variables
 
-     public void lipiarCampos()
+     public void limpiarCampos()
     {
         jtfNumero.setText("");
         jtfNombre.setText("");
-        jtfApellido.setText("");
         jtfSaldo.setText("");
+        this.jbEliminar.setEnabled(false);
     }
 }

@@ -124,6 +124,19 @@ public class Principal extends javax.swing.JFrame {
          banco.agregarCliente(c);  
     }
     
+    protected  Cliente buscarCliente(Cliente c){
+         return banco.buscarCliente(c);  
+    }
+    
+    protected  void eliminarCliente(Cliente c){
+         banco.eliminarCliente(c);  
+    }
+    
+    protected String mostrarClientes(int n)
+    {
+        return banco.mostrarClientes(n);
+    }
+    
     private final Banco banco;
     private BuscarCliente ventanaBuscarCliente;
     private EliminarCliente ventanEliminarCliente;

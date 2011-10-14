@@ -10,16 +10,23 @@
  */
 package interfaces;
 
+import dominio.Cliente;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author a1
  */
 public class BuscarCliente extends javax.swing.JDialog {
 
+    Principal parent;
+    Cliente cliente;
     /** Creates new form BuscarCliente */
     public BuscarCliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.parent=(Principal) parent;
+        cliente=null;
     }
 
     /** This method is called from within the constructor to
@@ -39,6 +46,11 @@ public class BuscarCliente extends javax.swing.JDialog {
         jbGuardarCambios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setText("Ingresar Numero de Cliente: ");
 
@@ -108,12 +120,28 @@ public class BuscarCliente extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
 private void jbGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarCambiosActionPerformed
-this.lipiarCampos();
+    this.parent.eliminarCliente(cliente);
+    this.parent.agregarCliente(new Cliente(cliente.getNumero(), cliente.getNombre(), Float.parseFloat(this.jtfSaldo.getText())));
+    this.limpiarCampos();
 }//GEN-LAST:event_jbGuardarCambiosActionPerformed
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-        // TODO add your handling code here:
+       cliente=this.parent.buscarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()),"", 0));
+       if (cliente!=null)
+       {
+           this.jtfSaldo.setEnabled(true);
+           this.jbGuardarCambios.setEnabled(true);
+           this.jtfSaldo.setText(String.valueOf(cliente.getSaldo()));
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(null,"No existe el cliente", "Error", JOptionPane.ERROR_MESSAGE);
+       }
     }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        this.limpiarCampos();
+    }//GEN-LAST:event_formWindowClosed
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -125,10 +153,12 @@ this.lipiarCampos();
     private javax.swing.JTextField jtfSaldo;
     // End of variables declaration//GEN-END:variables
 
-    public void lipiarCampos()
+    public void limpiarCampos()
     {
-        jtfNumero.setText("");
-        jtfSaldo.setText("");
+        this.jtfNumero.setText("");
+        this.jtfSaldo.setText("");
+        this.jtfSaldo.setEnabled(false);
+        this.jbGuardarCambios.setEnabled(false);
     }
 
 }

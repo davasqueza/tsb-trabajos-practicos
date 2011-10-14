@@ -142,13 +142,6 @@ this.limpiarCampos();
         jtfSaldo.setText("");
     }
     
-    public boolean validarCampos()
-    {
-        if(jtfNombre.getText().isEmpty()==false)
-        {
-            if()
-        }
-            
-    }
+   
 
 }
