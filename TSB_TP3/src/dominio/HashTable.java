@@ -8,32 +8,18 @@ package dominio;
 import java.io.*;
 public class HashTable implements Serializable
 {
-   private SimpleList []items;
+   private Comparable  items[];
    private Class clase;   // la clase de objetos que contiene la tabla
    
-   /**
-    * Crea una tabla hash con tama�o 11 por defecto. El valor 11 es el primer n�mero primo 
-    * mayor a 10, y se eligi� por su cercan�a con el valor "t�pico" de 10...
-    */
-   public HashTable()
+   
+   public HashTable ()
    {
-      this(11);   
+      items = new Comparable[11];
    }
    
-   /**
-    * Crea una tabla hash con tama�o n. Si n es cero o negativo, el tama�o se ajusta a 11. Este
-    * constructor no controla si n es primo, ni busca el siguiente primo mayor a n...
-    * @param n el tama�o de la tabla a crear.
-    */
    public HashTable (int n)
    {
-      if (n <= 0) { n = 11; }
-      
-      items = new SimpleList[n];
-      for (int i=0; i<n; i++)
-      {
-          items[i] = new SimpleList();
-      } 
+      items = new Comparable[n];
    }
    
    /**
@@ -52,7 +38,7 @@ public class HashTable implements Serializable
           if( x.getClass() != clase ) return;
           
           // controlamos si es hora de redispersar...
-          if ( averageLength() >= 3 ) rehash();
+          if (arregloDemasiadoLleno()) rehash();
           
           // ahora si: primero tomamos el hashCode() del objeto...
           int k = x.hashCode();
@@ -61,10 +47,26 @@ public class HashTable implements Serializable
           int y = h(k);
           
           // ... y finalmente pedimos a la lista que corresponda que haga la inserci�n
-          items[y].addFirst(x);
+          y=verificarInsercion(y);
+          items[y]=x;
+          
       }
    }
 
+   private int verificarInsercion(int n)
+   {
+       if(items.length>n)
+       {
+           if(items[n]==null)
+              return n;
+           else{
+              return verificarInsercion(n+1);
+            }
+       }
+       else{
+           return verificarInsercion(0);
+       }
+   }
    /**
     * Elimina el objeto x de la tabla. No hace nada si x no es de la misma clase que los
     * objetos que ya estaban en la tabla, o si x no estaba en la tabla.
@@ -82,9 +84,30 @@ public class HashTable implements Serializable
           
           int k = x.hashCode();
           int y = h(k);
-          items[y].remove(x);
+          
+          int r=verificarItem(y,x, false,y);
+          if(r>-1)
+            items[r]=null;
       }
    }   
+   
+    private int verificarItem(int n, Comparable x, boolean ban, int limite)
+   {
+       if(items.length>n)
+       {
+           if(items[n]!=null&&x.compareTo(items[n])==0)
+              return n;
+           else{
+              if(ban&&n==limite)
+                return -1;
+              else
+                return verificarItem(n+1, x, ban, limite);
+            }
+       }
+       else{
+           return verificarItem(0, x, true, limite);
+       }
+   }
    
    /**
     * Busca el objeto x en la tabla, y retorna la direcci�n del objeto que est� en la tabla 
@@ -105,7 +128,9 @@ public class HashTable implements Serializable
 
           int k = x.hashCode();
           int y = h(k);
-          return items[y].search(x);
+          int r=verificarItem(y,x, false,y);
+          if(r>-1)
+            return items[r];
      }
      return null;
    }
@@ -118,27 +143,17 @@ public class HashTable implements Serializable
     */
    public boolean contains (Comparable x)
    {
-      // si no hay nada en la tabla, sale sin hacer nada...
-      if ( clase == null )  return false;
-      
-      if( x != null )  
-      {
-          // control de homogeneidad a nivel tabla...
-          if( x.getClass() != clase ) return false;
-
-          int k = x.hashCode();
-          int y = h(k);
-          return items[y].contains(x);
-     }
-     return false;
+      if(get(x)!=null)
+          return true;
+      return false;
    }
-   
-   
+
    
    /**
     * Devuelve el contenido de la tabla en forma de String.
     * @return un String con el contenido de la tabla.
     */
+    @Override
    public String toString()
    {
       StringBuffer cad = new StringBuffer("");
@@ -160,31 +175,18 @@ public class HashTable implements Serializable
        // calculamos un aumento del 50% sobre el tama�o anterior... aunque no busco un n�mero primo...
        int n = (int)(1.5 * items.length);
        
-       // creamos un nuevo arreglo de listas, de ese tama�o...
-       SimpleList temp[] = new SimpleList[n];
-       for(int j = 0; j < temp.length; j++) temp[j] = new SimpleList();
-       
+       // creamos un nuevo arreglo de comparables, de ese tama�o...
+       HashTable aux = new HashTable(n);
+              
        // recorremos la vieja tabla, para extraer uno a uno los objetos que conten�a...
        for (int i = 0; i < items.length; i++)
        {
-           // entramos en la lista n�mero i, y la recorremos con el iterador...
-           items[i].startIterator();
-           while( items[i].hasNext() )
-           {
-               // obtenemos un objeto de la vieja lista...
-               Comparable x = items[i].next();
-               
-               // obtenemos su nuevo valor de dispersi�n para el nuevo arreglo...
-               int k = x.hashCode();
-               int y = k % temp.length;
-               
-               // y lo insertamos en el nuevo arreglo, en la lista n�mero "y"...
-               temp[y].addFirst(x);
-           }
+           
+            aux.put(items[i]); 
        }
-       
+              
        // cambiamos la referencia items para que apunte a la nueva tabla...
-       items = temp;
+       this.items = aux.items;
    }
     
    /**
@@ -199,16 +201,23 @@ public class HashTable implements Serializable
    }
    
    /**
-    * Calcula la longitud promedio de las listas de la tabla
-    * @return la longitud promedio de la listas contenidas en la tabla.
+    * Calcula el nivel de ocupacion del vector
+    * @return true si hay lugares ocupados que vacios
     */
-   private int averageLength()
+   private boolean arregloDemasiadoLleno()
    {
-       int ac = 0;
+       int ocupado = 0;
+       int vacio = 0;
        for(int i = 0; i < items.length; i++)
        {
-            ac += items[i].size();    
+           if(items[i]!=null) 
+               ocupado++;
+           else
+               vacio++;
        }
-       return ac / items.length;
+       if(ocupado>vacio)
+            return true;
+       else
+           return false;
    }
 }

@@ -80,4 +80,10 @@ public class Cliente implements Comparable, Serializable {
            return 0;
        }
      }
+    
+    @Override
+    public String toString()
+    {
+        return "\r\nNumero de Cliente: " + numero + "\tNombre: " + nombre + "\tSaldo: " + saldo; 
+    }
 }
