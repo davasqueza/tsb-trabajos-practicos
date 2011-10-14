@@ -4,11 +4,13 @@
  */
 package dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Franco
  */
-public class Cliente {
+public class Cliente implements Comparable, Serializable {
     private long numero;
     private String nombre;
     private float saldo;
@@ -62,11 +64,10 @@ public class Cliente {
     public int hashCode() {
         int hash = 3;
         hash = 53 * hash + (int) (this.numero ^ (this.numero >>> 32));
-        hash = 53 * hash + (this.nombre != null ? this.nombre.hashCode() : 0);
-        hash = 53 * hash + Float.floatToIntBits(this.saldo);
         return hash;
     }
 
+    @Override
     public int compareTo(Object o)
      {
        Cliente otro = (Cliente) o;
