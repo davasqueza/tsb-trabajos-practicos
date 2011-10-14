@@ -24,14 +24,20 @@ public class Banco {
         this.clientes = clientes;
     }
     
-    public void AgregarCliente(Cliente c){
+    public void agregarCliente(Cliente c){
         this.clientes.put(c);
     }
     
-    public void EliminarCliente(Cliente c){
+    public void eliminarCliente(Cliente c){
         this.clientes.remove(c);
     }
     
-    
-    //agregarCLiente eliminarCliente modificarCliente buscarCliente
+    public boolean esCliente(Cliente c)
+    {
+        if(clientes.contains(c))
+            return true;
+        else      
+            return false;
+    }
+   
 }

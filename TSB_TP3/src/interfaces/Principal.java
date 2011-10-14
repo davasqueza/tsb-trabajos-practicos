@@ -10,6 +10,9 @@
  */
 package interfaces;
 
+import dominio.Banco;
+import dominio.Cliente;
+
 /**
  *
  * @author a1
@@ -23,6 +26,7 @@ public class Principal extends javax.swing.JFrame {
         this.ventanEliminarCliente=new EliminarCliente(this,true);
         this.ventanaMostarListaClientes= new MostarListaClientes(this, true);
         this.ventanaNuevoCliente= new NuevoCliente(this, true);
+        this.banco=new Banco();
     }
 
     /** This method is called from within the constructor to
@@ -77,11 +81,11 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnBorrarCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNuevoCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMostarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(249, 249, 249))
+                    .addComponent(btnMostarDatos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(btnBuscarCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNuevoCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBorrarCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(240, 240, 240))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,6 +120,11 @@ public class Principal extends javax.swing.JFrame {
        this.ventanEliminarCliente.setVisible(true);
     }//GEN-LAST:event_btnBorrarClienteActionPerformed
 
+    protected  void agregarCliente(Cliente c){
+         banco.agregarCliente(c);  
+    }
+    
+    private final Banco banco;
     private BuscarCliente ventanaBuscarCliente;
     private EliminarCliente ventanEliminarCliente;
     private MostarListaClientes ventanaMostarListaClientes;
