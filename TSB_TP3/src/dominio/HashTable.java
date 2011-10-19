@@ -156,7 +156,7 @@ public class HashTable implements Serializable
     @Override
    public String toString()
    {
-      StringBuffer cad = new StringBuffer("");
+      StringBuilder cad = new StringBuilder("");
       for (int i = 0; i < items.length; i++)
       {
         cad.append("\nLista " + i + ":\n\t" + items[i].toString());   
