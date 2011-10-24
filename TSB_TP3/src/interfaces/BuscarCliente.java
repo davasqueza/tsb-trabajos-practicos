@@ -126,17 +126,24 @@ private void jbGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//
 }//GEN-LAST:event_jbGuardarCambiosActionPerformed
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-       cliente=this.parent.buscarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()),"", 0));
-       if (cliente!=null)
+       if(this.validarCampos()==true)
        {
-           this.jtfSaldo.setEnabled(true);
-           this.jbGuardarCambios.setEnabled(true);
-           this.jtfSaldo.setText(String.valueOf(cliente.getSaldo()));
-       }
-       else
-       {
-            JOptionPane.showMessageDialog(null,"No existe el cliente", "Error", JOptionPane.ERROR_MESSAGE);
-       }
+           cliente=this.parent.buscarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()),"", 0));
+           if (cliente!=null)
+           {
+               this.jtfSaldo.setEnabled(true);
+               this.jbGuardarCambios.setEnabled(true);
+               this.jtfSaldo.setText(String.valueOf(cliente.getSaldo()));
+           }
+           else
+           {
+               JOptionPane.showMessageDialog(null,"No existe el cliente", "Error", JOptionPane.ERROR_MESSAGE);
+           }
+         }      
+         else
+         {
+             JOptionPane.showMessageDialog(null,"Lo ingresado no es numerico", "Error", JOptionPane.ERROR_MESSAGE);
+         }
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
@@ -159,6 +166,32 @@ private void jbGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//
         this.jtfSaldo.setText("");
         this.jtfSaldo.setEnabled(false);
         this.jbGuardarCambios.setEnabled(false);
+    }
+    
+    public boolean validarCampos()
+    {
+        if(this.isNumero()==false)
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    public boolean isNumero()
+    {
+        char c=' ';
+        if(jtfNumero.getText().isEmpty()==false)
+        {
+            for(int i=0;i<jtfNumero.getText().length();i++)
+            {
+                c=jtfNumero.getText().charAt(i);
+                if(Character.isDigit(c)==false)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }

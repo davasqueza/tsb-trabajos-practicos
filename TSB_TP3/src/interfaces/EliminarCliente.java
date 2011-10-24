@@ -139,6 +139,8 @@ private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 }//GEN-LAST:event_jbEliminarActionPerformed
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+       if(this.validarCampos()==true)
+       {
        cliente=this.parent.buscarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()),"", 0));
        if (cliente!=null)
        {
@@ -150,6 +152,11 @@ private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
        else
        {
            JOptionPane.showMessageDialog(null,"No existe el cliente", "Error", JOptionPane.ERROR_MESSAGE);
+       }
+       }
+       else
+       {
+           JOptionPane.showMessageDialog(null,"Lo ingresado no es numerico.", "Error", JOptionPane.ERROR_MESSAGE);
        }
     }//GEN-LAST:event_jbBuscarActionPerformed
 
@@ -175,5 +182,31 @@ private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         jtfNombre.setText("");
         jtfSaldo.setText("");
         this.jbEliminar.setEnabled(false);
+    }
+    
+    public boolean validarCampos()
+    {
+        if(this.isNumero()==false)
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    public boolean isNumero()
+    {
+        char c=' ';
+        if(jtfNumero.getText().isEmpty()==false)
+        {
+            for(int i=0;i<jtfNumero.getText().length();i++)
+            {
+                c=jtfNumero.getText().charAt(i);
+                if(Character.isDigit(c)==false)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
