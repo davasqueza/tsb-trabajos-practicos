@@ -11,6 +11,7 @@
 package interfaces;
 
 import dominio.Cliente;
+import javax.swing.JTextField;
 
 /**
  *
@@ -116,9 +117,14 @@ public class NuevoCliente extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
 private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
-this.parent.agregarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()), this.jtfNombre.getText()+ " "+this.jtfApellido.getText(), Float.parseFloat(this.jtfSaldo.getText())));
-this.setVisible(false);
-this.limpiarCampos();
+if(this.validarCampos())
+{
+//    this.parent.agregarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()), this.jtfNombre.getText()+ " "+this.jtfApellido.getText(), Float.parseFloat(this.jtfSaldo.getText())));
+//    this.setVisible(false);
+    this.limpiarCampos();
+}
+
+
 }//GEN-LAST:event_btnNuevoClienteActionPerformed
 
    
@@ -142,6 +148,71 @@ this.limpiarCampos();
         jtfSaldo.setText("");
     }
     
-   
+    public boolean validarCampos()
+    {
+        if(this.isNombre()==false)
+        {
+            return false;
+        }
+        if(this.isApellido()==false)
+        {
+            return false;
+        }
+        if(this.isNumero()==false)
+        {
+            return false;
+        }
+        return true;
+    }
+    public boolean isNombre()
+    {
+        char c=' ';
+        if(jtfNombre.getText().isEmpty()==false)
+        {
+            for(int i=0;i<jtfNombre.getText().length();i++)
+            {
+                c=jtfNombre.getText().charAt(i);
+                if(Character.isDigit(c))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public boolean isApellido()
+    {
+        char c=' ';
+        if(jtfApellido.getText().isEmpty()==false)
+        {
+            for(int i=0;i<jtfApellido.getText().length();i++)
+            {
+                c=jtfApellido.getText().charAt(i);
+                if(Character.isDigit(c))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public boolean isNumero()
+    {
+        char c=' ';
+        if(jtfNumero.getText().isEmpty()==false)
+        {
+            for(int i=0;i<jtfNumero.getText().length();i++)
+            {
+                c=jtfNumero.getText().charAt(i);
+                if(Character.isDigit(c)==false)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
 }
