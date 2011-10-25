@@ -120,8 +120,8 @@ public class Principal extends javax.swing.JFrame {
        this.ventanEliminarCliente.setVisible(true);
     }//GEN-LAST:event_btnBorrarClienteActionPerformed
 
-    protected  void agregarCliente(Cliente c){
-         banco.agregarCliente(c);  
+    protected  boolean agregarCliente(Cliente c){
+         return banco.agregarCliente(c);  
     }
     
     protected  Cliente buscarCliente(Cliente c){

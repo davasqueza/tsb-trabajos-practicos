@@ -120,7 +120,10 @@ public class NuevoCliente extends javax.swing.JDialog {
 private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
 if(this.validarCampos())
 {
-    this.parent.agregarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()), this.jtfNombre.getText()+ " "+this.jtfApellido.getText(), Float.parseFloat(this.jtfSaldo.getText())));
+    if(this.parent.agregarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()), this.jtfNombre.getText()+ " "+this.jtfApellido.getText(), Float.parseFloat(this.jtfSaldo.getText()))))
+        JOptionPane.showMessageDialog(null,"Se agregó el cliente.", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+    else
+        JOptionPane.showMessageDialog(null,"No se agregó el cliente.", "Error", JOptionPane.ERROR_MESSAGE);
     this.setVisible(false);
     this.limpiarCampos();
 }

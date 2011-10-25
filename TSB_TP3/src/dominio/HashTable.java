@@ -27,7 +27,7 @@ public class HashTable implements Serializable
     * clase que los objetos que ya est�n en la tabla.
     * @param x el objeto a insertar.
     */
-   public void put (Comparable x)
+   public boolean put (Comparable x)
    {
       if( x != null )  
       {
@@ -35,7 +35,7 @@ public class HashTable implements Serializable
           if ( clase == null ) clase = x.getClass(); 
           
           // control de homogeneidad a nivel tabla...
-          if( x.getClass() != clase ) return;
+          if( x.getClass() != clase ) return false;
           
           // controlamos si es hora de redispersar...
           if (arregloDemasiadoLleno()) rehash();
@@ -49,8 +49,10 @@ public class HashTable implements Serializable
           // ... y finalmente pedimos a la lista que corresponda que haga la inserci�n
           y=verificarInsercion(y);
           items[y]=x;
+          return true;
           
       }
+      return false;
    }
 
    private int verificarInsercion(int n)

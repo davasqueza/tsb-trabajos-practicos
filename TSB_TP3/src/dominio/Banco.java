@@ -34,9 +34,10 @@ public class Banco {
         this.clientes = clientes;
     }
     
-    public void agregarCliente(Cliente c){
-        this.clientes.put(c);
-        this.arbol.add(c);
+    public boolean agregarCliente(Cliente c){
+        if (this.arbol.add(c)&&this.clientes.put(c))
+            return true;
+        return false;
     }
     
     public void eliminarCliente(Cliente c){
