@@ -11,6 +11,7 @@
 package interfaces;
 
 import dominio.Cliente;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -119,8 +120,8 @@ public class NuevoCliente extends javax.swing.JDialog {
 private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
 if(this.validarCampos())
 {
-//    this.parent.agregarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()), this.jtfNombre.getText()+ " "+this.jtfApellido.getText(), Float.parseFloat(this.jtfSaldo.getText())));
-//    this.setVisible(false);
+    this.parent.agregarCliente(new Cliente(Long.parseLong(this.jtfNumero.getText()), this.jtfNombre.getText()+ " "+this.jtfApellido.getText(), Float.parseFloat(this.jtfSaldo.getText())));
+    this.setVisible(false);
     this.limpiarCampos();
 }
 
@@ -152,14 +153,22 @@ if(this.validarCampos())
     {
         if(this.isNombre()==false)
         {
+            
             return false;
         }
         if(this.isApellido()==false)
         {
+            
             return false;
         }
         if(this.isNumero()==false)
         {
+            
+            return false;
+        }
+        if(this.isSaldo()==false)
+        {
+            
             return false;
         }
         return true;
@@ -174,9 +183,15 @@ if(this.validarCampos())
                 c=jtfNombre.getText().charAt(i);
                 if(Character.isDigit(c))
                 {
+                    JOptionPane.showMessageDialog(null,"Lo ingresado no es un nombre valido.", "Error", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }
             }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"No ingreso un nombre.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
         }
         return true;
     }
@@ -191,9 +206,15 @@ if(this.validarCampos())
                 c=jtfApellido.getText().charAt(i);
                 if(Character.isDigit(c))
                 {
+                    JOptionPane.showMessageDialog(null,"Lo ingresado no es un apellido valido.", "Error", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }
             }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"No ingreso un apellido.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
         }
         return true;
     }
@@ -208,9 +229,38 @@ if(this.validarCampos())
                 c=jtfNumero.getText().charAt(i);
                 if(Character.isDigit(c)==false)
                 {
+                    JOptionPane.showMessageDialog(null,"Lo ingresado no es numerico.", "Error", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }
             }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"No ingreso un numero de cliente.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return true;
+    }
+    
+    public boolean isSaldo()
+    {
+        char c=' ';
+        if(jtfSaldo.getText().isEmpty()==false)
+        {
+            for(int i=0;i<jtfSaldo.getText().length();i++)
+            {
+                c=jtfSaldo.getText().charAt(i);
+                if(Character.isDigit(c)==false)
+                {
+                    JOptionPane.showMessageDialog(null,"Lo ingresado no es un salgo valido.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return false;
+                }
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"No ingreso un saldo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
         }
         return true;
     }
