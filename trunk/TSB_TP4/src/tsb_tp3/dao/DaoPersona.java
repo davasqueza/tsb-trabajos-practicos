@@ -14,22 +14,27 @@ public class DaoPersona implements IDao<Persona> {
 
     @Override
     public Persona guardar(Persona t) {
-        throw new UnsupportedOperationException("Not supported yet.");
+      String sql = "INSERT INTO T_PERSONA (NOMBRE,APELLIDO,FECHANACIMIENTO)  VALUES ('alejandor','Burgos','02/05/1988');";
+        
+        return null;
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+       String sql= "DELETE FROM T_PERSONA WHERE id="+id+";";
+       return false;
     }
 
     @Override
     public Persona actualizar(Persona t) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String sql="UPDATE T_PERSONA SET NOMBRE='"+t.getNombre()+"',APELLIDO='"+t.getApellido()+"',FECHANACIMIENTO='"+t.getFechaNacimiento()+"' WHERE id='"+t.getId()+"'";
+        return null;
     }
 
     @Override
     public Persona obtener(int idT) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String sql="SELECT * FROM T_PERSONA WHERE id="+idT;
+        return null;
     }
     
 }

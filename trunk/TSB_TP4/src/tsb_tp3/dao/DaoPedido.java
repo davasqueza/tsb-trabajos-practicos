@@ -14,22 +14,26 @@ public class DaoPedido implements IDao<Pedido>{
 
     @Override
     public Pedido guardar(Pedido t) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String sql = "INSERT INTO T_PEDIDO (ID_CLIENTE,FECHA)  VALUES ('"+t.getCliente().getId()+"','"+t.getFecha()+"');";
+       return null;
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+       String sql= "DELETE FROM T_PEDIDO WHERE id="+id+";";
+       return false;
     }
 
     @Override
     public Pedido actualizar(Pedido t) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String sql="UPDATE T_PEDIDO SET ID_CLIENTE='"+t.getCliente().getId()+"',FECHA='"+t.getFecha()+"' WHERE id='"+t.getId()+"'";
+        return null;
     }
 
     @Override
     public Pedido obtener(int idT) {
-        throw new UnsupportedOperationException("Not supported yet.");
+         String sql="SELECT * FROM T_PEDIDO WHERE id="+idT;
+        return null;
     }
     
 }
