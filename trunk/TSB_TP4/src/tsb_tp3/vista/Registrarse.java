@@ -349,14 +349,7 @@ new DaoUsuario().guardar(u);
         
     }
     
-    public Persona cargarPersona(String nombre,String apellido, int id)
-    {
-        Persona p=new Persona();
-        p.setNombre(nombre);
-        p.setApellido(apellido);
-        p.setId(id);
-        return p;
-    }
+  
     
 
 }
