@@ -11,16 +11,19 @@
 package tsb_tp3.vista;
 
 import javax.swing.JOptionPane;
+import tsb_tp3.dao.DaoUsuario;
 import tsb_tp3.dominio.Persona;
+import tsb_tp3.dominio.Usuario;
+import tsb_tp3.encriptacion.Encrypter;
 
 /**
  *
  * @author Lucas
  */
-public class Reguistrarce extends javax.swing.JFrame {
+public class Registrarse extends javax.swing.JFrame {
 
     /** Creates new form Reguistrarce */
-    public Reguistrarce() {
+    public Registrarse() {
         initComponents();
     }
 
@@ -48,6 +51,8 @@ public class Reguistrarce extends javax.swing.JFrame {
         jtfContraseña = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        cmb_Encriptacion = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,11 +79,15 @@ public class Reguistrarce extends javax.swing.JFrame {
 
         jLabel4.setText("Contreseña: ");
 
+        jLabel9.setText("Método de encriptacion:");
+
+        cmb_Encriptacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CesarEncrypter", "RCAEncrypter", "TranspositionEncrypter", "VernamEncrypter", "VernamMauborgneEncrypter", "VigenereEncrypter" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,26 +103,32 @@ public class Reguistrarce extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtfApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(241, Short.MAX_VALUE)
+                .addComponent(jbReguistar)
+                .addGap(216, 216, 216))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtfRContraseña)
-                    .addComponent(jtfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmb_Encriptacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtfRContraseña)
+                            .addComponent(jtfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addGap(32, 32, 32))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(238, Short.MAX_VALUE)
-                .addComponent(jbReguistar)
-                .addGap(216, 216, 216))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,17 +163,41 @@ public class Reguistrarce extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)))
-                .addGap(48, 48, 48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(cmb_Encriptacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addComponent(jbReguistar)
-                .addGap(71, 71, 71))
+                .addGap(77, 77, 77))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 private void jbReguistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbReguistarActionPerformed
+if(this.validarCampos())
+{
+    Usuario u = new Usuario();
+    Persona p  = new Persona(this.jtfNombre.getText(),this.jtfApellido.getText(),Integer.valueOf(this.jtfNumero.getText()));
+    u.setNombre(this.jtfNombre.getText()+' '+this.jtfApellido.getText());
+    u.setPersona(p);
+    
+    try{
+    Encrypter enc=(Encrypter)Class.forName(cmb_Encriptacion.getSelectedItem().toString()).newInstance();
+    enc.setMessage(this.jtfContraseña.getText());
+    u.setPassword(enc.code());
+    }catch(Exception c)
+    {
+        System.out.println("ClassNotFound");
+    }
+    
+    
+    
+ 
 
-    this.validarCampos();
+new DaoUsuario().guardar(u);
+}   
 }//GEN-LAST:event_jbReguistarActionPerformed
 
     /**
@@ -166,6 +205,7 @@ private void jbReguistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox cmb_Encriptacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -174,6 +214,7 @@ private void jbReguistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbReguistar;
     private javax.swing.JTextField jtfApellido;

@@ -40,7 +40,7 @@
           <Component id="jSeparator1" alignment="0" pref="521" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
-              <Component id="jbReguistrarce" min="-2" max="-2" attributes="0"/>
+              <Component id="jbReguistrarse" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="212" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -76,7 +76,7 @@
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Component id="jbReguistrarce" min="-2" max="-2" attributes="0"/>
+              <Component id="jbReguistrarse" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -112,12 +112,12 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jtfUsuario">
     </Component>
-    <Component class="javax.swing.JButton" name="jbReguistrarce">
+    <Component class="javax.swing.JButton" name="jbReguistrarse">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registrarce"/>
+        <Property name="text" type="java.lang.String" value="Registrarse"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbReguistrarceActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbReguistrarseActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -27,7 +27,7 @@ public class DaoPersona implements IDao<Persona> {
 
     @Override
     public Persona actualizar(Persona t) {
-        String sql="UPDATE T_PERSONA SET NOMBRE='"+t.getNombre()+"',APELLIDO='"+t.getApellido()+"',FECHANACIMIENTO='"+t.getFechaNacimiento()+"' WHERE id='"+t.getId()+"'";
+        String sql="UPDATE T_PERSONA SET NOMBRE='"+t.getNombre()+"',APELLIDO='"+t.getApellido()+"' WHERE id='"+t.getId()+"'";
         return null;
     }
 

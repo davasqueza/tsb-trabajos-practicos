@@ -14,14 +14,21 @@ public class Persona {
     private int id;
     private String nombre;
     private String apellido;
-    private Date fechaNacimiento;
+    private int dni;
 
+    public Persona(String nombre, String apellido, int dni) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+    }
     /**
      * @return the id
      */
     public int getId() {
         return id;
     }
+
+    
 
     /**
      * @param id the id to set
@@ -61,14 +68,14 @@ public class Persona {
     /**
      * @return the fechaNacimiento
      */
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public int getDNI() {
+        return dni;
     }
 
     /**
      * @param fechaNacimiento the fechaNacimiento to set
      */
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setDNI(int dni) {
+        this.dni = dni;
     }
 }

@@ -33,7 +33,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jtfUsuario = new javax.swing.JTextField();
-        jbReguistrarce = new javax.swing.JButton();
+        jbReguistrarse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,10 +50,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setText("Usuario");
 
-        jbReguistrarce.setText("Registrarce");
-        jbReguistrarce.addActionListener(new java.awt.event.ActionListener() {
+        jbReguistrarse.setText("Registrarse");
+        jbReguistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbReguistrarceActionPerformed(evt);
+                jbReguistrarseActionPerformed(evt);
             }
         });
 
@@ -76,7 +76,7 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(222, 222, 222)
-                .addComponent(jbReguistrarce)
+                .addComponent(jbReguistrarse)
                 .addContainerGap(212, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
@@ -104,19 +104,19 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel3)
                 .addGap(31, 31, 31)
-                .addComponent(jbReguistrarce)
+                .addComponent(jbReguistrarse)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void jbReguistrarceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbReguistrarceActionPerformed
+private void jbReguistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbReguistrarseActionPerformed
 
-    Reguistrarce re=new Reguistrarce();
+    Registrarse re=new Registrarse();
     re.limpiarCampos();
     re.setVisible(true);
-}//GEN-LAST:event_jbReguistrarceActionPerformed
+}//GEN-LAST:event_jbReguistrarseActionPerformed
 
 private void jbIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIniciarActionPerformed
     if(this.validarCampos())
@@ -135,7 +135,7 @@ private void jbIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbIniciar;
-    private javax.swing.JButton jbReguistrarce;
+    private javax.swing.JButton jbReguistrarse;
     private javax.swing.JTextField jtfPass;
     private javax.swing.JTextField jtfUsuario;
     // End of variables declaration//GEN-END:variables

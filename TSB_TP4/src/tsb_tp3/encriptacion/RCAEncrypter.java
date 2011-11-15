@@ -30,7 +30,21 @@ public class RCAEncrypter extends Encrypter{
         clavePublica[1]=5;
         clavePublicaReceptor[0]=claveReceptor[0];
         clavePublicaReceptor[1]=claveReceptor[1];
-    }        
+    }  
+    
+    public RCAEncrypter(String mensaje)
+    {
+        super(mensaje);
+        clavePublica = new long[2];
+        clavePrivada = new long[2];
+        clavePublicaReceptor = new long[2];
+        clavePrivada[0]=35;
+        clavePrivada[1]=29;
+        clavePublica[0]=35;
+        clavePublica[1]=5;
+        clavePublicaReceptor[0]=35;
+        clavePublicaReceptor[1]=5;
+    }      
            
     @Override
     public String code() {
