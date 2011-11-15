@@ -4,10 +4,11 @@
  */
 package tsb_tp3.dao;
 
-import java.beans.Statement;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,23 +17,19 @@ import java.util.logging.Logger;
  * @author Ale
  */
 public class BaseDatos {
-        private  static BaseDatos instancia;
-        private static String dbURL = "jdbc:derby://localhost:1527/tsb_tp4_bd;user=root;password=toor";
-                //"jdbc:derby://localhost:1527/myDB;create=true;user=me;password=mine";
-        private static String tableName = "restaurants";
-        private  Connection conn = null;
+        
+        private static String dbURL = "jdbc:derby:tsb_tp4_bd;create=true;user=app;password=app";
+     //   private static String dbURL ="jdbc:derby://localhost:1527/tsb_tp3_bd";       
+        
+        private static  Connection conn = null;
+        private static Statement stmt = null;
  private BaseDatos(){}
  
- public static BaseDatos get(){
- if(instancia==null)
-     instancia=new BaseDatos();
- return instancia;
- }
  
- private void conectar(){
+ private static void  conectar(){
  try
-        {
-            Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
+        {   
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
             //Get a connection
             conn = DriverManager.getConnection(dbURL); 
         }
@@ -43,16 +40,42 @@ public class BaseDatos {
  
  };
  
- public Connection getConexion(){
+ public static Connection getConexion(){
+     if(conn==null){
+     conectar();
+     }
  return conn;
  }
  
- public void ejecutarSQL(String sql){
- 
+ public static void ejecutarSQL(String sql){
+ try
+        {
+            stmt = getConexion().createStatement();
+            stmt.execute(sql);
+            stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
  };
  
- public ResultSet ejecutarSelect(String sql){
- return null;
+ public static ResultSet ejecutarSelect(String sql){
+  ResultSet resultados=null;
+     
+     try
+        {
+            stmt = conn.createStatement();
+             resultados = stmt.executeQuery(sql);
+            stmt.close();
+            
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+     
+     return resultados;
  };
 
  

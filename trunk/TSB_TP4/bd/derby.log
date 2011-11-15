@@ -1,7 +1,12 @@
-2011-11-13 19:38:22.982 GMT : Apache Derby Network Server - 10.5.3.0 - (802917) se ha iniciado y est?° listo para aceptar conexiones en el puerto 1527
+2011-11-15 02:46:36.602 GMT : Apache Derby Network Server - 10.5.3.0 - (802917) se ha iniciado y est?° listo para aceptar conexiones en el puerto 1527
 ----------------------------------------------------------------
-2011-11-13 19:38:23.259 GMT
- Arrancando Derby versi??n The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instancia a816c00e-0133-9e70-0b51-00004c07d752
-en el directorio de base de datos C:\Users\Burgos\Desktop\TSB\TSB_TP4\bd\tsb_tp4_bd  
+2011-11-15 02:46:36.785 GMT
+ Arrancando Derby versi??n The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instancia a816c00e-0133-a51e-74f0-000042d80136
+en el directorio de base de datos C:\Users\Ale\Desktop\TSB\TSB_TP4\bd\tsb_tp3  
 
 Cargador de clases de base de datos iniciado - derby.database.classpath=''
+
+2011-11-15 02:46:41.984 GMT:
+Concluyendo instancia a816c00e-0133-a51e-74f0-000042d80136
+----------------------------------------------------------------
+2011-11-15 02:46:42.019 GMT Thread[DRDAConnThread_3,5,main] (DATABASE = tsb_tp3), (DRDAID = {2}), Conclusión de la base de datos 'tsb_tp3'.
