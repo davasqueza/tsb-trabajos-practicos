@@ -34,6 +34,19 @@ public abstract class Encrypter
         mensaje = mens;
         encriptado = "";
     }   
+    public Encrypter ()
+    {
+        
+        mensaje = "";
+        encriptado = "";
+    }  
+    
+    public void setMessage( String mens )
+    {
+        mensaje = mens;
+        encriptado = "";
+    }
+    
     
     /**
      *  Retorna el �ltimo mensaje abierto que deber�a ser usado la pr�xima vez que se invoque a code().
