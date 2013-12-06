@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=TranspositionEncrypter()
+comment0.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ tabla\ de\ transposici\u00F3n.\ El\ mensaje\ a\ encriptar\ ser\u00E1\ inicializado\ \ncomo\ la\ cadena\ vac\u00EDa\ ("")\ y\ el\ programador\ deber\u00E1\ cambiar\ luego\ ese\ valor\ mediante\ setOpenMessage().\n\n
+comment1.params=mens
+comment1.target=TranspositionEncrypter(String)
+comment1.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ tabla\ de\ transposici\u00F3n.\ El\ mensaje\ a\ encriptar\ se\ inicializa\ \ncon\ el\ valor\ del\ par\u00E1metro\ mens.\ Si\ ese\ par\u00E1metro\ es\ null,\ el\ mensaje\ a\ encriptar\ se\ inicia\ como\ \nla\ cadena\ vac\u00EDa\ ("")\ y\ luego\ el\ programador\ deber\u00E1\ cambiar\ ese\ valor\ con\ setOpenMessage().\n@param\ mens\ el\ mensaje\ abierto\ que\ ser\u00E1\ encriptado.\n\n
+comment2.target=String\ getTranspositionTable()
+comment2.text=\nRetorna\ la\ tabla\ de\ transposici\u00F3n\ usada\ por\ el\ encriptador.\ El\ m\u00E9todo\ est\u00E1\ disponible\ s\u00F3lo\ para\nefectos\ did\u00E1cticos...\n\n
+comment3.target=String\ code()
+comment3.text=\nEncripta\ el\ mensaje\ abierto\ alojado\ en\ la\ clase,\ seg\u00FAn\ la\ t\u00E9cnica\ de\ tabla\ de\ transposici\u00F3n.\ \nRetorna\ null\ si\ el\ proceso\ de\ encriptaci\u00F3n\ no\ pudo\ hacerse\ por\ haber\ caracteres\ extra\u00F1os\ en\ el\ \nmensaje\ abierto.\ \n@return\ una\ cadena\ con\ el\ mensaje\ encriptado,\ o\ null\ si\ la\ cadena\ no\ pudo\ encriptarse\ (debido\ a\ que\ \nalg\u00FAn\ caracter\ del\ mensaje\ original\ no\ figuraba\ en\ el\ alfabeto\ base\ aceptado).\n\n
+comment4.target=String\ decode()
+comment4.text=\nDesencripta\ un\ mensaje\ encriptado\ (alojado\ en\ la\ clase),\ siguiendo\ la\ t\u00E9cnica\ de\ tabla\ de\ transposici\u00F3n.\nEl\ m\u00E9todo\ PUEDE\ CAMBIAR\ el\ valor\ del\ mensaje\ abierto\ almacenado\ en\ la\ clase\ (lo\ cual\ ocurrir\u00E1\ si\ se\ \ninvoca\ a\ setOpenMessage()\ y\ luego\ se\ invoca\ a\ decode()\ sin\ invocar\ previamente\ a\ code()).\ Retorna\ null\ \nsi\ el\ proceso\ de\ desencriptaci\u00F3n\ no\ pudo\ hacerse\ por\ haber\ caracteres\ extra\u00F1os\ en\ el\ mensaje\ encriptado.\ \n@return\ una\ cadena\ con\ el\ mensaje\ desencriptado,\ o\ null\ si\ la\ cadena\ no\ pudo\ desencriptarse\ (debido\ a\ \nque\ alg\u00FAn\ caracter\ del\ mensaje\ encriptado\ no\ era\ v\u00E1lido).\n\n
+comment5.target=String\ toString()
+comment5.text=\nRetorna\ una\ cadena\ con\ informaci\u00F3n\ general\ sobre\ el\ encriptador.\n@return\ un\ cadena\ con\ informaci\u00F3n\ del\ encriptador.\n\n
+numComments=6

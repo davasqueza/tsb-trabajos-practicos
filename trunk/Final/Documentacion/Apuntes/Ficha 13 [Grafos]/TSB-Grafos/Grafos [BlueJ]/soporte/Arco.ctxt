@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Arco()
+comment1.params=p
+comment1.target=Arco(int)
+comment2.target=int\ getPeso()
+comment3.params=p
+comment3.target=void\ setPeso(int)
+comment4.target=boolean\ exists()
+comment5.params=e
+comment5.target=void\ set(boolean)
+comment6.target=String\ toString()
+numComments=7

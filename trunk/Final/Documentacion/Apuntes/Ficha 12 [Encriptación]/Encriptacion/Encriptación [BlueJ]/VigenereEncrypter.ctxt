@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=VigenereEncrypter()
+comment0.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ Vigenere.\ El\ mensaje\ a\ encriptar\ ser\u00E1\ inicializado\ \ncomo\ la\ cadena\ vac\u00EDa\ ("")\ y\ el\ programador\ deber\u00E1\ cambiar\ luego\ ese\ valor\ mediante\ setOpenMessage().\ \nLa\ clave\ de\ desplazamiento\ a\ usar,\ ser\u00E1\ iniciada\ con\ la\ secuencia\ "ABC".\ \n\n
+comment1.params=mens
+comment1.target=VigenereEncrypter(String)
+comment1.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ Vigenere.\ El\ mensaje\ a\ encriptar\ ser\u00E1\ inicializado\ \ncon\ el\ valor\ del\ par\u00E1metro\ y\ el\ programador\ podr\u00E1\ cambiar\ luego\ ese\ valor\ mediante\ setOpenMessage().\ \nLa\ clave\ de\ desplazamiento\ a\ usar,\ ser\u00E1\ iniciada\ con\ la\ secuencia\ "ABC".\ \n\n
+comment2.params=mens\ key
+comment2.target=VigenereEncrypter(String,\ String)
+comment2.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ Vigenere.\ El\ mensaje\ a\ encriptar\ se\ inicializa\ \ncon\ el\ valor\ del\ par\u00E1metro\ mens.\ Si\ ese\ par\u00E1metro\ es\ null,\ el\ mensaje\ a\ encriptar\ se\ inicia\ como\ \nla\ cadena\ vac\u00EDa\ ("")\ y\ luego\ el\ programador\ deber\u00E1\ cambiar\ ese\ valor\ con\ setOpenMessage().\nLa\ clave\ de\ desplazamiento\ a\ usar,\ ser\u00E1\ iniciada\ con\ el\ par\u00E1metro\ key.\ Si\ este\ par\u00E1metro\ es\ null,\nla\ clave\ quedar\u00E1\ como\ "ABC".\n@param\ mens\ el\ mensaje\ abierto\ que\ ser\u00E1\ encriptado.\n@param\ key\ la\ clave\ de\ desplazamiento\ a\ usar.\n\n
+comment3.target=String\ getKey()
+comment3.text=\nRetorna\ la\ clave\ usada\ por\ el\ encriptador\ para\ la\ tabla\ de\ transposici\u00F3n.\ \nEl\ m\u00E9todo\ est\u00E1\ disponible\ s\u00F3lo\ para\ efectos\ did\u00E1cticos...\n\n
+comment4.target=String\ code()
+comment4.text=\nEncripta\ el\ mensaje\ abierto\ alojado\ en\ la\ clase,\ seg\u00FAn\ la\ t\u00E9cnica\ Vigenere.\ \nRetorna\ null\ si\ el\ proceso\ de\ encriptaci\u00F3n\ no\ pudo\ hacerse\ por\ haber\ caracteres\ extra\u00F1os\ en\ el\ \nmensaje\ abierto.\ \n@return\ una\ cadena\ con\ el\ mensaje\ encriptado,\ o\ null\ si\ la\ cadena\ no\ pudo\ encriptarse\ (debido\ a\ que\ \nalg\u00FAn\ caracter\ del\ mensaje\ original\ no\ figuraba\ en\ el\ alfabeto\ base\ aceptado).\n\n
+comment5.target=String\ decode()
+comment5.text=\nDesencripta\ un\ mensaje\ encriptado\ (alojado\ en\ la\ clase),\ siguiendo\ la\ t\u00E9cnica\ Vigenere.\nEl\ m\u00E9todo\ PUEDE\ CAMBIAR\ el\ valor\ del\ mensaje\ abierto\ almacenado\ en\ la\ clase\ (lo\ cual\ ocurrir\u00E1\ si\ se\ \ninvoca\ a\ setOpenMessage()\ y\ luego\ se\ invoca\ a\ decode()\ sin\ invocar\ previamente\ a\ code()).\ Retorna\ null\ \nsi\ el\ proceso\ de\ desencriptaci\u00F3n\ no\ pudo\ hacerse\ por\ haber\ caracteres\ extra\u00F1os\ en\ el\ mensaje\ encriptado.\ \n@return\ una\ cadena\ con\ el\ mensaje\ desencriptado,\ o\ null\ si\ la\ cadena\ no\ pudo\ desencriptarse\ (debido\ a\ \nque\ alg\u00FAn\ caracter\ del\ mensaje\ encriptado\ no\ era\ v\u00E1lido).\n\n
+comment6.target=String\ toString()
+comment6.text=\nRetorna\ una\ cadena\ con\ informaci\u00F3n\ general\ sobre\ el\ encriptador.\n@return\ un\ cadena\ con\ informaci\u00F3n\ del\ encriptador.\n\n
+numComments=7

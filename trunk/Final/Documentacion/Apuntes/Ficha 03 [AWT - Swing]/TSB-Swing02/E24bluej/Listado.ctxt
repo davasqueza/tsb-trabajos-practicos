@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Listado()
+comment0.text=\nPor\ default,\ se\ crea\ un\ Listado\ de\ 10\ elementos\ de\ largo,\ con\ referencias\ nulas\n\n
+comment1.params=n
+comment1.target=Listado(int)
+comment1.text=\nCrea\ un\ Listado\ de\ n\ elementos\ de\ largo,\ con\ referencias\ nulas,\ siempre\ y\ cuando\ n\ sea\ mayor\ a\ cero.\ De\ lo\ contrario,\ el\ Listado\nse\ crea\ de\ tama\u00F1o\ 10\n\n
+comment2.target=int\ length()
+comment2.text=\nM\u00E9todo\ de\ acceso\ para\ el\ tama\u00F1o\ del\ Listado.\ Provisto\ en\ lugar\ de\ "getLargo"\ por\ razones\ de\ claridad\n@return\ el\ tama\u00F1o\ del\ Listado\n\n
+comment3.target=int\ getPrimeraLibre()
+comment3.text=\nM\u00E9todo\ de\ acceso\ al\ \u00EDndice\ de\ la\ primera\ casilla\ libre\ en\ el\ Listado.\ \n@return\ el\ tama\u00F1o\ del\ Listado\n\n
+comment4.target=String\ toString()
+comment4.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ toString\ heredado\ desde\ Object\n@return\ una\ cadena\ con\ el\ contenido\ del\ Listado\ para\ ser\ visualizado\n\n
+comment5.params=x
+comment5.target=boolean\ add(Comparable)
+comment5.text=\nAgrega\ un\ elemento\ al\ Listado,\ en\ la\ primera\ casilla\ libre.\ El\ m\u00E9todo\ supone\ que\ el\ atributo\ "libre"\ indica\ el\ \u00EDndice\ de\ la\ primera\ncasilla\ que\ est\u00E1\ desocupada\ en\ el\ arreglo,\ complet\u00E1ndose\ de\ izquierda\ a\ derecha\n@param\ x\ el\ objeto\ Comparable\ a\ a\u00F1adir\ al\ Listado\n@return\ true\ si\ el\ a\u00F1adido\ tuvo\ \u00E9xito\ -\ false\ si\ el\ objeto\ no\ pudo\ a\u00F1adirse\ (por\ falta\ de\ lugar).\n@throws\ InsercionHeterogeneaException\ si\ x\ es\ de\ clase\ diferente\ a\ los\ elementos\ ya\ contenidos\ en\ el\ Listado\n\n
+comment6.params=i
+comment6.target=Comparable\ get(int)
+comment6.text=\nDevuelve\ una\ referencia\ al\ objeto\ ubicado\ en\ la\ posici\u00F3n\ i\ del\ Listado,\ sin\ removerlo\ del\ mismo.\n@param\ i\ el\ \u00EDndice\ de\ la\ casilla\ con\ el\ objeto\ a\ retornar\n@return\ la\ referencia\ al\ objeto,\ o\ null\ si\ el\ \u00EDndice\ estaba\ fuera\ de\ rango\n@throws\ AccesoIncorrectoException\ si\ se\ intenta\ entrar\ a\ un\ objeto\ no\ disponible\n\n
+comment7.params=x
+comment7.target=int\ buscar(Comparable)
+comment7.text=\nBusca\ un\ objeto\ en\ el\ Listado\n@param\ x\ el\ objeto\ a\ buscar\n@return\ el\ \u00EDndice\ la\ casilla\ que\ contiene\ a\ x,\ si\ existe.\ Si\ x\ no\ existe\ en\ el\ Listado,\ retorna\ -1\n\n
+comment8.target=void\ ordenar()
+comment8.text=\nOrdena\ el\ Listado\ con\ el\ m\u00E9todo\ Quick\ Sort\n\n
+comment9.params=izq\ der
+comment9.target=void\ quick(int,\ int)
+numComments=10

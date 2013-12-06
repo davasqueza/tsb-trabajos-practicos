@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=NodeTree()
+comment0.text=\nConstructor\ por\ defecto\n\n
+comment1.params=x\ iz\ de
+comment1.target=NodeTree(Comparable,\ NodeTree,\ NodeTree)
+comment1.text=\nInicializa\ los\ atributos\ tomando\ los\ valores\ de\ los\ par\u00E1metros\n\n
+comment2.params=x
+comment2.target=void\ setInfo(Comparable)
+comment2.text=\nModificador\ del\ info\n@param\ x\ nuevo\ valor\ del\ info\n\n
+comment3.params=iz
+comment3.target=void\ setIzquierdo(NodeTree)
+comment3.text=\nModificador\ de\ la\ direcci\u00F3n\ del\ sub\u00E1rbol\ izquierdo\n@param\ iz\ Nuevo\ valor\ del\ atributo\ izq\n\n
+comment4.params=de
+comment4.target=void\ setDerecho(NodeTree)
+comment4.text=\nModificador\ de\ la\ direcci\u00F3n\ del\ sub\u00E1rbol\ derecho\n@param\ de\ Nuevo\ valor\ del\ atributo\ der\n\n
+comment5.target=Comparable\ getInfo()
+comment5.text=\nAcceso\ al\ info\n@return\ valor\ del\ info\n\n
+comment6.target=NodeTree\ getIzquierdo()
+comment6.text=\nAcceso\ a\ la\ direcci\u00F3n\ del\ sub\u00E1rbol\ izquierdo\n@return\ valor\ de\ la\ direcci\u00F3n\ del\ sub\u00E1rbol\ izquierdo\n\n
+comment7.target=NodeTree\ getDerecho()
+comment7.text=\nAcceso\ a\ la\ direcci\u00F3n\ del\ sub\u00E1rbol\ derecho\n@return\ valor\ de\ la\ direcci\u00F3n\ del\ sub\u00E1rbol\ derecho\n\n
+comment8.target=String\ toString()
+comment8.text=\nRedefinici\u00F3n\ de\ toString\n@return\ representaci\u00F3n\ del\ contenido\ del\ nodo\ como\ un\ String\n\n
+numComments=9

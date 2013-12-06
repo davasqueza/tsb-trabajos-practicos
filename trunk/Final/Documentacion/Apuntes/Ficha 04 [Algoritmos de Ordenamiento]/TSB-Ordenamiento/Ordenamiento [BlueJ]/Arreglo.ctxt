@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=Arreglo(int)
+comment0.text=\r\n\ \ Crea\ un\ arreglo\ de\ tama\u00F1o\ n,\ y\ le\ asigna\ un\ ordenador\ que\ implementa\ \r\n\ \ el\ algoritmo\ Quick\ Sort.\ Si\ n\ es\ menor\ o\ igual\ cero,\ el\ arreglo\ se\ crea\r\n\ \ de\ tama\u00F1o\ 100.\r\n\ \ @param\ n\ el\ tama\u00F1o\ del\ arreglo\ a\ crear.\r\n
+comment1.params=
+comment1.target=void\ generar()
+comment1.text=\r\n\ \ Genera\ un\ arreglo\ con\ valores\ aleatorios.\ \r\n
+comment2.params=
+comment2.target=boolean\ verificar()
+comment2.text=\r\n\ \ Verifica\ si\ el\ arreglo\ est\u00E1\ ordenado.\r\n\ \ @return\ true\ si\ est\u00E1\ ordenado\ -\ false\ si\ no\ lo\ est\u00E1.\r\n
+comment3.params=method
+comment3.target=void\ setOrdenador(int)
+comment3.text=\r\n\ Cambia\ el\ m\u00E9todo\ de\ ordenamiento\ que\ debe\ aplicarse\ sobre\ el\ arreglo.\r\n\ @param\ method\ un\ valor\ que\ identifica\ a\ la\ versi\u00F3n\ deseada\ del\ m\u00E9todo\ ordenar().\r\n
+comment4.params=
+comment4.target=void\ ordenar()
+comment4.text=\r\n\ Ordena\ el\ arreglo.\r\n
+numComments=5

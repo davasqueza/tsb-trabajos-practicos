@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=nom\ ed
+comment0.target=Persona(String,\ int)
+comment0.text=\nCrea\ un\ objeto\ con\ los\ valores\ tomados\ como\ par\u00E1metro\n\n
+comment1.target=String\ getNombre()
+comment1.text=\nAcceso\ al\ nombre\n@return\ el\ nombre\ de\ la\ persona\n\n
+comment2.target=int\ getEdad()
+comment2.text=\nAcceso\ a\ la\ edad\n@return\ el\ valor\ de\ la\ edad\n\n
+comment3.params=nom
+comment3.target=void\ setNombre(String)
+comment3.text=\nCambia\ el\ nombre\n@param\ nom\ el\ nuevo\ nombre\n\n
+comment4.params=ed
+comment4.target=void\ setEdad(int)
+comment4.text=\nCambia\ la\ edad\n@param\ ed\ la\ nueva\ edad\n\n
+comment5.target=String\ toString()
+comment5.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ que\ se\ hereda\ de\ Object\n@return\ la\ representaci\u00F3n\ como\ String\ del\ contenido\ del\ objeto\n\n
+comment6.params=x
+comment6.target=int\ compareTo(Object)
+comment6.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ pedido\ por\ la\ interfaz\ Comparable\n@param\ x\ El\ objeto\ a\ comparar\ contra\ el\ par\u00E1metro\ impl\u00EDcito\n@return\ 0\ si\ los\ nombres\ son\ iguales,\ negativo\ si\ el\ nombre\ del\ impl\u00EDcito\ es\ menor,\ positivo\ si\ es\ mayor.\n\n
+comment7.target=int\ hashCode()
+comment7.text=\nRedefine\ al\ m\u00E9todo\ tomado\ desde\ Object\n@return\ un\ valor\ int\ que\ representa\ en\ forma\ (lo\ m\u00E1s)\ un\u00EDvoca\ (posible)\ al\ objeto\n\n
+numComments=8

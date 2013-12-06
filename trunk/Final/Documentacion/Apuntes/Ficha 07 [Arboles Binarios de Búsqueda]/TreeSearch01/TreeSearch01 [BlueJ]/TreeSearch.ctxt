@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=TreeSearch()
+comment0.text=\nConstructor.\ Garantiza\ que\ el\ \u00E1rbol\ arranca\ vac\u00EDo\n\n
+comment1.params=x
+comment1.target=Comparable\ search(Comparable)
+comment1.text=\nBusca\ un\ objeto\ en\ el\ \u00E1rbol\ y\ retorna\ la\ direcci\u00F3n\ del\ nodo\ que\ lo\ contiene,\no\ null\ si\ no\ lo\ encuentra.\ Se\ considera\ que\ el\ \u00E1rbol\ es\ de\ b\u00FAsqueda,\ y\ por\ lo\ntanto\ no\ es\ heterog\u00E9neo.\ Se\ supone\ que\ el\ m\u00E9todo\ de\ inserci\u00F3n\ usado\ para\ncrear\ el\ \u00E1rbol\ es\ el\ provisto\ por\ esta\ clase,\ el\ cual\ verifica\ que\ el\ \u00E1rbol\ se\nmantenga\ homog\u00E9neo.\n@param\ x\ el\ objeto\ a\ buscar\n@return\ la\ direcci\u00F3n\ del\ objeto\ encontrado\ que\ coincide\ con\ x,\ o\ null\ si\ x\ no\ se\ \nencuentra.\ Tambi\u00E9n\ sale\ con\ null\ si\ se\ detecta\ que\ el\ objeto\ x\ no\ es\ \ncompatible\ con\ el\ tipo\ del\ info\ en\ los\ nodos\ del\ \u00E1rbol.\n\n
+comment2.params=x
+comment2.target=boolean\ add(Comparable)
+comment2.text=\nInserta\ un\ objeto\ en\ el\ \u00E1rbol.\ Si\ el\ objeto\ a\ insertar\ ya\ exist\u00EDa,\ no\ lo\ inserta\ y\ sale\nretornando\ false.\ Si\ no\ exist\u00EDa,\ lo\ inserta\ y\ retorna\ true.\ El\ m\u00E9todo\ cuida\ que\ el\ \u00E1rbol\ \nse\ mantenga\ homog\u00E9neo,\ retornando\ false\ sin\ hacer\ nada\ si\ se\ intenta\ insertar\ un\ objeto\ \ncuya\ clase\ no\ coincida\ con\ la\ de\ los\ que\ ya\ est\u00E1n\ en\ el\ \u00E1rbol.\n@return\ true\ si\ el\ objeto\ pudo\ insertarse\ -\ false\ en\ caso\ contrario\n@param\ x\ el\ objeto\ a\ insertar\n\n
+comment3.target=String\ toString()
+comment3.text=\nRedefinici\u00F3n\ de\ toString\n@return\ el\ contenido\ del\ arbol,\ en\ secuencia\ de\ entre\ orden,\ como\ un\ String\n\n
+comment4.params=p\ cad
+comment4.target=void\ armarEntreOrden(NodeTree,\ StringBuffer)
+comment4.text=//\ Notar\ que\ esto\ no\ es\ javadoc...\ \nRecorre\ en\ entre\ orden\ el\ arbol,\ y\ va\ armando\ una\ cadena\ con\ todos\ los\ c\u00F3digos\n@param\ p\ referencia\ al\ nodo\ que\ se\ est\u00E1\ procesando\n@param\ cad\ el\ StringBuffer\ que\ se\ est\u00E1\ generando,\ en\ el\ cual\ queda\ la\ cadena\ final\n\n
+numComments=5

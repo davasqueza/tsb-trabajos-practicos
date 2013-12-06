@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=SimpleListIOException()
+comment0.text=\nInicializa\ el\ objeto\ de\ excepci\u00F3n\ con\ valores\ por\ default.\n\n
+comment1.params=msg
+comment1.target=SimpleListIOException(String)
+comment1.text=\nInicializa\ el\ mensaje\ a\ retornar\ con\ getMessage()\ con\ la\ cadena\ tomada\ como\npar\u00E1metro.\n@param\ msg\ el\ mensaje\ que\ sera\ retornado\ con\ getMessage().\n@see\ getMessage()\n\n
+comment2.target=String\ getMessage()
+comment2.text=\nRetorna\ una\ descripci\u00F3n\ del\ error\ que\ provoc\u00F3\ la\ excepci\u00F3n\n@return\ una\ cadena\ con\ la\ descripci\u00F3n\ del\ error.\n\n
+numComments=3

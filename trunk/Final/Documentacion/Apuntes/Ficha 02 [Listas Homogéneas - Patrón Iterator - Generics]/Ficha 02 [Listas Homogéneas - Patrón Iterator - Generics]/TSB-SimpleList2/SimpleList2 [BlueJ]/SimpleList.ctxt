@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=SimpleList()
+comment0.text=\nConstructor\ por\ defecto\n\n
+comment1.params=x
+comment1.target=void\ addFirst(Comparable)
+comment1.text=\nInserta\ un\ objeto\ al\ principio\ de\ la\ lista.\n@param\ x\ el\ objeto\ a\ almacenar\ en\ la\ lista.\n\n
+comment2.target=void\ clear()
+comment2.text=\nRemueve\ todos\ los\ elementos\ de\ la\ lista.\n\n
+comment3.target=Comparable\ getFirst()
+comment3.text=\nRetorna\ (pero\ sin\ removerlo)\ el\ objeto\ ubicado\ al\ principio\ de\ la\ lista.\ \n@return\ una\ referencia\ al\ primer\ elemento\ de\ la\ lista.\n@throws\ NoSuchElementException\ si\ la\ lista\ estaba\ vac\u00EDa.\n\n
+comment4.target=Comparable\ removeFirst()
+comment4.text=\nRetorna\ (y\ remueve)\ el\ objeto\ ubicado\ al\ principio\ de\ la\ lista.\ \n@return\ el\ primer\ elemento\ de\ la\ lista.\n@throws\ NoSuchElementException\ si\ la\ lista\ estaba\ vac\u00EDa.\n\n
+comment5.params=x
+comment5.target=boolean\ contains(Comparable)
+comment5.text=\nDetermina\ si\ en\ la\ lista\ existe\ un\ elemento\ que\ coincida\ con\ x.\ Usamos\ compareTo()\ para\nrealizar\ las\ comparaciones\ (aunque\ podr\u00EDa\ usarse\ equals()).\n@return\ true\ si\ x\ est\u00E1\ en\ la\ lista\ -\ false\ si\ x\ no\ est\u00E1\ o\ si\ x\ es\ null.\n@param\ x\ el\ objeto\ a\ buscar.\n\n
+comment6.target=String\ toString()
+comment6.text=\nRedefine\ el\ m\u00E9todo\ toString\ heredado\ desde\ Object.\n@return\ el\ contenido\ de\ la\ lista\ convertido\ a\ String.\n\n
+numComments=7

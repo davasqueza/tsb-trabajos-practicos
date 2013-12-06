@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=SimpleListReader()
+comment0.text=\nCrea\ un\ objeto\ SimpleListReader.\ Asume\ que\ el\ nombre\ del\ archivo\ desde\ el\ \ncual\ se\ recupera\ es\ "lista.dat".\n\n
+comment1.params=nom
+comment1.target=SimpleListReader(String)
+comment1.text=\nCrea\ un\ objeto\ SimpleListReader.\ Fija\ el\ nombre\ del\ archivo\ desde\ el\ cual\ \nse\ recupera\ con\ el\ nombre\ tomado\ como\ par\u00E1metro.\n@param\ nom\ el\ nombre\ del\ archivo\ a\ abrir\ para\ iniciar\ la\ recuperaci\u00F3n.\n\n
+comment2.target=SimpleList\ read()
+comment2.text=\nRecupera\ una\ SimpleList\ desde\ un\ archivo\ serializado.\n@throws\ SimpleListIOException\ si\ se\ encuentra\ un\ error\ de\ IO.\n@return\ una\ referencia\ al\ objeto\ recuperado.\n\n
+numComments=3

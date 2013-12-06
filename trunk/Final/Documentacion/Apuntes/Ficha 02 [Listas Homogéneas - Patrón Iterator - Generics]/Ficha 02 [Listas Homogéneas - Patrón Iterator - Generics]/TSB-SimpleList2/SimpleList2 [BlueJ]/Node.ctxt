@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Node()
+comment0.text=\nConstructor\ por\ defecto.\ \n\n
+comment1.params=x\ p
+comment1.target=Node(Comparable,\ Node)
+comment1.text=\nCrea\ un\ nodo\ incializando\ todos\ los\ atributos\ en\ base\ a\ par\u00E1metros\ \n\n
+comment2.target=Node\ getNext()
+comment2.text=\nAccede\ a\ la\ direcci\u00F3n\ del\ sucesor\n@return\ la\ direcci\u00F3n\ del\ nodo\ sucesor\n\n
+comment3.params=p
+comment3.target=void\ setNext(Node)
+comment3.text=\nCambia\ la\ direcci\u00F3n\ del\ sucesor\n@param\ p\ direcci\u00F3n\ del\ nuevo\ sucesor\n\n
+comment4.target=Comparable\ getInfo()
+comment4.text=\nAccede\ al\ valor\ del\ info\n@return\ el\ valor\ del\ info\n\n
+comment5.params=p
+comment5.target=void\ setInfo(Comparable)
+comment5.text=\nCambia\ el\ valor\ del\ info\n@param\ p\ nuevo\ valor\ del\ info\n\n
+comment6.target=String\ toString()
+comment6.text=\nConvierte\ el\ contenido\ del\ nodo\ en\ String\n@return\ el\ contenido\ del\ nodo\ convertido\ en\ String\n\n
+numComments=7

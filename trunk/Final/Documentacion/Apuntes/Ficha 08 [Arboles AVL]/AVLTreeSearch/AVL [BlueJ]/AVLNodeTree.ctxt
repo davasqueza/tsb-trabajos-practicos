@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=AVLNodeTree()
+comment0.text=\nConstructor\ por\ defecto\n\n
+comment1.params=c\ iz\ de
+comment1.target=AVLNodeTree(Comparable,\ NodeTree,\ NodeTree)
+comment1.text=\nConstructor.\ Inicializa\ los\ atributos\ tomando\ los\ valores\ de\ los\ par\u00E1metros,\ salvo\ el\ \nfactor\ de\ equilibrio\ que\ se\ inicia\ en\ cero\n\n
+comment2.params=e
+comment2.target=void\ setEquilibrio(int)
+comment2.text=\nModificador\ del\ factor\ de\ equilibrio\n@param\ e\ nuevo\ valor\ del\ atributo\ Equilibrio\n\n
+comment3.target=int\ getEquilibrio()
+comment3.text=\nAcceso\ al\ factor\ de\ equilibrio\n@return\ valor\ del\ atributo\ Equilibrio\ \n\n
+numComments=4

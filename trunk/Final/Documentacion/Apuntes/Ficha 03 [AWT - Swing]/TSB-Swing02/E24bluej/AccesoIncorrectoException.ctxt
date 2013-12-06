@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=AccesoIncorrectoException()
+comment0.text=\nConstructor\ nulo\n\n
+comment1.params=mens
+comment1.target=AccesoIncorrectoException(String)
+comment1.text=\nConstructor.\ Toma\ el\ mensaje\ como\ par\u00E1metro\n\n
+comment2.target=String\ getMessage()
+comment2.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ heredado\ desde\ Throwable\n@return\ un\ String\ con\ la\ descripci\u00F3n\ del\ error\n\n
+numComments=3
