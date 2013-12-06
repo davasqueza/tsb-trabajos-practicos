@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Alumno()
+comment0.text=\nConstructor\ por\ defecto\n\n
+comment1.params=leg
+comment1.target=Alumno(int)
+comment1.text=\nInicializa\ el\ legajo\ con\ el\ valor\ del\ par\u00E1metro\n\n
+comment2.params=leg\ nom
+comment2.target=Alumno(int,\ String)
+comment2.text=\nInicializa\ todos\ los\ atributos\n\n
+comment3.target=int\ getLegajo()
+comment3.text=\nAcceso\ al\ Legajo\n@return\ valor\ del\ legajo\n\n
+comment4.target=String\ getNombre()
+comment4.text=\nAcceso\ al\ nombre\n@return\ valor\ del\ nombre\n\n
+comment5.params=leg
+comment5.target=void\ setLegajo(int)
+comment5.text=\nModifica\ el\ legajo\n@param\ leg\ nuevo\ legajo\n\n
+comment6.params=nom
+comment6.target=void\ setNombre(String)
+comment6.text=\nModifica\ el\ nombre\n@param\ nom\ nuevo\ nombre\n\n
+comment7.target=String\ toString()
+comment7.text=\nRedefinici\u00F3n\ de\ toString\n@return\ el\ contenido\ del\ nodo\ en\ forma\ de\ String\n\n
+comment8.params=o
+comment8.target=int\ compareTo(Object)
+comment8.text=\nPermite\ comparar\ el\ contenido\ de\ informaci\u00F3n\ de\ un\ Alumno\ con\ el\ de\ otro\n@param\ o\ el\ objeto\ a\ comparar\n@return\ un\ valor\ int\:\ \ 0\ si\ eran\ iguales,\ >0\ si\ el\ impl\u00EDcito\ era\ mayor,\ <0\ si\ el\ impl\u00EDcito\ era\ menor\n@throws\ ClassCastException\ si\ se\ intenta\ moldear\ a\ una\ clase\ incompatible\n\n
+numComments=9

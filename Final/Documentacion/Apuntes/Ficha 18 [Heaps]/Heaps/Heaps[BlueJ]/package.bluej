@@ -1,0 +1,21 @@
+#BlueJ package file
+package.editor.height=143
+package.editor.width=461
+package.editor.x=279
+package.editor.y=93
+package.numDependencies=0
+package.numTargets=2
+package.showExtends=true
+package.showUses=true
+target1.height=62
+target1.name=estructuras
+target1.type=PackageTarget
+target1.width=90
+target1.x=250
+target1.y=10
+target2.height=62
+target2.name=interfaz
+target2.type=PackageTarget
+target2.width=80
+target2.x=100
+target2.y=10

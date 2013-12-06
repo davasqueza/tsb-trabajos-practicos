@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=lis
+comment0.target=VentanaCarga(Listado)
+comment0.text=\nCrea\ el\ JFrame,\ ajusta\ sus\ valores,\ y\ le\ agrega\ los\ componentes\ \n\n
+comment1.params=evt
+comment1.target=void\ jbAgregarActionPerformed(ActionEvent)
+comment1.text=\nGestiona\ el\ evento\ de\ presionar\ el\ bot\u00F3n\ jbCargar\n@param\ evt\ objeto\ que\ representa\ el\ evento\ generado\n\n
+numComments=2

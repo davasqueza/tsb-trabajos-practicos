@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=GrafoNoDirigido()
+comment0.text=\nCrea\ un\ GrafoNoDirigido\ con\ espacio\ para\ un\ m\u00E1ximo\ de\ 10\ nodos.\n\n
+comment1.params=n
+comment1.target=GrafoNoDirigido(int)
+comment1.text=\nCrea\ un\ GrafoNoDirigido\ con\ espacio\ para\ un\ m\u00E1ximo\ de\ n\ nodos.\n@param\ n\ el\ n\u00FAmero\ m\u00E1ximo\ de\ nodos\ a\ representar.\n\n
+comment2.params=n1\ n2\ p
+comment2.target=boolean\ unir(Object,\ Object,\ int)
+comment2.text=\nPermite\ unir\ dos\ nodos\ n1\ y\ n2\ con\ un\ arco\ cuyo\ factor\ de\ peso\ ser\u00E1\ igual\ a\ p.\ Si\ alguno\ de\ los\ nodos\ n1\ o\ n2\ no\ existe\ \nen\ el\ grafo,\ la\ operaci\u00F3n\ no\ se\ llevar\u00E1\ a\ cabo.\ Lo\ mismo\ vale\ si\ los\ objetos\ n1\ o\ n2\ no\ son\ de\ la\ misma\ clase\ que\ los\ \nobjetos\ que\ ya\ est\u00E1n\ en\ el\ grafo.\n@param\ n1\ el\ primer\ nodo\ que\ define\ al\ arco.\n@param\ n2\ el\ segundo\ nodo\ que\ define\ al\ arco.\n@param\ p\ el\ peso\ del\ arco\ que\ unir\u00E1\ a\ n1\ y\ n2.\n@return\ true\ si\ la\ operaci\u00F3n\ se\ llev\u00F3\ a\ cabo\ -\ false\ en\ caso\ contrario.\n\n
+comment3.target=int\ contarConexasEnProfundidad()
+comment3.text=\nDetermina\ cu\u00E1ntas\ componentes\ conexas\ tiene\ el\ grafo,\ recorriendo\ el\ mismo\ en\ profundidad.\n@return\ la\ cantidad\ de\ componentes\ conexas\ del\ grafo.\n\n
+comment4.target=int\ contarConexasEnAmplitud()
+comment4.text=\nDetermina\ cu\u00E1ntas\ componentes\ conexas\ tiene\ el\ grafo,\ recorriendo\ el\ mismo\ en\ amplitud.\n@return\ la\ cantidad\ de\ componentes\ conexas\ del\ grafo.\n\n
+comment5.target=String\ buscarAEM()
+comment5.text=\nCalcula\ un\ \u00E1rbol\ de\ expansi\u00F3n\ m\u00EDnimo\ para\ el\ grafo,\ mediante\ el\ \u00E1lgoritmo\ de\ Prim.\ El\ grafo\ deber\u00EDa\ constar\ \nde\ una\ s\u00F3la\ y\ \u00FAnica\ componente\ conexa.\n@return\ una\ cadena\ representando\ el\ contenido\ del\ \u00E1rbol\ de\ expansi\u00F3n\ m\u00EDnimo\ calculado\n\n
+comment6.params=nodoinicio
+comment6.target=String\ buscarCMC(Object)
+comment6.text=\nCalcula\ el\ "camino\ m\u00E1s\ corto"\ (o\ sea,\ el\ de\ menor\ sumatoria\ de\ pesos)\ desde\ un\ nodo\ tomado\ como\ par\u00E1metro\ a\ \ncada\ uno\ del\ resto\ de\ los\ nodos\ del\ grafo,\ mediante\ el\ algoritmo\ de\ Dijkstra.\ \n@param\ nodoinicio\ el\ nodo\ desde\ el\ cual\ se\ calculan\ las\ distancias\ m\u00EDnimas.\n@return\ una\ cadena\ representando\ el\ contenido\ del\ \u00E1rbol\ de\ expansi\u00F3n\ m\u00EDnimo\ calculado\n\n
+comment7.params=k\ visitados
+comment7.target=void\ visitarEnProfundidad(int,\ boolean[])
+comment8.params=k\ visitados
+comment8.target=void\ visitarEnAmplitud(int,\ boolean[])
+numComments=9

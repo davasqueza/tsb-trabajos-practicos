@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=level\ data
+comment0.target=Node(int,\ java.lang.Comparable)
+comment0.text=\r\n\ Crea\ un\ nodo\ con\ nivel\ igual\ a\ level\ e\ info\ igual\ a\ data.\r\n\ @param\ level\ el\ nivel\ que\ ser\u00E1\ asociado\ al\ nodo.\r\n\ @param\ data\ el\ objeto\ a\ almacenar\ en\ el\ nodo.\r\n
+comment1.params=
+comment1.target=java.lang.Comparable\ getInfo()
+comment1.text=\r\n\ Obtiene\ el\ objeto\ almacenado\ en\ el\ nodo.\r\n\ @return\ el\ objeto\ almacenado\ en\ el\ nodo.\r\n
+comment2.params=x
+comment2.target=void\ setInfo(java.lang.Comparable)
+comment2.text=\r\n\ Cambia\ el\ objeto\ almacenado\ en\ el\ nodo.\r\n\ @param\ x\ el\ objeto\ a\ almacenar\ en\ el\ nodo.\r\n
+comment3.params=i
+comment3.target=Node\ getNext(int)
+comment3.text=\r\n\ Obtiene\ el\ siguiente\ nodo\ en\ el\ nivel\ i.\r\n\ @return\ una\ referencia\ al\ siguiente\ nodo\ en\ el\ nivel\ i.\r\n
+comment4.params=x\ i
+comment4.target=void\ setNext(Node,\ int)
+comment4.text=\r\n\ Cambia\ el\ siguiente\ nodo\ en\ el\ nivel\ i.\r\n\ @param\ x\ el\ nuevo\ nodo\ a\ asignar\ como\ sucesor\ en\ el\ nivel\ i.\r\n\ @param\ i\ el\ nivel\ en\ el\ cual\ se\ cambiara\ el\ sucesor.\r\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\r\n\ Obtiene\ la\ conversion\ a\ String\ del\ objeto\ almacenado\ en\ el\ nodo.\r\n\ @return\ la\ conversion\ a\ String\ del\ objeto\ almacenado.\r\n
+numComments=6

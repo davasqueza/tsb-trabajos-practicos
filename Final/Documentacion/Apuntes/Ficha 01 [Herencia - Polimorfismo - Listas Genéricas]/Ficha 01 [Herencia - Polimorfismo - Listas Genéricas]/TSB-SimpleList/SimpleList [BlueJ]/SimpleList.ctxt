@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=SimpleList()
+comment0.text=\nConstructor\ por\ defecto\n\n
+comment1.params=x
+comment1.target=void\ addFirst(Object)
+comment1.text=\nInserta\ un\ objeto\ al\ principio\ de\ la\ lista.\n@param\ x\ el\ objeto\ a\ almacenar\ en\ la\ lista.\n\n
+comment2.target=void\ clear()
+comment2.text=\nRemueve\ todos\ los\ elementos\ de\ la\ lista.\n\n
+comment3.target=Object\ getFirst()
+comment3.text=\nRetorna\ (pero\ sin\ removerlo)\ el\ objeto\ ubicado\ al\ principio\ de\ la\ lista.\ \n@return\ una\ referencia\ al\ primer\ elemento\ de\ la\ lista.\n@throws\ NoSuchElementException\ si\ la\ lista\ estaba\ vac\u00EDa.\n\n
+comment4.target=Object\ removeFirst()
+comment4.text=\nRetorna\ (y\ remueve)\ el\ objeto\ ubicado\ al\ principio\ de\ la\ lista.\ \n@return\ el\ primer\ elemento\ de\ la\ lista.\n@throws\ NoSuchElementException\ si\ la\ lista\ estaba\ vac\u00EDa.\n\n
+comment5.target=String\ toString()
+comment5.text=\nRedefine\ el\ m\u00E9todo\ toString\ heredado\ desde\ Object.\n@return\ el\ contenido\ de\ la\ lista\ convertido\ a\ String.\n\n
+numComments=6

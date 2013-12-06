@@ -1,0 +1,36 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SkipList()
+comment0.text=\r\n\ Crea\ una\ SkipList\ vacia,\ con\ MAX_LEVEL\ niveles\ de\ capacidad.\r\n
+comment1.params=ml
+comment1.target=SkipList(int)
+comment1.text=\r\n\ Crea\ una\ SkipList\ vacia,\ con\ ml\ niveles\ de\ capacidad.\r\n\ En\ general,\ la\ cantidad\ de\ niveles\ optima\ que\ deberia\ tener\ una\ SkipList,\r\n\ puede\ calcularse\ como\ ml\ \=\ log2(N),\ siendo\ N\ una\ cota\ superior\ para\ la\ \r\n\ cantidad\ de\ datos\ n\ que\ se\ espera\ almacenar.\r\n\ @param\ ml\ la\ cantidad\ maxima\ de\ niveles\ que\ tendra\ la\ SkipList.\r\n
+comment10.params=x
+comment10.target=boolean\ isHomogeneus(java.lang.Comparable)
+comment11.params=
+comment11.target=int\ randomLevel()
+comment2.params=data
+comment2.target=void\ add(java.lang.Comparable)
+comment2.text=\r\n\ Inserta\ un\ nuevo\ objeto\ en\ la\ SkipList.\ Recuerde\ que\ en\ esencia\ una\ SkipList\r\n\ es\ una\ lista\ ordenada,\ por\ lo\ que\ el\ objeto\ data\ se\ insertara\ de\ forma\ que\ la\r\n\ SkipList\ permanezca\ ordenada.\ Si\ el\ objeto\ data\ a\ insertar\ ya\ existe\ en\ la\ \r\n\ SkipList,\ entonces\ el\ objeto\ data\ reemplazar\u00E1\ al\ que\ exist\u00EDa\ previamente\ (en\ \r\n\ otras\ palabras\:\ la\ SkipList\ no\ contendr\u00E1\ dos\ nodos\ con\ objetos\ iguales).\r\n\ Tiempo\ de\ ejecuci\u00F3n\ esperado\:\ O(log(n)).\r\n\ @param\ data\ el\ objeto\ a\ insertar\ en\ la\ SkipList.\r\n
+comment3.params=
+comment3.target=void\ clear()
+comment3.text=\r\n\ Remueve\ todos\ los\ elementos\ de\ la\ SkipList\ y\ la\ deja\ vacia.\ Se\ \r\n\ mantiene\ el\ numero\ maximo\ de\ niveles\ que\ se\ uso\ para\ crear\ la\ \r\n\ SkipList.\r\n
+comment4.params=data
+comment4.target=boolean\ contains(java.lang.Comparable)
+comment4.text=\r\n\ Determina\ si\ el\ objeto\ data\ esta\ en\ la\ SkipList\ (o\ sea\:\ realiza\r\n\ un\ test\ de\ pertenencia).\r\n\ @param\ data\ el\ objeto\ a\ buscar.\r\n\ @return\ true\ si\ data\ esta\ en\ la\ SkipList\ -\ false\ en\ caso\ contrario.\r\n
+comment5.params=
+comment5.target=boolean\ isEmpty()
+comment5.text=\r\n\ Permite\ determinar\ la\ SkipList\ esta\ vacia.\r\n\ @return\ true\ si\ la\ SkipList\ esta\ vacia.\r\n
+comment6.params=data
+comment6.target=void\ remove(java.lang.Comparable)
+comment6.text=\r\n\ Elimina\ el\ objeto\ data\ de\ la\ SkipList.\r\n\ Tiempo\ de\ ejecuci\u00F3n\ esperado\:\ O(log(n)).\r\n\ @param\ data\ el\ objeto\ a\ eliminar.\r\n
+comment7.params=data
+comment7.target=java.lang.Comparable\ search(java.lang.Comparable)
+comment7.text=\r\n\ Busca\ el\ objeto\ data\ en\ la\ SkipList.\ Si\ lo\ encuentra,\ retorna\ el\ objeto\r\n\ que\ estaba\ en\ la\ SkipList\ (que\ segun\ compareTo\ era\ igual\ a\ data).\ Si\ no\ \r\n\ lo\ encuentra,\ retorna\ null.\r\n\ @param\ data\ el\ objeto\ a\ buscar.\r\n\ @return\ el\ objeto\ que\ estaba\ en\ la\ SkipList\ y\ era\ igual\ a\ data\ (si\ data\ \r\n\ estaba\ en\ la\ SkipList,\ o\ null\ si\ data\ no\ estaba.\r\n
+comment8.params=
+comment8.target=int\ size()
+comment8.text=\r\n\ Retorna\ la\ cantidad\ de\ elementos\ contenidos\ en\ la\ SkipList.\r\n\ @return\ el\ tama\u00F1o\ de\ la\ SkipList.\r\n
+comment9.params=
+comment9.target=java.lang.String\ toString()
+comment9.text=\r\n\ Retorna\ una\ cadena\ con\ la\ conversion\ a\ String\ de\ la\ SkipList\ \r\n\ completa,\ en\ orden\ de\ menor\ a\ mayor.\r\n\ @return\ la\ conversion\ a\ String\ de\ la\ SkipList.\r\n
+numComments=12

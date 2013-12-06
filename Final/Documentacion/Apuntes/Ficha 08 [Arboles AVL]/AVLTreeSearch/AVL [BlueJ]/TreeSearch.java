@@ -1,0 +1,253 @@
+/**
+ * Clase para representar un Arbol Binario de Búsqueda.
+ * @author Ing. Valerio Frittelli
+ * @version Septiembre de 2008 
+ */
+public class TreeSearch
+{
+    private NodeTree raiz;
+        
+    /**
+      Constructor. Garantiza que el árbol arranca vacío
+    */
+    public TreeSearch ()
+    {
+       raiz = null;
+    }
+
+    /**
+     * Retorna la dirección del nodo raiz.
+     * @return un referencia al nodo raiz.
+     */
+    public NodeTree getRaiz()
+    {
+        return raiz;   
+    }
+    
+    /**
+     * Cambia la dirección del nodo raiz.
+     * @param r la referencia al nuevo nodo raiz.
+     */
+    public void setRaiz(NodeTree r)
+    {
+        raiz = r;
+    }
+    
+    /**
+      Busca un objeto en el árbol y retorna la dirección del nodo que lo contiene,
+      o null si no lo encuentra. Se considera que el árbol es de búsqueda, y por lo
+      tanto no es heterogéneo. Se supone que el método de inserción usado para
+      crear el árbol es el provisto por esta clase, el cual verifica que el árbol se
+      mantenga homogéneo.
+      @param x el objeto a buscar
+      @return la dirección del objeto encontrado que coincide con x, o null si x no se 
+              encuentra. También sale con null si se detecta que el objeto x no es 
+              compatible con el tipo del info en los nodos del árbol.
+    */
+    public Comparable search (Comparable x)
+    {
+       if(x == null || (raiz != null && x.getClass() != raiz.getInfo().getClass())) return null;
+        
+       NodeTree p = raiz;
+       while (p != null)
+       {
+              Comparable y = p.getInfo();
+              if (x.compareTo(y) == 0) { break; }
+              if (x.compareTo(y) <  0) { p = p.getIzquierdo(); }
+              else { p = p.getDerecho(); }
+       }
+       return (p != null)? p.getInfo() : null;
+    }
+    
+
+    /**
+      Inserta un objeto en el árbol. Si el objeto a insertar ya existía, no lo inserta y sale
+      retornando false. Si no existía, lo inserta y retorna true. El método cuida que el árbol 
+      se mantenga homogéneo, retornando false sin hacer nada si se intenta insertar un objeto 
+      cuya clase no coincida con la de los que ya están en el árbol.
+      @return true si el objeto pudo insertarse - false en caso contrario
+      @param x el objeto a insertar
+    */
+    public boolean add (Comparable x)
+    {
+
+       if(x == null || (raiz != null && x.getClass() != raiz.getInfo().getClass())) return false;
+
+       NodeTree p = raiz, q = null;
+       while (p != null)
+       {
+            Comparable y = p.getInfo();
+            if( x.compareTo(y) == 0 ) { break; }
+            
+            q = p;
+            if ( x.compareTo(y) < 0 ) { p = p.getIzquierdo(); }
+            else { p = p.getDerecho(); }
+       }
+       
+       // si ya existía... retorne false.
+       if (p != null) return false;
+       
+       // si no existía... hay que insertarlo.
+       NodeTree nuevo = new NodeTree(x, null, null);
+       if (q == null) { raiz = nuevo; }
+       else 
+       {
+          if ( x.compareTo(q.getInfo() ) < 0) { q.setIzquierdo(nuevo); }
+          else { q.setDerecho(nuevo); }
+       }
+       return true;
+    }
+
+    /**
+      Borra el nodo del Arbol que contiene al objeto x. Si el objeto x no es compatible con la
+      clase de los nodos del árbol, el método sale sin hacer nada y retorna false.
+      @param x el objeto a borrar.
+      @return true si la eliminación pudo hacerse, o false en caso contrario.
+    */
+    public boolean remove (Comparable x)
+    {
+       if(x == null || (raiz != null && x.getClass() != raiz.getInfo().getClass())) return false;
+       
+       raiz = eliminar (raiz, x);
+       return true;
+    }
+
+    /**
+      Redefinición de toString
+      @return el contenido del arbol, en secuencia de entre orden, como un String
+    */
+    public String toString()
+    {
+       StringBuffer cad = new StringBuffer("");
+       armarEntreOrden(raiz, cad);
+       return cad.toString();       
+    }
+
+    /**
+      Genera un String con el contenido del arbol en pre orden 
+      @return el contenido del arbol, en secuencia de pre orden, como un String
+    */
+    public String toPreOrdenString()
+    {
+       StringBuffer cad = new StringBuffer("");
+       armarPreOrden(raiz, cad);
+       return cad.toString();       
+    }
+
+    /**
+      Genera un String con el contenido del arbol en entre orden. Genera el mismo String que el 
+      método toString() redefinido en la clase
+      @return el contenido del arbol, en secuencia de entre orden, como un String
+    */
+    public String toEntreOrdenString()
+    {
+       return this.toString();
+    }
+
+    /**
+      Genera un String con el contenido del arbol en post orden 
+      @return el contenido del arbol, en secuencia de post orden, como un String
+    */
+    public String toPostOrdenString()
+    {
+       StringBuffer cad = new StringBuffer("");
+       armarPostOrden(raiz, cad);
+       return cad.toString();       
+    }
+
+    private void armarPreOrden (NodeTree p, StringBuffer cad)
+    {
+      if (p != null) 
+      {
+        cad = cad.append(p.getInfo().toString() + " ");         
+        armarPreOrden (p.getIzquierdo(), cad);
+        armarPreOrden (p.getDerecho(), cad);
+      }
+    }
+
+    private void armarEntreOrden (NodeTree p, StringBuffer cad)
+    {
+      if (p != null) 
+      {
+        armarEntreOrden (p.getIzquierdo(), cad);
+        cad = cad.append(p.getInfo().toString() + " ");         
+        armarEntreOrden (p.getDerecho(), cad);
+      }
+    }
+
+    private void armarPostOrden (NodeTree p, StringBuffer cad)
+    {
+      if (p != null) 
+      {
+        armarPostOrden (p.getIzquierdo(), cad);
+        armarPostOrden (p.getDerecho(), cad);
+        cad = cad.append(p.getInfo().toString() + " ");         
+      }
+    }
+
+    /*
+      Auxiliar del método de borrado. Borra un nodo que contenga al objeto x si el mismo 
+      tiene un hijo o ninguno.
+      @param p nodo que está siendo procesado
+      @param x Objeto a borrar
+      @return dirección del nodo que quedó en lugar del que venía en "p" al comenzar el proceso
+    */
+    private NodeTree eliminar (NodeTree p, Comparable x)
+    {
+       if (p != null)
+       {
+         Comparable y = p.getInfo();
+         if ( x.compareTo(y) < 0 ) 
+         { 
+             NodeTree  menor = eliminar(p.getIzquierdo(), x);
+             p.setIzquierdo(menor);   
+         }
+         else
+         {
+              if ( x.compareTo(y) > 0 ) 
+              { 
+                 NodeTree mayor = eliminar (p.getDerecho(), x);
+                 p.setDerecho(mayor); 
+              } 
+              else
+              {  
+                 // Objeto encontrado... debe borrarlo.
+                 if (p.getIzquierdo() == null) { p = p.getDerecho(); }
+                 else
+                 {
+                    if (p.getDerecho() == null) { p = p.getIzquierdo(); }
+                    else 
+                    {
+                        // Tiene dos hijos... que lo haga otra!!!
+                        NodeTree dos = dosHijos(p.getIzquierdo(), p);
+                        p.setIzquierdo(dos);
+                    }
+                 }
+              }
+         }
+       }
+       return p;
+    }
+    
+    /*
+      Auxiliar del método de borrado. Reemplaza al nodo que venía en "p" por su mayor descendiente izquierdo "d", 
+      y luego borra a "d" de su posición original
+      @param d nodo que está siendo procesado
+      @param p nodo a reemplazar por d
+      @return dirección del nodo que quedó en lugar del que venía en "d" al comenzar el proceso.
+    */    
+    private NodeTree dosHijos (NodeTree d, NodeTree p)
+    {
+       if (d.getDerecho() != null) 
+       { 
+         NodeTree der = dosHijos(d.getDerecho(), p);
+         d.setDerecho(der); 
+       }
+       else 
+       {
+         p.setInfo(d.getInfo());
+         d = d.getIzquierdo();
+       }
+       return d;
+    }
+}

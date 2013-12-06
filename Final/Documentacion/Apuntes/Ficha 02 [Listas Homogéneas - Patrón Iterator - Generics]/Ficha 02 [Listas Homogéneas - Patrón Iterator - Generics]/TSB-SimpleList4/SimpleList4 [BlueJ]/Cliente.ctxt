@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Cliente()
+comment0.text=\nConstructor\ por\ defecto\ o\ nulo.\ \ \n\n
+comment1.params=d\ nom
+comment1.target=Cliente(int,\ String)
+comment1.text=\nConstructor\ sobrecargado.\ Inicializa\ el\ dni\ y\ el\ nombre\ de\ acuerdo\ a\ los\ par\u00E1metros\n\n
+comment2.target=int\ getDni()
+comment2.text=M\u00E9todo\ de\ consulta\ para\ el\ n\u00FAmero\ de\ dni\n@return\ el\ n\u00FAmero\ de\ dni\n\n
+comment3.target=String\ getNombre()
+comment3.text=M\u00E9todo\ de\ consulta\ para\ el\ nombre\ del\ cliente\n@return\ el\ nombre\ del\ cliente\n\n
+comment4.params=num
+comment4.target=void\ setDni(int)
+comment4.text=M\u00E9todo\ modificador\ para\ el\ n\u00FAmero\ de\ dni\n@param\ num\ el\ nuevo\ dni\n\n
+comment5.params=nom
+comment5.target=void\ setNombre(String)
+comment5.text=M\u00E9todo\ modificador\ para\ el\ nombre\ del\ cliente\n@param\ nom\ el\ nuevo\ nombre\n\n
+comment6.target=String\ toString()
+comment6.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ toString\n@return\ el\ contenido\ del\ objeto\ en\ forma\ String\ con\ formato\ adecuado\ para\ ser\ visualizado\n\n
+comment7.params=x
+comment7.target=int\ compareTo(Object)
+comment7.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ pedido\ por\ la\ interfaz\ Comparable\nEl\ criterio\ de\ comparaci\u00F3n\ ser\u00E1\ en\ base\ al\ dni\ del\ cliente.\n@param\ x\ El\ objeto\ a\ comparar\ contra\ el\ par\u00E1metro\ impl\u00EDcito\n@return\ 0\ si\ los\ dni\ de\ ambos\ objetos\ son\ iguales,\ negativo\ si\ el\ dni\ del\ impl\u00EDcito\ es\ menor,\ positivo\ si\ es\ mayor.\n\n
+numComments=8

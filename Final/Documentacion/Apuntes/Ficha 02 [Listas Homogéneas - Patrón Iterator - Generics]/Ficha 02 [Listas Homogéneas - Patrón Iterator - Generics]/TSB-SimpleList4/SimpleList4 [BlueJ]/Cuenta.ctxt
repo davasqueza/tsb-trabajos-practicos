@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Cuenta()
+comment0.text=\nConstructor\ por\ defecto\ o\ nulo.\ Al\ incluirlo,\ facilitamos\ el\ proceso\ de\ creaci\u00F3n\ de\ instancias,\ como\ se\ ver\u00E1\ \n\n
+comment1.params=num\ sal
+comment1.target=Cuenta(int,\ float)
+comment1.text=\nConstructor\ sobrecargado.\ Inicializa\ el\ numero\ de\ cuenta\ y\ el\ saldo\ de\ acuerdo\ a\ los\ par\u00E1metros\n\n
+comment2.target=int\ getNumero()
+comment2.text=\nM\u00E9todo\ de\ consulta\ para\ el\ n\u00FAmero\ de\ cuenta\n@return\ el\ n\u00FAmero\ de\ la\ cuenta\n\n
+comment3.target=float\ getSaldo()
+comment3.text=\nM\u00E9todo\ de\ consulta\ para\ el\ saldo\ de\ la\ cuenta\n@return\ el\ saldo\ de\ la\ cuenta\n\n
+comment4.params=num
+comment4.target=void\ setNumero(int)
+comment4.text=\nM\u00E9todo\ modificador\ para\ el\ n\u00FAmero\ de\ cuenta\n@param\ num\ el\ nuevo\ n\u00FAmero\ de\ la\ cuenta\n\n
+comment5.params=sal
+comment5.target=void\ setSaldo(float)
+comment5.text=\nM\u00E9todo\ modificador\ para\ el\ saldo\ de\ cuenta\n@param\ sal\ el\ nuevo\ saldo\ de\ la\ cuenta\n\n
+comment6.params=imp
+comment6.target=void\ retirar(float)
+comment6.text=\nRetiro\ de\ cierto\ monto\ del\ saldo\ de\ la\ cuenta.\ \n@param\ imp\ monto\ que\ ser\u00E1\ retirado\ de\ la\ cuenta\n\n
+comment7.params=imp
+comment7.target=void\ depositar(float)
+comment7.text=\nDep\u00F3sito\ de\ cierto\ monto\ en\ la\ cuenta.\ Se\ asume\ una\ operaroria\ muy\ general,\ dejando\ que\ las\ clases\ derivadas\ puedan\ cambiar\ la\nforma\ de\ depositar\n@param\ imp\ monto\ que\ ser\u00E1\ depositado\ en\ la\ cuenta\n\n
+comment8.target=String\ toString()
+comment8.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ toString\n@return\ el\ contenido\ del\ objeto\ en\ forma\ String\ con\ formato\ adecuado\ para\ ser\ visualizado\n\n
+comment9.params=x
+comment9.target=int\ compareTo(Object)
+numComments=10

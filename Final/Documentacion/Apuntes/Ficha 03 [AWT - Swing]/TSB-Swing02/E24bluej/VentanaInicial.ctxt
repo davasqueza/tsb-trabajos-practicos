@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=VentanaInicial()
+comment0.text=\nCrea\ una\ nueva\ ventana\n\n
+comment1.params=evt
+comment1.target=void\ jbCargarActionPerformed(ActionEvent)
+comment1.text=\nGestiona\ el\ evento\ de\ presionar\ el\ bot\u00F3n\ jbCargar\n@param\ evt\ objeto\ que\ representa\ el\ evento\ generado\n\n
+comment2.params=evt
+comment2.target=void\ jbMostrarActionPerformed(ActionEvent)
+comment2.text=\nGestiona\ el\ evento\ de\ presionar\ el\ bot\u00F3n\ jbMostrar\n@param\ evt\ objeto\ que\ representa\ el\ evento\ generado\n\n
+comment3.params=evt
+comment3.target=void\ cargarActionPerformed(ActionEvent)
+comment3.text=\nGestiona\ el\ evento\ de\ seleccionar\ el\ \u00EDtem\ "Cargar"\n@param\ evt\ objeto\ que\ representa\ el\ evento\ generado\n\n
+comment4.params=evt
+comment4.target=void\ mostrarActionPerformed(ActionEvent)
+comment4.text=\nGestiona\ el\ evento\ de\ seleccionar\ el\ \u00EDtem\ "Mostrar"\n@param\ evt\ objeto\ que\ representa\ el\ evento\ generado\n\n
+comment5.params=evt
+comment5.target=void\ cargar(ActionEvent)
+comment6.params=evt
+comment6.target=void\ mostrar(ActionEvent)
+comment7.params=evt
+comment7.target=void\ salirActionPerformed(ActionEvent)
+comment7.text=\nGestiona\ el\ evento\ de\ seleccionar\ el\ item\ "Salir"\n@param\ evt\ objeto\ que\ representa\ el\ evento\ generado\n\n
+comment8.params=evt
+comment8.target=void\ aboutActionPerformed(ActionEvent)
+comment8.text=\nGestiona\ el\ evento\ de\ seleccionar\ el\ item\ "Acerca\ de"\n@param\ evt\ objeto\ que\ representa\ el\ evento\ generado\n\n
+numComments=9

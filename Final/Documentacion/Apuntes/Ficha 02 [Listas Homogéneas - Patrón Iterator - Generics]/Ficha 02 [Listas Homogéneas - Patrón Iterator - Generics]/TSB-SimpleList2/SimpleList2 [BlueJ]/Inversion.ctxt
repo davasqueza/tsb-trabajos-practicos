@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Inversion()
+comment0.text=\nConstructor\ por\ defecto.\ Si\ se\ invoca\ a\ este\ constructor,\ Java\ autom\u00E1ticamente\ invoca\ primero\ al\ constructor\ por\ defecto\ de\ la\ super\nclase...\n\n
+comment1.params=num\ sal\ tas
+comment1.target=Inversion(int,\ float,\ float)
+comment1.text=\nConstructor\ con\ par\u00E1metros\ para\ CADA\ atributo.\ \n\n
+comment2.target=float\ getTasa()
+comment2.text=\nM\u00E9todo\ de\ consulta\ para\ la\ tasa\ de\ inter\u00E9s\n@return\ la\ tasa\ de\ inter\u00E9s\ pactada\ para\ la\ cuenta\n\n
+comment3.params=tas
+comment3.target=void\ setTasa(float)
+comment3.text=\nM\u00E9todo\ modificador\ para\ la\ tasa\ de\ inter\u00E9s\n@param\ tas\ la\ nueva\ tasa\ de\ inter\u00E9s\ de\ la\ cuenta\n\n
+comment4.target=void\ actualizar()
+comment4.text=\nActualiza\ el\ saldo\ de\ la\ cuenta\ en\ base\ a\ la\ tasa\ de\ inter\u00E9s\ pactada\n\n
+comment5.params=imp
+comment5.target=void\ retirar(float)
+comment5.text=\nRetiro\ de\ cierto\ monto\ del\ saldo\ de\ la\ cuenta.\ \n@param\ imp\ monto\ que\ ser\u00E1\ retirado\ de\ la\ cuenta\n\n
+comment6.target=String\ toString()
+comment6.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ toString\n@return\ el\ contenido\ del\ objeto\ en\ forma\ String\ con\ formato\ adecuado\ para\ ser\ visualizado\n\n
+numComments=7

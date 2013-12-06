@@ -1,0 +1,125 @@
+
+/**
+ * Encripta una cadena en base a la encriptación de César. El alfabeto base de los mensajes 
+ * a encriptar viene dado por la constante Encriptador.ALFABETO. 
+ * Patrón aplicado: Strategy.
+ * 
+ * @author Ing. Valerio Frittelli
+ * @version Julio de 2009
+ */
+public class CesarEncrypter extends Encrypter
+{
+   private int k;   // el factor de desplazamiento a usar   
+
+   /**
+    *  Inicia un encriptador con técnica de César, con factor de desplazamiento 3. El mensaje a encriptar 
+    *  será inicializado como la cadena vacía ("") y el programador deberá cambiar luego ese valor mediante
+    *  setOpenMessage().
+    */
+   public CesarEncrypter( )
+   {
+       this("", 3);
+   }
+
+   /**
+    *  Inicia un encriptador con técnica de César, con factor de desplazamiento 3. El mensaje a encriptar 
+    *  se inicializa con el valor del parámetro. Si ese parámetro es null, el mensaje a encriptar se inicia
+    *  como la cadena vacía ("") y luego el programador deberá cambiar ese valor con setOpenMessage().
+    *  @param mens el mensaje abierto que será encriptado.
+    */
+   public CesarEncrypter( String mens )
+   {
+       this(mens, 3);
+   }
+   
+   /**
+    *  Inicia un encriptador con técnica de César, con factor de desplazamiento igual a desp.
+    *  Si el valor informado en desp es menor a cero, el factor de desplazamiento se ajustará 
+    *  como igual a 3. El mensaje a encriptar se inicializa con el valor del parámetro mens. Si ese parámetro
+    *  es null, el mensaje a encriptar se inicia como la cadena vacía ("") y luego el programador deberá 
+    *  cambiar ese valor con setOpenMessage().
+    *  @param mens el mensaje abierto que será encriptado.
+    *  @param desp el valor del factor de desplazamiento a usar.
+    */
+   public CesarEncrypter( String mens, int desp )
+   {
+       super(mens);
+       if (desp < 0) desp = 3;
+       k = desp;
+   }
+   
+   /**
+    * Retorna el factor de desplazamiento usado por el encriptador.
+    * @return el factor de desplazamiento usado en esta instancia.
+    */
+   public int getDisplacement()
+   { 
+       return k;
+   }
+
+   /**
+    * Encripta el mensaje abierto alojado en la clase, según la técnica de César. Retorna null si el proceso de 
+    * encriptación no pudo hacerse por haber caracteres extraños en el mensaje abierto. El factor de desplazamiento 
+    * a usar, fue informado a la clase mediante alguno de sus constructores o se ajustó a k = 3 por default y puede 
+    * obtenerse mediante getDisplacement().  
+    * @return una cadena con el mensaje encriptado, o null si la cadena no pudo encriptarse (debido a que algún caracter
+    *          del mensaje original no figuraba en el alfabeto base aceptado).
+    */
+   public String code ( )
+   {
+      // "mensaje" y "encriptado" son atributos protected de la clase Encrypter
+      if ( ! isOk( mensaje ) ) return null;
+      
+      StringBuffer b = new StringBuffer(""); 
+      for (int i = 0; i < mensaje.length(); i++) 
+      {
+          char actual = mensaje.charAt(i);
+          int iactual = Encrypter.ALFABETO.indexOf( actual );
+          
+          int icripto = ( iactual + k ) % Encrypter.ALFABETO.length();
+          b.append( Encrypter.ALFABETO.charAt( icripto ) );
+      }
+      
+      encriptado = b.toString();
+      return encriptado;
+   }
+   
+   /**
+    *  Desencripta un mensaje encriptado (alojado en la clase), siguiendo la técnica de César. El método PUEDE CAMBIAR 
+    *  el valor del mensaje abierto almacenado en la clase (lo cual ocurrirá si se invoca a setOpenMessage() y luego se 
+    *  invoca a decode() sin invocar previamente a code()). Retorna null si el proceso de desencriptación no pudo 
+    *  hacerse por haber caracteres extraños en el mensaje encriptado. El factor de desplazamiento a usar, fue 
+    *  informado a la clase mediante alguno de sus constructores o se ajustó a k = 3 por default y puede obtenerse 
+    *  mediante getDisplacement(). 
+    *  @return una cadena con el mensaje desencriptado, o null si la cadena no pudo desencriptarse (debido a 
+    *          que algún caracter del mensaje encriptado no era válido).
+    */
+   public String decode ( )
+   {
+      // "encriptado" es atributo protected de la clase Encrypter
+      if ( ! isOk( encriptado ) ) return null;
+      
+      int n = Encrypter.ALFABETO.length();
+      StringBuffer b = new StringBuffer(""); 
+      for (int i = 0; i < encriptado.length(); i++) 
+      {
+          char actual = encriptado.charAt(i);
+          int iactual = Encrypter.ALFABETO.indexOf( actual );
+          
+          int idecripto = ( iactual - k + n ) % n;
+          b.append( Encrypter.ALFABETO.charAt( idecripto ) );
+      }
+      
+      mensaje = b.toString();
+      return mensaje;
+   }
+   
+   /**
+    * Retorna una cadena con información general sobre el encriptador.
+    * @return un cadena con información del encriptador.
+    */
+   public String toString()
+   {
+       return super.toString() + "\nTécnica: Cifrado de César - Factor de desplazamiento: " + k;
+   }
+}

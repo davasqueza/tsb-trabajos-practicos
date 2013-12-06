@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=CesarEncrypter()
+comment0.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ C\u00E9sar,\ con\ factor\ de\ desplazamiento\ 3.\ El\ mensaje\ a\ encriptar\ \nser\u00E1\ inicializado\ como\ la\ cadena\ vac\u00EDa\ ("")\ y\ el\ programador\ deber\u00E1\ cambiar\ luego\ ese\ valor\ mediante\nsetOpenMessage().\n\n
+comment1.params=mens
+comment1.target=CesarEncrypter(String)
+comment1.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ C\u00E9sar,\ con\ factor\ de\ desplazamiento\ 3.\ El\ mensaje\ a\ encriptar\ \nse\ inicializa\ con\ el\ valor\ del\ par\u00E1metro.\ Si\ ese\ par\u00E1metro\ es\ null,\ el\ mensaje\ a\ encriptar\ se\ inicia\ncomo\ la\ cadena\ vac\u00EDa\ ("")\ y\ luego\ el\ programador\ deber\u00E1\ cambiar\ ese\ valor\ con\ setOpenMessage().\n@param\ mens\ el\ mensaje\ abierto\ que\ ser\u00E1\ encriptado.\n\n
+comment2.params=mens\ desp
+comment2.target=CesarEncrypter(String,\ int)
+comment2.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ C\u00E9sar,\ con\ factor\ de\ desplazamiento\ igual\ a\ desp.\nSi\ el\ valor\ informado\ en\ desp\ es\ menor\ a\ cero,\ el\ factor\ de\ desplazamiento\ se\ ajustar\u00E1\ \ncomo\ igual\ a\ 3.\ El\ mensaje\ a\ encriptar\ se\ inicializa\ con\ el\ valor\ del\ par\u00E1metro\ mens.\ Si\ ese\ par\u00E1metro\nes\ null,\ el\ mensaje\ a\ encriptar\ se\ inicia\ como\ la\ cadena\ vac\u00EDa\ ("")\ y\ luego\ el\ programador\ deber\u00E1\ \ncambiar\ ese\ valor\ con\ setOpenMessage().\n@param\ mens\ el\ mensaje\ abierto\ que\ ser\u00E1\ encriptado.\n@param\ desp\ el\ valor\ del\ factor\ de\ desplazamiento\ a\ usar.\n\n
+comment3.target=int\ getDisplacement()
+comment3.text=\nRetorna\ el\ factor\ de\ desplazamiento\ usado\ por\ el\ encriptador.\n@return\ el\ factor\ de\ desplazamiento\ usado\ en\ esta\ instancia.\n\n
+comment4.target=String\ code()
+comment4.text=\nEncripta\ el\ mensaje\ abierto\ alojado\ en\ la\ clase,\ seg\u00FAn\ la\ t\u00E9cnica\ de\ C\u00E9sar.\ Retorna\ null\ si\ el\ proceso\ de\ \nencriptaci\u00F3n\ no\ pudo\ hacerse\ por\ haber\ caracteres\ extra\u00F1os\ en\ el\ mensaje\ abierto.\ El\ factor\ de\ desplazamiento\ \na\ usar,\ fue\ informado\ a\ la\ clase\ mediante\ alguno\ de\ sus\ constructores\ o\ se\ ajust\u00F3\ a\ k\ \=\ 3\ por\ default\ y\ puede\ \nobtenerse\ mediante\ getDisplacement().\ \ \n@return\ una\ cadena\ con\ el\ mensaje\ encriptado,\ o\ null\ si\ la\ cadena\ no\ pudo\ encriptarse\ (debido\ a\ que\ alg\u00FAn\ caracter\ndel\ mensaje\ original\ no\ figuraba\ en\ el\ alfabeto\ base\ aceptado).\n\n
+comment5.target=String\ decode()
+comment5.text=\nDesencripta\ un\ mensaje\ encriptado\ (alojado\ en\ la\ clase),\ siguiendo\ la\ t\u00E9cnica\ de\ C\u00E9sar.\ El\ m\u00E9todo\ PUEDE\ CAMBIAR\ \nel\ valor\ del\ mensaje\ abierto\ almacenado\ en\ la\ clase\ (lo\ cual\ ocurrir\u00E1\ si\ se\ invoca\ a\ setOpenMessage()\ y\ luego\ se\ \ninvoca\ a\ decode()\ sin\ invocar\ previamente\ a\ code()).\ Retorna\ null\ si\ el\ proceso\ de\ desencriptaci\u00F3n\ no\ pudo\ \nhacerse\ por\ haber\ caracteres\ extra\u00F1os\ en\ el\ mensaje\ encriptado.\ El\ factor\ de\ desplazamiento\ a\ usar,\ fue\ \ninformado\ a\ la\ clase\ mediante\ alguno\ de\ sus\ constructores\ o\ se\ ajust\u00F3\ a\ k\ \=\ 3\ por\ default\ y\ puede\ obtenerse\ \nmediante\ getDisplacement().\ \n@return\ una\ cadena\ con\ el\ mensaje\ desencriptado,\ o\ null\ si\ la\ cadena\ no\ pudo\ desencriptarse\ (debido\ a\ \nque\ alg\u00FAn\ caracter\ del\ mensaje\ encriptado\ no\ era\ v\u00E1lido).\n\n
+comment6.target=String\ toString()
+comment6.text=\nRetorna\ una\ cadena\ con\ informaci\u00F3n\ general\ sobre\ el\ encriptador.\n@return\ un\ cadena\ con\ informaci\u00F3n\ del\ encriptador.\n\n
+numComments=7

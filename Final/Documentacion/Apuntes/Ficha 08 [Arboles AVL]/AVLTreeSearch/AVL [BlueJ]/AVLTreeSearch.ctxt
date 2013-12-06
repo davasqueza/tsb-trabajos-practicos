@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=AVLTreeSearch()
+comment0.text=\nConstructor\ por\ default.\ \n\n
+comment1.params=x
+comment1.target=boolean\ add(Comparable)
+comment1.text=\nInserta\ un\ objeto\ x\ en\ el\ \u00E1rbol,\ rebalanceando\ en\ caso\ de\ desequilibrio.\ Si\ el\ objeto\ ya\ exist\u00EDa,\ no\ lo\ inserta.\n@param\ x\ el\ objeto\ a\ insertar.\n@return\ true\ si\ la\ inserci\u00F3n\ pudo\ hacerse.\n\n
+comment2.params=x
+comment2.target=boolean\ remove(Comparable)
+comment2.text=\nBorra\ un\ nodo\ del\ TreeSearchTreeSearch,\ rebalanceando.\n@param\ x\ el\ objeto\ a\ borrar\n@return\ true\ si\ el\ borrado\ tuvo\ \u00E9xito.\n\n
+comment3.params=p\ x
+comment3.target=NodeTree\ insAvl(NodeTree,\ Comparable)
+comment3.text=\nRecorre\ el\ \u00E1rbol\ en\ forma\ recursiva,\ inserta\ y\ rebalancea\n@param\ p\ direcci\u00F3n\ del\ nodo\ actual\n@param\ x\ clave\ a\ insertar\n\n
+comment4.params=p\ x
+comment4.target=NodeTree\ sacar(NodeTree,\ Comparable)
+comment4.text=\nRecorre\ el\ \u00E1rbol\ recursivamente,\ borra\ el\ nodo\ con\ el\ objeto\ x\ (si\ existe)\ y\ rebalancea\ si\ es\ necesario\n@param\ p\ direcci\u00F3n\ del\ nodo\ actual\n@param\ x\ objeto\ a\ borrar\n@return\ direcci\u00F3n\ de\ la\ nueva\ raiz\ del\ \u00E1rbol\n\n
+comment5.params=d\ q
+comment5.target=NodeTree\ bor(NodeTree,\ NodeTree)
+comment5.text=\nM\u00E9todo\ auxiliar\ para\ eliminar\ el\ nodo\ si\ tiene\ dos\ hijos\n@param\ d\ nodo\ actual\n@param\ q\ nodo\ original\ a\ borrar\n@return\ direcci\u00F3n\ de\ la\ nueva\ raiz\ del\ arbol\n\n
+comment6.params=p
+comment6.target=NodeTree\ equilibrar1(NodeTree)
+comment6.text=\nAuxiliar\ de\ reequilibrado\n@param\ p\ direcci\u00F3n\ del\ nodo\ a\ reequilibrar\n@return\ nueva\ raiz\ del\ \u00E1rbol\n\n
+comment7.params=p
+comment7.target=NodeTree\ equilibrar2(NodeTree)
+comment7.text=\nAuxiliar\ de\ reequilibrado\n@param\ p\ direcci\u00F3n\ del\ nodo\ a\ reequilibrar\n@return\ nueva\ raiz\ del\ \u00E1rbol\n\n
+numComments=8

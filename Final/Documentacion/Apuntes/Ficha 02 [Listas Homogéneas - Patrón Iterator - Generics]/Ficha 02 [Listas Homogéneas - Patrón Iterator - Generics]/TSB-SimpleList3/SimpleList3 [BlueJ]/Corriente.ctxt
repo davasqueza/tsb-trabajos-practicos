@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Corriente()
+comment0.text=\nConstructor\ por\ defecto\n\n
+comment1.params=num\ sal\ des
+comment1.target=Corriente(int,\ float,\ boolean)
+comment1.text=\nConstructor\ con\ par\u00E1metros\ para\ CADA\ atributo.\ \n\n
+comment2.target=boolean\ getDescubierto()
+comment2.text=\nM\u00E9todo\ de\ consulta\ para\ la\ autorizaci\u00F3n\ de\ giro\ en\ rojo...\n@return\ el\ estado\ de\ la\ autorizaci\u00F3n\ de\ giro\ en\ descubierto\:\ \ true\:\ es\ v\u00E1lido\ el\ giro\ -\ false\:\ no\ es\ v\u00E1lido\n\n
+comment3.params=des
+comment3.target=void\ setDescubierto(boolean)
+comment3.text=\nM\u00E9todo\ modificador\ para\ la\ autorizaci\u00F3n\ de\ giro\ en\ rojo...\n@param\ des\ true\:\ se\ autoriza\ giro\ en\ descubierto\ -\ false\:\ no\ se\ autoriza\n\n
+comment4.params=imp
+comment4.target=void\ retirar(float)
+comment4.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ retirar\ heredado\ desde\ Cuenta.\ Si\ el\ importe\ a\ retirar\ es\ mayor\ que\ el\ saldo,\ a\u00FAn\ podr\u00EDa\ ser\ v\u00E1lido\ el\ \nretiro\ si\ la\ cuenta\ tiene\ autorizaci\u00F3n\ de\ sobregiro.\n@param\ imp\ monto\ que\ ser\u00E1\ retirado\ de\ la\ cuenta\n\n
+comment5.target=String\ toString()
+comment5.text=\nRedefinici\u00F3n\ del\ m\u00E9todo\ toString\n@return\ el\ contenido\ del\ objeto\ en\ forma\ String\ con\ formato\ adecuado\ para\ ser\ visualizado\n\n
+numComments=6

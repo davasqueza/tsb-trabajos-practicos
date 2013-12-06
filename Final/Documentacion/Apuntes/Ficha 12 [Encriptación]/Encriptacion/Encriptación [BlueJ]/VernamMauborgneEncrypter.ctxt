@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=VernamMauborgneEncrypter()
+comment0.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ Vernam-Mauborgne.\ El\ mensaje\ a\ encriptar\ ser\u00E1\ inicializado\ \ncomo\ la\ cadena\ vac\u00EDa\ ("")\ y\ el\ programador\ deber\u00E1\ cambiar\ luego\ ese\ valor\ mediante\ setOpenMessage().\ \n\n
+comment1.params=mens
+comment1.target=VernamMauborgneEncrypter(String)
+comment1.text=\nInicia\ un\ encriptador\ con\ t\u00E9cnica\ de\ Vernam-Mauborgne.\ El\ mensaje\ a\ encriptar\ se\ inicializa\ \ncon\ el\ valor\ del\ par\u00E1metro\ mens.\ Si\ ese\ par\u00E1metro\ es\ null,\ el\ mensaje\ a\ encriptar\ se\ inicia\ como\ \nla\ cadena\ vac\u00EDa\ ("")\ y\ luego\ el\ programador\ deber\u00E1\ cambiar\ ese\ valor\ con\ setOpenMessage().\n@param\ mens\ el\ mensaje\ abierto\ que\ ser\u00E1\ encriptado.\n\n
+comment2.params=mens
+comment2.target=void\ setOpenMessage(String)
+comment2.text=\nCambia\ el\ mensaje\ a\ encriptar.\ Si\ el\ nuevo\ mensaje\ es\ null,\ el\ mensaje\ a\ encriptar\ se\ inicia\ como\ cadena\ \nvac\u00EDa\ (""),\ lo\ que\ deber\u00EDa\ provocar\ que\ una\ invocaci\u00F3n\ a\ code()\ retorne\ null.\ En\ todos\ los\ casos,\ tambi\u00E9n\ \nse\ inicia\ como\ cadena\ vac\u00EDa\ el\ mensaje\ encriptado,\ lo\ que\ deber\u00EDa\ provocar\ que\ una\ nueva\ invocaci\u00F3n\ a\ decode()\ \nretorne\ null.\ La\ clave\ de\ desplazamiento\ a\ usar,\ se\ vuelve\ a\ crear\ en\ forma\ aleatoria,\ y\ se\ ajusta\ al\ tama\u00F1o\ndel\ nuevo\ mensaje.\n@param\ mens\ el\ nuevo\ mensaje\ a\ encriptar.\n\n
+comment3.target=String\ toString()
+comment3.text=\nRetorna\ una\ cadena\ con\ informaci\u00F3n\ general\ sobre\ el\ encriptador.\n@return\ un\ cadena\ con\ informaci\u00F3n\ del\ encriptador.\n\n
+comment4.target=void\ createKey()
+numComments=5

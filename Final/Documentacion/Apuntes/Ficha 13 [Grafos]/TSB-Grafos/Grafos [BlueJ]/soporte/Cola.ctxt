@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Cola()
+comment0.text=\nConstructor\ por\ defecto\n\n
+comment1.target=Nodo\ getFrente()
+comment1.text=\nAcceso\ a\ la\ direcci\u00F3n\ del\ primer\ Nodo\n@return\ direcci\u00F3n\ del\ primer\ Nodo\n\n
+comment2.target=Nodo\ getFondo()
+comment2.text=\nAcceso\ a\ la\ direcci\u00F3n\ del\ \u00FAltimo\ Nodo\n@return\ direcci\u00F3n\ del\ \u00FAltimo\ Nodo\n\n
+comment3.target=boolean\ vacia()
+comment3.text=\nDetermina\ si\ la\ cola\ est\u00E1\ vac\u00EDa\n@return\ true\:\ est\u00E1\ vac\u00EDa\ \ -\ \ false\:\ no\ est\u00E1\ vac\u00EDa\n\n
+comment4.params=x
+comment4.target=void\ insertar(Comparable)
+comment4.text=\nInserta\ un\ nodo\ al\ final\ de\ la\ cola\n@param\ x\ el\ objeto\ a\ almacenar\ en\ el\ nuevo\ nodo\n\n
+comment5.target=Comparable\ borrar()
+comment5.text=\nElimina\ el\ primer\ nodo\n@return\ una\ referencia\ al\ info\ del\ nodo\ eliminado,\ o\ null\ la\ cola\ estaba\ vac\u00EDa\n\n
+comment6.target=String\ toString()
+comment6.text=\nRedefine\ el\ m\u00E9todo\ toString\n@return\ el\ contenido\ de\ la\ lista\ convertido\ a\ String\n\n
+numComments=7

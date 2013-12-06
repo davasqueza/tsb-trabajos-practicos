@@ -1,0 +1,21 @@
+#BlueJ package file
+package.editor.height=191
+package.editor.width=335
+package.editor.x=333
+package.editor.y=2
+package.numDependencies=0
+package.numTargets=2
+package.showExtends=true
+package.showUses=true
+target1.height=62
+target1.name=soporte
+target1.type=PackageTarget
+target1.width=80
+target1.x=230
+target1.y=50
+target2.height=62
+target2.name=interfaz
+target2.type=PackageTarget
+target2.width=80
+target2.x=90
+target2.y=50

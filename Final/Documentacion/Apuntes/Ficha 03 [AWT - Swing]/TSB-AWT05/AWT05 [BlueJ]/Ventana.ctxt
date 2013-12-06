@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Ventana()
+comment0.text=\nCrea\ el\ Frame,\ ajusta\ sus\ valores,\ y\ le\ agrega\ los\ componentes\ \n\n
+comment1.target=void\ crearComponentes()
+comment1.text=\nCrea\ los\ componentes\ a\ incluir\ en\ la\ ventana\n\n
+comment2.target=void\ agregarComponentes()
+comment2.text=Agrega\ los\ componentes\ a\ la\ ventana\n\n
+numComments=3
